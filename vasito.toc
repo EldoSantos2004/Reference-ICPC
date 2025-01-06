@@ -1,0 +1,84 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Data structures}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Fenwick Tree}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Segment Tree}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Segment tree(Lazy)}{2}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Segment tree types}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}DSU}{4}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}DSU with deletion}{4}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}BIT}{6}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}BIT2D}{6}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Oset}{6}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}Multioset}{6}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Treap}{7}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Treap with inversion}{8}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}HLD}{8}{subsection.1.13}%
+\contentsline {section}{\numberline {2}Graphs}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}BFS}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}DFS}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Bellman Ford}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Dijkstra}{10}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Floyd Warshal}{10}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Strongly Connected Components}{10}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Condensation Graph}{11}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Bridges Articulation}{11}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}LCA}{12}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}2sat}{13}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Bipartite check}{14}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}LCA with RMQ}{14}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Find Centroid}{16}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Centroid Decomposition}{16}{subsection.2.14}%
+\contentsline {subsection}{\numberline {2.15}Koenig}{17}{subsection.2.15}%
+\contentsline {subsection}{\numberline {2.16}Max Bipartite Matching}{18}{subsection.2.16}%
+\contentsline {section}{\numberline {3}Math}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Binary Exponentiation}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Binom small numbers without mod}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Factorial}{19}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Binomial Coefficient}{19}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Fibonacci (Logn)}{20}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}GCD}{20}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Sieve O(nlog(log(n)))}{20}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Inverse Modulo}{20}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Divisors}{21}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}NTT}{21}{subsection.3.10}%
+\contentsline {subsection}{\numberline {3.11}FFT}{22}{subsection.3.11}%
+\contentsline {subsection}{\numberline {3.12}Matrix Exponentiation}{23}{subsection.3.12}%
+\contentsline {subsection}{\numberline {3.13}Mobius}{23}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Phi}{24}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Prefix sum Phi}{24}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Identities}{24}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}Burnside's Lemma}{25}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Recursion}{25}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Theorems}{25}{subsection.3.19}%
+\contentsline {section}{\numberline {4}Game Theory}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Sprague-Grundy theorem}{25}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Strings}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Manacher}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Suffix Array O(nlog(n))}{26}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Z Function O(n)}{26}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}KMP}{27}{subsection.5.4}%
+\contentsline {section}{\numberline {6}DP Optimization}{28}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Convex Hull Trick}{28}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Divide and Conquer DP}{28}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Other}{29}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Binary Search}{29}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}BinSearch with doubles}{29}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Ternary Search}{29}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}LIS DP}{29}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Random numbers}{29}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}XOR basis}{30}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Bitsets}{30}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}All permutations}{30}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Print doubles}{30}{subsection.7.9}%
+\contentsline {section}{\numberline {8}Flows}{30}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Maximum Flow O(V*E*E)}{30}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Maximum Flow O(V*V*E)}{31}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Maximum matching $O(E\sqrt {V})$}{32}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Minimum Cost Maximum Flow}{33}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Dinic}{34}{subsection.8.5}%
+\contentsline {section}{\numberline {9}Geometry}{35}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Point struct}{35}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Sort points}{36}{subsection.9.2}%
+\contentsline {section}{\numberline {10}Compile}{36}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Template}{36}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Compile}{36}{subsection.10.2}%

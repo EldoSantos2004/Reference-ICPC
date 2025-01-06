@@ -1,0 +1,285 @@
+%"The PDF file may contain up to 25 pages of reference material, single-sided, letter or A4 size, with text and illustrations readable by a person with correctable eyesight without magnification from a distance of 1/2 meter."
+\input{preamble.tex}
+\begin{document}
+\def\title{Universidad Nacional Autónoma de México }
+.\\[0.2cm]
+\centering{\LARGE\textbf{UNAM}} \\[0.5cm]
+%\centering{\includegraphics[width=5.5cm]{img/vasito.jpg}}
+\tableofcontents%\newpage
+
+\section{Data structures}
+	\subsection{Fenwick Tree}
+	\cppfile{data_structures/fenwickTree.cpp}
+	\subsection{Segment Tree}
+	\cppfile{data_structures/segment_tree.cpp}
+	\subsection{Segment tree(Lazy)}
+	\cppfile{data_structures/segment_tree_lazy.cpp}
+	\subsection{Segment tree types}
+	\cppfile{data_structures/segtree_types.cpp}
+	\subsection{DSU}
+	\cppfile{data_structures/dsu.cpp}
+	\subsection{DSU with deletion}
+	\cppfile{data_structures/dsu_with_deletion.cpp}
+	\subsection{BIT}
+	\cppfile{data_structures/bit.cpp}
+	\subsection{BIT2D}
+	\cppfile{data_structures/2dbit.cpp}
+	\subsection{Oset}
+	\cppfile{data_structures/oset.cpp}
+	\subsection{Multioset}
+	\cppfile{data_structures/multioset.cpp}
+	\subsection{Treap}
+	\cppfile{data_structures/treap.cpp}
+	\subsection{Treap with inversion}
+	\cppfile{data_structures/treap_w_inversion.cpp}
+	\subsection{HLD}
+	\cppfile{data_structures/hld.cpp}
+
+
+\section{Graphs}
+	\subsection{BFS}
+	\cppfile{graphs/bfs.cpp}
+	\subsection{DFS}
+	\cppfile{graphs/dfs.cpp}
+	\subsection{Bellman Ford}
+	\cppfile{graphs/bellman_ford.cpp}
+	\subsection{Dijkstra}
+	\cppfile{graphs/dijkstra.cpp}
+	\subsection{Floyd Warshal}
+	\cppfile{graphs/floyd_warshall.cpp}
+	\subsection{Strongly Connected Components}
+	\cppfile{graphs/scc.cpp}
+	\subsection{Condensation Graph}
+	\cppfile{graphs/condensation.cpp}
+	\subsection{Bridges Articulation}
+	\cppfile{graphs/bridges_articulation.cpp}
+	\subsection{LCA}
+	\cppfile{graphs/lca.cpp}
+	\subsection{2sat}
+	\cppfile{graphs/2sat.cpp}
+	\subsection{Bipartite check}
+	\cppfile{graphs/bipartite_checker.cpp}
+	\subsection{LCA with RMQ}
+	\cppfile{graphs/lca_max_edge.cpp}
+	\subsection{Find Centroid}
+	\cppfile{graphs/find_centroid.cpp}
+	\subsection{Centroid Decomposition}
+	\cppfile{graphs/centroid_decomposition.cpp}
+	\subsection{Koenig}
+	\cppfile{graphs/koenig.py}
+	\subsection{Max Bipartite Matching}
+	\cppfile{graphs/maximum_bipartite_matching.cpp}
+	\cppfile{graphs/maximum_bipartite_matching.py}
+
+	
+
+
+\section{Math}
+	\subsection{Binary Exponentiation}
+	\cppfile{mathematics/binexp.cpp}
+	\subsection{Binom small numbers without mod}
+	\cppfile{mathematics/binom_small_num_without_mod.cpp}
+	\subsection{Factorial}
+	\cppfile{mathematics/factorial.cpp}
+	\subsection{Binomial Coefficient}
+	\cppfile{mathematics/binom.cpp}
+	\subsection{Fibonacci (Logn)}
+	\cppfile{mathematics/fib.cpp}
+	\subsection{GCD}
+	\cppfile{mathematics/gcd.cpp}
+	\subsection{Sieve O(nlog(log(n)))}
+	\cppfile{mathematics/sieve.cpp}
+	\subsection{Inverse Modulo}
+	\cppfile{mathematics/inverse.cpp}
+	\subsection{Divisors}
+	\cppfile{mathematics/divisors.cpp}
+	\subsection{NTT}
+	\cppfile{mathematics/ntt.cpp}
+	\subsection{FFT}
+	\cppfile{mathematics/fft.cpp}
+	\subsection{Matrix Exponentiation}
+	\cppfile{mathematics/matrix_exp.cpp}
+	\subsection{Mobius}
+	\cppfile{mathematics/mobius.cpp}
+	\subsection{Phi}
+	\cppfile{mathematics/phi.cpp}
+	\subsection{Prefix sum Phi}
+	\cppfile{mathematics/prefix_sum_phi.cpp}
+
+	\subsection{Identities}
+	{
+		$C_n = \frac{2(2n-1)}{n+1} C_{n-1}$
+
+		$C_n = \frac{1}{n+1} \binom{2n}{n}$
+
+		$C_n \sim \frac{4^n}{n^{3/2}\sqrt{\pi}}$
+
+		$\sigma(n) = O(\log(\log(n)))$ (number of divisors of $n$)
+
+		$F_{2n+1} = F_{n}^2 + F_{n+1}^2$
+
+		$F_{2n} = F_{n+1}^2 - F_{n-1}^2$
+
+		$\sum_{i=1}^n F_i = F_{n+2}-1$
+
+		$F_{n+i}F_{n+j} - F_nF_{n+i+j} = (-1)^n F_iF_j$
+
+		(Möbius Inv. Formula)
+		$\mu(p^k) = [k=0] - [k=1]$
+		Let $g(n) = \sum_{d\mid n} f(d)$, then $f(n)=\sum_{d\mid n} g(d) \mu\left(\frac{n}{d}\right)$.
+		(Dirichlet Convolution)
+		Let $f,g$ be arithmetic functions, then $(f*g)(n) = \sum_{d\mid n} f(d)g\left(\frac{n}{d}\right)$.
+		If $f,g$ are multiplicative, then so is $f*g$.
+
+		$n=\sum_{d|n}\phi(d)$
+
+		Lucas' Theorem: $\binom{m}{n} \equiv \prod_{i=0}^k \binom{m_i}{n_i} \pmod{p}$ where $m = \sum_{i=0}^k m_i p^i$ and $n = \sum_{i=0}^k n_i p^i$.
+	}
+	\subsection{Burnside's Lemma}
+		\begin{flushleft}
+		Dado un grupo $G$ de permutaciones y un conjunto $X$ de $n$ elementos, 
+		el número de órbitas de $X$ bajo la acción de $G$ es igual al promedio
+		del número de puntos fijos de las permutaciones en $G$.\\
+		Formalmente, el número de órbitas es $\frac{1}{|G|} \sum_{g \in G} f(g)$ donde $f(g)$ es el número de puntos fijos de $g$.\\
+		Ejemplo: Dado un collar con $n$ cuentas y $2$ colores, el número de collares
+		diferentes que se pueden formar es $\frac{1}{n} \sum_{i=0}^{n} f(i)$ donde $f(i)$ es el número de collares
+		que quedan fijos bajo una rotación de $i$ posiciones.\\
+		Para contar el número de collares que quedan fijos bajo una rotación de $i$ posiciones, se puede usar
+		la fórmula $f(i) = 2^{\gcd(i,n)}$.\\
+		Para un collar de $n$ cuentas y $k$ colores, el número de collares diferentes que se pueden formar
+		es $\frac{1}{n} \sum_{i=0}^{n} k^{\gcd(i,n)}$\\
+		Ejemplo: Dado un cubo con $6$ caras y $k$ colores, el número de cubos diferentes que se pueden formar
+		es $\frac{1}{24} \sum_{i=0}^{24} f(i)$ donde $f(i)$ es el número de cubos que quedan fijos bajo una rotación de $i$ posiciones.
+		Esta formula es igual a $\frac{1}{24} (n^6+3n^4+12n^3+8n^2)$
+		\end{flushleft}
+	\subsection{Recursion}
+		\begin{flushleft}
+			Sea $f(n) = \sum_{i=1}^{k} a_i f(n-i)$ entonces
+			podemos considerar la matriz:
+			\[
+			\begin{bmatrix}
+				f(n) \\
+				f(n-1) \\
+				\vdots \\
+				f(n-k+1)
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				a_1 & a_2 & \cdots & a_{k-1} & a_{k}\\
+				1 & 0 & \cdots & 0 & 0\\
+				0 & 1 & \cdots & 0 & 0\\
+				\vdots & \vdots & \ddots & \vdots & \vdots\\
+				0 & 0 & \cdots & 1 & 0
+			\end{bmatrix}
+			\begin{bmatrix}
+				f(n-1) \\
+				f(n-2) \\
+				\vdots \\
+				f(n-k)
+			\end{bmatrix}
+			\]
+			De aqui podemos calcular $f(n)$ con exponenciación de matrices.
+			\[
+			\begin{bmatrix}
+				f(n) \\
+				f(n-1) \\
+				\vdots \\
+				f(n-k+1)
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				a_1 & a_2 & \cdots & a_{k-1} & a_{k}\\
+				1 & 0 & \cdots & 0 & 0\\
+				0 & 1 & \cdots & 0 & 0\\
+				\vdots & \vdots & \ddots & \vdots & \vdots\\
+				0 & 0 & \cdots & 1 & 0
+			\end{bmatrix}
+			^{n-k}
+			\begin{bmatrix}
+				f(k) \\
+				f(k-1) \\
+				\vdots \\
+				f(1)
+			\end{bmatrix}
+			\]
+		\end{flushleft}
+	\subsection{Theorems}
+		\begin{flushleft}
+			\textbf{Koeing's Theorem:} La cardinalidad del emparejamiento maximo de una grafica bipartita
+			es igual al minimum vertex cover.\\
+			\textbf{Hall's Theorem:} Una grafica bipartita $G$ tiene un emparejamiento que cubre todos los nodos
+			de $G$ si y solo si para todo subconjunto $S$ de nodos de $G$, el número de vecinos de $S$ es mayor o igual a $|S|$.\\
+		\end{flushleft}
+
+
+\section{Game Theory}
+	\subsection{Sprague-Grundy theorem}
+	\url{https://codeforces.com/blog/entry/66040}
+	Dado un juego con pilas $p_1$, $p_2$, ..., $p_n$ sea $g(p)$ el nimber de la pila $p$, 
+	entonces el nimber del juego es $g(p_1) \oplus g(p_2) \oplus ... \oplus g(p_n)$.
+	Para calcular el nimber de una pila, se puede usar la fórmula $g(r) = mex(\{g(r_1), g(r_2), ..., g(r_k)\})$
+	donde $r_1, r_2, ..., r_k$ son los posibles estados a los que se puede llegar desde $r$ y $g(r)=0$ si $r$ es un estado perdedor.
+
+
+\section{Strings}
+	\subsection{Manacher}
+	\cppfile{strings/manacher.cpp}
+	\subsection{Suffix Array O(nlog(n))}
+	\cppfile{strings/suffix_array.cpp}
+	\subsection{Z Function O(n)}
+	\cppfile{strings/z_function.cpp}
+	\subsection{KMP}
+	\cppfile{strings/kmp.cpp}
+
+\section{DP Optimization}
+	\subsection{Convex Hull Trick}
+	\cppfile{dp_optimizations/convex_hull_trick.cpp}
+	\subsection{Divide and Conquer DP}
+	\cppfile{dp_optimizations/divide_conquer_dp.cpp}
+
+\section{Other}
+	\subsection{Binary Search}
+	\cppfile{more_topics/bin_search.cpp}
+	\subsection{BinSearch with doubles}
+	\cppfile{more_topics/bin_search_with_doubles.cpp}
+	\subsection{Ternary Search}
+	\cppfile{more_topics/ternary_search.cpp}
+	\subsection{LIS DP}
+	\cppfile{more_topics/lis_dp.cpp}\
+	\subsection{Random numbers}
+	\cppfile{more_topics/randints.cpp}
+	\subsection{XOR basis}
+	\cppfile{more_topics/xor_basis.cpp}
+	\subsection{Bitsets}
+	\cppfile{more_topics/bitsets.cpp}
+	\subsection{All permutations}
+	\cppfile{more_topics/next_permutation.cpp}
+	\subsection{Print doubles}
+	\cppfile{more_topics/setprecision.cpp}
+
+
+\section{Flows}
+	\subsection{Maximum Flow O(V*E*E)}
+	\cppfile{flow/max_flow.cpp}
+	\subsection{Maximum Flow O(V*V*E)}
+	\cppfile{flow/push_relabel.cpp}
+	\subsection{Maximum matching $O(E\sqrt{V})$}
+	\cppfile{flow/hopcroft_karp.cpp}
+	\subsection{Minimum Cost Maximum Flow}
+	\cppfile{flow/max_flow_min_cost.cpp}
+	\subsection{Dinic}
+	\cppfile{flow/dinic.cpp}
+
+\section{Geometry}
+	\subsection{Point struct}
+	\cppfile{geometry/point.cpp}
+	\subsection{Sort points}
+	\cppfile{geometry/sort_points.cpp}
+
+\section{Compile}
+	\subsection{Template}
+	\cppfile{compile/template.cpp}
+	\subsection{Compile}
+	\cppfile{compile/compile.cpp}
+
+\end{document}
