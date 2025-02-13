@@ -1,0 +1,539 @@
+\input{config.tex}
+\begin{document}
+	\def\title{Chamba Seekers - UNAM Facultad de Ingeniería}
+	\tableofcontents\newpage
+	
+	\section{Funciones C++}%%%%%%%%%%%%%%%%%%ALGORITHM%%%%%%%%%%%%%%%%%%
+	\input{FuncionesC++.tex}
+	
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Data Structures}
+	
+	\subsection{SparseTable}
+	
+	\cppfile{data_structures/SparseTable.cpp}
+	
+	\subsection{Segment Tree}
+
+	\cppfile{data_structures/SegTree.cpp}
+	
+	\subsection{Segment Tree Max Subarray Sum}
+	
+	\cppfile{data_structures/SegTreeMaxSubarraySum.cpp}
+	
+	\subsection{MergeSortTree}
+	
+	\cppfile{data_structures/MergeSortTree.cpp}
+	
+	\subsection{LazySegmentTree}
+	
+	\cppfile{data_structures/LazySegTree.cpp}
+	
+	\cppfile{data_structures/LazySegTree2.cpp}
+	
+	\subsection{PersistentSegmentTree}
+	
+	\cppfile{data_structures/PersistentSegTree.cpp}
+	
+	\subsection{Persistent Array}
+	
+	\cppfile{data_structures/PersistentArray.cpp}
+	
+	\subsection{Fenwick}
+	
+	\cppfile{data_structures/Fenwick.cpp}
+	
+	\subsection{Fenwick 2D}
+	
+	\cppfile{data_structures/Fenwick2D.cpp}
+	
+	\subsection{SegmentTree 2D}
+	
+	\cppfile{data_structures/segment_tree_2d.cpp}
+	
+	\subsection{DynamicSegTree}
+	
+	\cppfile{data_structures/dynamic_seg_tree.cpp}
+	
+	\subsection{OrderedSet}
+	
+	\cppfile{data_structures/OrderedSet.cpp}
+	
+	\subsection{Disjoint Set Union}
+	
+	\cppfile{data_structures/DSU.cpp}
+	
+	\subsection{BitTrie}
+	
+	\cppfile{data_structures/BitTrie.cpp}
+	
+		\subsection{Palindromic Tree}
+	
+	\cppfile{data_structures/palindromic_tree.cpp}
+	
+	\subsection{LineContainer}
+	
+	\cppfile{data_structures/LineContainer.cpp}
+	
+	\subsection{SqrtDecomposition}
+	
+	\cppfile{data_structures/SqrtDecomposition.cpp}
+	
+	\subsection{Treap}
+	
+	\cppfile{data_structures/Treap.cpp}
+	
+	\subsection{Dynammic Connectivity}
+	
+	\cppfile{data_structures/DynamicConnectivity.cpp}
+	
+	\subsection{Bitset}
+	
+	\cppfile{data_structures/Bitset.cpp}
+	
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Math}
+	
+	\subsection{Binary Exponentiation And Modular Division}
+	
+	\cppfile{math/Binpow.cpp}
+	
+	\subsection{Euler's Totient}
+	
+	\cppfile{math/EulerTotient.cpp}
+	
+	\subsection{Miller Rabin}
+	
+	\cppfile{math/MillerRabinDeterministic.cpp}
+	
+	\subsection{Diophantine}
+	
+	If one solution is $(x_0, y_0)$ all solutions can be obtained by $x = x_0  +k  * \frac{b}{gcd(a, b)}$ and $y= y_0 -k *\frac{a}{gcd(a, b)}$.
+	\cppfile{math/diophantine.cpp}
+
+	\subsection{Discrete Log}
+	Finds discrete logarithm in $O(\sqrt(m))$.
+	\cppfile{math/discrete_log.cpp}
+
+	
+	
+	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Polynomials}
+	
+	\subsection{Fast Fourier Transform (FFT)}
+	
+	Fast Fourier Transform in $O(nlogn)$. 
+	\cppfile{polynomials/FFT.cpp}
+	
+	\subsection{Number Theoretic Transform (NTT)}
+	
+	\cppfile{polynomials/NTT.cpp}
+	
+	
+	\subsection{Berlekamp-Massey}
+	
+	\cppfile{polynomials/berlekamp_massey.cpp}
+	
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Linear Algebra}
+	
+	\subsection{Simplex}
+	
+	\cppfile{linear_algebra/simplex.cpp}
+	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Graphs}
+	
+	\subsection{Djikstra}
+	
+	\cppfile{graphs/Djikstra.cpp}
+	
+	\subsection{FloydWarshall}
+	
+	\cppfile{graphs/FloydWarshall.cpp}
+	
+	\subsection{BellmanFord}
+	
+	\cppfile{graphs/BellmanFord.cpp}
+	
+	\subsection{BellmanFordFast(SPFA)}
+	
+	\cppfile{graphs/FastBellmanFord.cpp}
+	
+	\subsection{EulerianPath}
+	An Eulerian Path is a path that passes through every edge once. For an undirected graph an eulerian path exists if the degree of every node is even or the degree of exactly two nodes is odd. In the first case, the eulerian path is also an eulerian circuit or cycle. In a directed graph, an eulerian path exists if at most one noda has $out_i-in_i=1$ and at most one node has $in_i-out_i=1$. A cycle exists if $in_i-out_i=0$ for all i. 
+	
+	\cppfile{graphs/EulerianPath.cpp}
+	
+	\subsection{Kruskal}
+	
+	\cppfile{graphs/Kruskal.cpp}
+	
+	\subsection{Strongly Connected Components}
+	
+	\cppfile{graphs/StronglyConnectedComponents.cpp}
+	
+	\subsection{2Sat}
+	
+	\cppfile{graphs/2Sat.cpp}
+	
+	\subsection{Finding Bridges}
+	
+	\cppfile{graphs/Bridges.cpp}
+	
+	\subsection{Finding Bridges Online }
+	
+	\cppfile{graphs/online_bridges.cpp}
+	
+	\subsection{Articulation Points}
+	
+	\cppfile{graphs/ArticulationPoints.cpp}
+	
+	\subsection{Biconnected Components (Block Cut Tree)}
+	Builds the Block Cut Tree of graph in $O(n)$.
+	
+	\cppfile{graphs/BlockCutTree.cpp}
+	
+	\subsection{Blossom}
+	Finds maximum matching in general graph in $O(n^3)$.
+	
+	\cppfile{graphs/blossom.cpp}
+	
+	
+ 	\subsection{Marriage}
+	
+	\cppfile{graphs/Marriage.cpp}
+
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Trees}
+	
+	\subsection{Tree Diameter}
+	
+	\cppfile{trees/TreeDiameter.cpp}
+	
+	\subsection{Heavy Light Decomposition}
+	
+	\cppfile{trees/HLD.cpp}
+	
+	\subsection{Lowest Common Ancestor (LCA)}
+	
+	\cppfile{trees/LCA.cpp}
+	
+	\subsection{Centroid Decomposition}
+	
+	\cppfile{trees/CentroidDecomposition.cpp}
+	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	
+	\section{Flows}
+	
+	\subsection{Dinic}
+	
+	\cppfile{flows/Dinic.cpp}
+ 	
+ 	
+ 	\subsection{Hungarian}
+ 	
+ 	\cppfile{flows/Hungarian.cpp}
+ 	
+ 	\subsection{Min-cost Max-Flow}
+ 	
+ 	\cppfile{flows/MinCostMaxFlow.cpp}
+ 	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	
+ 	\section{Strings}
+ 	
+ 	\subsection{KMP-Prefix Function}
+ 	
+ 	\cppfile{strings/KMP.cpp}
+ 	
+ 	\subsection{Z-Function}
+ 	
+ 	\cppfile{strings/Z_function.cpp}
+ 	
+ 	\subsection{Manacher}
+ 	
+ 	\cppfile{strings/Manacher.cpp}
+ 	
+ 	\subsection{String Hashing}
+ 	
+ 	\cppfile{strings/HashedString.cpp}
+ 	
+ 	\subsection{MinCyclicRotation}
+ 	
+ 	\cppfile{strings/LeastRotationString.cpp}
+ 	
+ 	\subsection{Suffix Array}
+
+ 	
+ 	\cppfile{strings/SuffixArray.cpp}
+ 	
+ 	\subsection{Trie AhoCorasick}
+ 	
+ 	\cppfile{strings/TrieAho.cpp}
+ 	
+ 	\subsection{SuffixAutomaton}
+ 	
+ 	\cppfile{strings/SuffixAutomaton.cpp}
+ 	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{DP}
+	
+ 	\subsection{Digit DP}
+	
+	\cppfile{dp/DigitDP.cpp}
+	
+ 	\subsection{Convex Hull Trick Deque}
+
+	\cppfile{dp/CHTDeque.cpp}
+
+ 	\subsection{Longest Common Subsequence(LCS)}
+ 	
+ 	\cppfile{dp/LCS1.cpp}
+ 	
+ 	\subsection{Edit Distance}
+ 	
+ 	\cppfile{dp/EditDistance.cpp}
+ 	
+ 	\subsection{Longest Increasing Subsequence(LIS)}
+ 	
+ 	\cppfile{dp/LIS.cpp}
+ 	
+ 	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Geometry}
+	
+	\subsection{Geometry Primitives}
+	
+	\cppfile{geometry/Geometry2D3DPoints.cpp}
+	
+	\subsection{Area of simple Polygon}
+	
+	\cppfile{geometry/AreaPolygon.cpp}
+	
+	\subsection{Point Inside Convex Polygon}
+	
+	\cppfile{geometry/PointInConvexPolygon.cpp}
+	
+	\subsection{Nearest Pair Of Points}
+	
+	\cppfile{geometry/ClosestPairOfPoints.cpp}
+	
+	\subsection{ConvexHull}
+	
+	\cppfile{geometry/ConvexHull.cpp}
+	
+	\subsection{Rotating Calipers}
+	
+	\cppfile{geometry/rotating_calipers.cpp}
+	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	\section{Miscellaneous}
+	
+	\subsection{Custom Comparators}
+	
+	\cppfile{misc/CustomComparators.cpp}
+	
+	\subsection{Random Number Generator}
+	
+	\cppfile{misc/randomNumberGenerators.cpp}
+
+	\subsection{Int Ternary Search}
+
+	\cppfile{misc/TernarySearchInt.cpp}
+
+	\subsection{Ternary Search}
+	
+	\cppfile{misc/TernarySearch.cpp}
+	
+	\subsection{Parallel Binary Search}
+	
+	\cppfile{misc/ParallelBinarySearch.cpp}
+	
+	\subsection{Next and Prev Smaller/Greater}
+	
+	\cppfile{misc/NextAndPrevSmaller_Greater.cpp}
+	
+	\subsection{2D Prefix Sum}
+	
+	\cppfile{misc/2DPrefixSum.cpp}
+	
+	\subsection{Day of Week}
+	
+	\cppfile{misc/day_of_week.cpp}
+	
+	\subsection{Iterating over all subsets of mask}
+	
+	\cppfile{misc/iterating_over_all_subsets.cpp}
+
+	
+	\subsection{Int 128}
+	
+	\cppfile{misc/int128.cpp}
+	
+	\subsection{XOR Basis}
+	
+	\cppfile{misc/XorBasis.cpp}
+	
+	\subsection{XOR Convolution}
+	
+	\cppfile{misc/xor_convolution.cpp}
+	
+	\subsection{GCD Convolution}
+	
+	\cppfile{misc/gcd_conv.cpp}
+	
+	\subsection{LCM Convolution}
+	
+	\cppfile{misc/lcm_conv.cpp}
+	
+	\subsection{OR, AND Convolution}
+	
+	For OR convolution run subset SOS DP for arrays, multiply then inverse SOS DP.
+	For AND convolution same idea but superset. 
+	
+	\subsection{Mo's Algorithm}
+	
+	\cppfile{misc/Mo.cpp}
+	
+	\subsection{Matrix Exponentiation}
+
+	\cppfile{misc/MatrixExp.cpp}
+	
+	\subsection{Sprague-Grundy Theorem}
+	
+	1) Get all transitions from state. \\
+	2) Calculate Grundy value for each independent game and xor them. \\
+	3) Grundy value of a state is mex of the Grundy values of transitions. \\
+	4) Zero means losing, anything else means winning state. \\
+	
+	
+	\section{Stress Testing Scripts}
+	
+	\subsection{build.sh}
+	
+	This file should be called before stress.sh or validate.sh.
+	build.sh name.cpp
+	
+	\bashfile{scripts/build.sh}
+	
+	\subsection{stress.sh}
+	
+	Format is stress.sh Awrong Aslow Agen Numtests
+	
+	\bashfile{scripts/stress.sh}
+	
+	\subsection{validate.sh}
+	
+	Format is validate.sh Awrong Avalidator Agen NumTests
+	
+	\bashfile{scripts/validate.sh}
+
+	\section{Useful things}
+	
+	\subsection{Sums}
+	\[ c^a + c^{a+1} + \dots + c^{b} = \frac{c^{b+1} - c^a}{c-1}, c \neq 1 \]
+	\begin{align*}
+		1 + 2 + 3 + \dots + n &= \frac{n(n+1)}{2} \\
+		1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(2n+1)(n+1)}{6} \\
+		1^3 + 2^3 + 3^3 + \dots + n^3 &= \frac{n^2(n+1)^2}{4} \\
+		1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{n(n+1)(2n+1)(3n^2 + 3n - 1)}{30} \\
+	\end{align*}
+	
+	\subsection{Catalan numbers}
+	\[ C_n=\frac{1}{n+1}\binom{2n}{n}= \binom{2n}{n}-\binom{2n}{n+1} = \frac{(2n)!}{(n+1)!n!} \]
+	\[ C_0=1,\ C_{n+1} = \frac{2(2n+1)}{n+2}C_n,\ C_{n+1}=\sum C_iC_{n-i} \]
+	${C_n = 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, \dots}$
+	\begin{itemize}
+		\item sub-diagonal monotone paths in an $n\times n$ grid.
+		\item strings with $n$ pairs of parenthesis, correctly nested. If prefix is given, number of ways is $\binom{n}{remaining_closed}$-$\binom{n}{remaining_closed+1}$.
+		\item binary trees with with $n+1$ leaves (0 or 2 children).
+		\item ordered trees with $n+1$ vertices.
+		\item ways a convex polygon with $n+2$ sides can be cut into triangles by connecting vertices with straight lines.
+		\item permutations of $[n]$ with no 3-term increasing subseq.
+	\end{itemize}
+	\
+	\subsection{Cayley's formula}
+	Number of labeled trees of n vertices is $n^{n-2}$.
+	Number of rooted forest of n vertices is $(n+1)^{n-1}$.
+	
+	\subsection{Geometric series}
+	Infinite \\
+	$a+ar+ar^2+ar^3+........+ \sum_{k=0}^{\infty} ar^k $	
+	\\
+	Sum=$\frac{a}{1-r}$
+	\\
+	Finite \\
+	$a+ar+ar^2+ar^3+........+ \sum_{k=0}^{n} ar^k $
+	\\
+	Sum=$\frac{a(1-r^{n+1})}{1-r}$
+
+	
+	\subsection{Estimates For Divisors}
+	
+	$\sum_{d|n} d = O(n \log \log n)$.
+	
+	The number of divisors of $n$   is at most around 100 for $n < 5e4$, 500 for $n < 1e7$, 2000 for $n < 1e10$, 200\,000 for $n < 1e19$.
+	
+	\subsection{Sum of divisors}
+	
+	$\sum{d|n} =\frac{{p_1}^{e_1+1}-1}{p_1-1}+\frac{{p_2}^{e_2+1}-1}{p_2-1}+....+\frac{{p_n}^{e_n+1}-1}{p_n-1}$
+	
+	\subsection{Pythagorean Triplets}
+ 	The Pythagorean triples are uniquely generated by
+	\[ a=k\cdot (m^{2}-n^{2}),\ \,b=k\cdot (2mn),\ \,c=k\cdot (m^{2}+n^{2}), \]
+	with $m > n > 0$, $k > 0$, $m \bot n$, and either $m$ or $n$ even.
+	
+	
+	\subsection{Derangements}
+	Permutations of a set such that none of the elements appear in their original position.
+	\[ \mkern-2mu D(n) = (n-1)(D(n-1)+D(n-2)) = n D(n-1)+(-1)^n = \left\lfloor\frac{n!}{e}\right\rceil \]
+	
+	\section{C++ things}
+	
+	\begin{itemize}
+		\item \textbf{Compiling}
+		\\g++ -std=c++20 name.cpp -o name
+		\item \textbf{Bits library}
+		\\
+		\#include $<$bits/stdc++.h$>$
+		\item \textbf{Fast IO}
+		\\
+		 ios\_base::sync\_with\_stdio(false); cin.tie(NULL);
+		 \item \textbf{Compiler Optimizations}
+		 \\
+		 \#pragma GCC target("popcnt"): makes bit operations faster
+		 \\
+		 \#pragma GCC optimize("\ Ofast"): auto-vectorize for loops and optimizes floating points better (assumes associativity and turns off denormals).
+		 \\
+		 \#pragma GCC target("\ avx2"): can double performance of vectorized code, but causes crashes on old machines.
+		 \\
+		 \#pragma GCC optimize("O3,unroll-loops")
+		 \\
+		 \#pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
+		 
+		 \item \textbf{Decimal Printing}
+		 \\
+		 cout $<\ <$ fixed  $<\ <$ setprecision(n)   $<\ <$ a  $<\ <$ endl;
+		 \item \textbf{Bit Tricks}
+		 \\
+		 x \& -x is least bit in x.
+		 \\
+		 c = x \& -x, r = x+c; (((r\^{}x) $>\ >$ 2)/c) $\mid$ r, next number bigger than x same number of bits set.
+	\end{itemize}
+	
+	
+	
+\end{document}
