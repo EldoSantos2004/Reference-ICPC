@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {1.10}Multioset}{6}{subsection.1.10}%
 \contentsline {subsection}{\numberline {1.11}Treap}{7}{subsection.1.11}%
 \contentsline {subsection}{\numberline {1.12}Treap with inversion}{8}{subsection.1.12}%
-\contentsline {subsection}{\numberline {1.13}HLD}{8}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.13}HLD}{9}{subsection.1.13}%
 \contentsline {section}{\numberline {2}Graphs}{9}{section.2}%
 \contentsline {subsection}{\numberline {2.1}BFS}{9}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}DFS}{9}{subsection.2.2}%
@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {2.9}LCA}{12}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}2sat}{13}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Bipartite check}{14}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}LCA with RMQ}{14}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.12}LCA with RMQ}{15}{subsection.2.12}%
 \contentsline {subsection}{\numberline {2.13}Find Centroid}{16}{subsection.2.13}%
 \contentsline {subsection}{\numberline {2.14}Centroid Decomposition}{16}{subsection.2.14}%
 \contentsline {subsection}{\numberline {2.15}Koenig}{17}{subsection.2.15}%
@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {3.10}NTT}{21}{subsection.3.10}%
 \contentsline {subsection}{\numberline {3.11}FFT}{22}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Matrix Exponentiation}{23}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Mobius}{23}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.13}Mobius}{24}{subsection.3.13}%
 \contentsline {subsection}{\numberline {3.14}Phi}{24}{subsection.3.14}%
 \contentsline {subsection}{\numberline {3.15}Prefix sum Phi}{24}{subsection.3.15}%
 \contentsline {subsection}{\numberline {3.16}Identities}{24}{subsection.3.16}%
@@ -65,7 +65,7 @@
 \contentsline {subsection}{\numberline {7.2}BinSearch with doubles}{29}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Ternary Search}{29}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}LIS DP}{29}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Random numbers}{29}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.5}Random numbers}{30}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}XOR basis}{30}{subsection.7.6}%
 \contentsline {subsection}{\numberline {7.7}Bitsets}{30}{subsection.7.7}%
 \contentsline {subsection}{\numberline {7.8}All permutations}{30}{subsection.7.8}%
@@ -79,6 +79,9 @@
 \contentsline {section}{\numberline {9}Geometry}{35}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Point struct}{35}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Sort points}{36}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Shoelace}{36}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Ray casting}{36}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Pick's Theorem}{36}{subsection.9.5}%
 \contentsline {section}{\numberline {10}Compile}{36}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Template}{36}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Compile}{36}{subsection.10.2}%

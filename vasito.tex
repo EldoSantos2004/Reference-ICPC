@@ -275,7 +275,15 @@
 	\cppfile{geometry/point.cpp}
 	\subsection{Sort points}
 	\cppfile{geometry/sort_points.cpp}
-
+	\subsection{Shoelace}
+	Sean los puntos $p_1, p_2, ..., p_n$ en sentido horario, el área del polígono es
+	$$\frac{1}{2} \sum_{i=1}^{n} (x_iy_{i+1} - x_{i+1}y_i) = \frac{1}{2} \sum_{i=1}^{n} (y_i+y_{i+1})(x_i-x_{i+1})$$
+	\subsection{Ray casting}
+	Dadp un punto y un poligono que no se intersecta, el punto esta dentro del poligono si el número de intersecciones
+	de un rayo horizontal que pasa por el punto con los lados del poligono es impar.
+	\subsection{Pick's Theorem}
+	El área de un polígono con vértices en puntos de la grilla es $A = i + \frac{b}{2} - 1$ donde $i$ es el número de puntos
+	internos al polígono y $b$ es el número de puntos en el borde del polígono.
 \section{Compile}
 	\subsection{Template}
 	\cppfile{compile/template.cpp}

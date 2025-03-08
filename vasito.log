@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  7 NOV 2024 16:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  7 MAR 2025 22:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -450,18 +450,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [5])
 (./data_structures/bit.cpp) (./data_structures/2dbit.cpp)
 (./data_structures/oset.cpp) (./data_structures/multioset.cpp [6])
-(./data_structures/treap.cpp)
+(./data_structures/treap.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
-(./data_structures/treap_w_inversion.cpp) (./data_structures/hld.cpp [8]
+ [7])
+(./data_structures/treap_w_inversion.cpp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+(./data_structures/hld.cpp) (./graphs/bfs.cpp) (./graphs/dfs.cpp [9])
+(./graphs/bellman_ford.cpp) (./graphs/dijkstra.cpp)
+(./graphs/floyd_warshall.cpp) (./graphs/scc.cpp [10])
+(./graphs/condensation.cpp
+Underfull \vbox (badness 3148) has occurred while \output is active []
 
 )
-(./graphs/bfs.cpp) (./graphs/dfs.cpp) [9] (./graphs/bellman_ford.cpp)
-(./graphs/dijkstra.cpp) (./graphs/floyd_warshall.cpp) (./graphs/scc.cpp
-[10]) (./graphs/condensation.cpp) (./graphs/bridges_articulation.cpp [11])
-(./graphs/lca.cpp
+(./graphs/bridges_articulation.cpp [11]) (./graphs/lca.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12])
@@ -472,24 +476,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./graphs/bipartite_checker.cpp) (./graphs/lca_max_edge.cpp [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+(./graphs/bipartite_checker.cpp) [14] (./graphs/lca_max_edge.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./graphs/find_centroid.cpp) (./graphs/centroid_decomposition.cpp [16])
-(./graphs/koenig.py
-Underfull \vbox (badness 3148) has occurred while \output is active []
-
-
+(./graphs/find_centroid.cpp) (./graphs/centroid_decomposition.cpp [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17]
+)
+(./graphs/koenig.py [17]
 Overfull \hbox (39.34137pt too wide) in paragraph at lines 47--48
 [][][][] 
  []
@@ -497,16 +495,18 @@ Overfull \hbox (39.34137pt too wide) in paragraph at lines 47--48
 ) (./graphs/maximum_bipartite_matching.cpp)
 (./graphs/maximum_bipartite_matching.py [18]) (./mathematics/binexp.cpp)
 (./mathematics/binom_small_num_without_mod.cpp) (./mathematics/factorial.cpp)
-(./mathematics/binom.cpp) [19] (./mathematics/fib.cpp) (./mathematics/gcd.cpp)
+(./mathematics/binom.cpp [19]) (./mathematics/fib.cpp) (./mathematics/gcd.cpp)
 (./mathematics/sieve.cpp) (./mathematics/inverse.cpp [20])
-(./mathematics/divisors.cpp) (./mathematics/ntt.cpp [21])
-(./mathematics/fft.cpp
+(./mathematics/divisors.cpp) (./mathematics/ntt.cpp [21]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22])
-(./mathematics/matrix_exp.cpp) (./mathematics/mobius.cpp [23])
-(./mathematics/phi.cpp) (./mathematics/prefix_sum_phi.cpp) [24]
-(./strings/manacher.cpp
+)
+(./mathematics/fft.cpp [22]) (./mathematics/matrix_exp.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23])
+(./mathematics/mobius.cpp) (./mathematics/phi.cpp)
+(./mathematics/prefix_sum_phi.cpp) [24] (./strings/manacher.cpp
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
 6.
 
@@ -514,17 +514,14 @@ LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [25])
 (./strings/suffix_array.cpp) (./strings/z_function.cpp [26]) (./strings/kmp.cpp
-)
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27]
+ [27])
 (./dp_optimizations/convex_hull_trick.cpp)
 (./dp_optimizations/divide_conquer_dp.cpp [28]) (./more_topics/bin_search.cpp)
-Underfull \vbox (badness 1303) has occurred while \output is active []
-
-
 (./more_topics/bin_search_with_doubles.cpp) (./more_topics/ternary_search.cpp)
-(./more_topics/lis_dp.cpp) (./more_topics/randints.cpp) [29]
+(./more_topics/lis_dp.cpp [29]) (./more_topics/randints.cpp)
 (./more_topics/xor_basis.cpp) (./more_topics/bitsets.cpp)
 (./more_topics/next_permutation.cpp) (./more_topics/setprecision.cpp)
 (./flow/max_flow.cpp [30]) (./flow/push_relabel.cpp
@@ -550,30 +547,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 (./flow/max_flow_min_cost.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33])
+ [33]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+)
 (./flow/dinic.cpp [34]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(./geometry/point.cpp) [35] (./geometry/sort_points.cpp)
+(./geometry/point.cpp [35]) (./geometry/sort_points.cpp)
 (./compile/template.cpp) (./compile/compile.cpp)
 
 AED: lastpage setting LastPage
 [36] (./vasito.aux)
-Package rerunfilecheck Info: File `vasito.out' has not changed.
-(rerunfilecheck)             Checksum: E0C3C64C25CD835CF7B99F1C3BF1C7A0;9991.
+
+Package rerunfilecheck Warning: File `vasito.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `vasito.out':
+(rerunfilecheck)             Before: 08E9A842226DE23429BC6933E80574A7;10089
+(rerunfilecheck)             After:  0CD442F686DC0B37DD6ACC7D3FBB765F;10336.
  ) 
 Here is how much of TeX's memory you used:
- 17242 strings out of 478268
- 261597 string characters out of 5846347
- 1585256 words of memory out of 5000000
- 32226 multiletter control sequences out of 15000+600000
+ 17256 strings out of 478268
+ 261802 string characters out of 5846347
+ 1532256 words of memory out of 5000000
+ 32232 multiletter control sequences out of 15000+600000
  477894 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,14n,66p,271b,2098s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,14n,66p,271b,2041s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -590,10 +593,10 @@ e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
 22/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on vasito.pdf (36 pages, 407008 bytes).
+Output written on vasito.pdf (36 pages, 410662 bytes).
 PDF statistics:
- 4009 PDF objects out of 4296 (max. 8388607)
- 3901 compressed objects within 40 object streams
- 2833 named destinations out of 2984 (max. 500000)
- 665 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4022 PDF objects out of 4296 (max. 8388607)
+ 3914 compressed objects within 40 object streams
+ 2841 named destinations out of 2984 (max. 500000)
+ 673 words of extra memory for PDF output out of 10000 (max. 10000000)
 
