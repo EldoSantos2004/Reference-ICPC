@@ -55,16 +55,16 @@
 \contentsline {section}{\numberline {5}Strings}{25}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Manacher}{25}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Suffix Array O(nlog(n))}{26}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Z Function O(n)}{26}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Z Function O(n)}{27}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}KMP}{27}{subsection.5.4}%
 \contentsline {section}{\numberline {6}DP Optimization}{28}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Convex Hull Trick}{28}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Divide and Conquer DP}{28}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.2}Divide and Conquer DP}{29}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Other}{29}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Binary Search}{29}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}BinSearch with doubles}{29}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Ternary Search}{29}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}LIS DP}{29}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.4}LIS DP}{30}{subsection.7.4}%
 \contentsline {subsection}{\numberline {7.5}Random numbers}{30}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}XOR basis}{30}{subsection.7.6}%
 \contentsline {subsection}{\numberline {7.7}Bitsets}{30}{subsection.7.7}%

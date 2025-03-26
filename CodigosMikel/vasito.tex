@@ -282,8 +282,11 @@
 	Dadp un punto y un poligono que no se intersecta, el punto esta dentro del poligono si el número de intersecciones
 	de un rayo horizontal que pasa por el punto con los lados del poligono es impar.
 	\subsection{Pick's Theorem}
-	El área de un polígono con vértices en puntos de la grilla es $A = i + \frac{b}{2} - 1$ donde $i$ es el número de puntos
+	El área de un polígono con vértices en puntos con coordenadas enteras es $A = i + \frac{b}{2} - 1$ donde $i$ es el número de puntos
 	internos al polígono y $b$ es el número de puntos en el borde del polígono.
+	\subsection{Set of lines}
+	A line can be described as the equation $ax+by+c=0$. Given two points $(x_1, y_1)$ and $(x_2, y_2)$, 
+	the line that passes through them is $a=y_1-y_2$, $b=x_2-x_1$, $c=x_1y_2-x_2y_1$. Dont forget check if $a$ or $b$ are zero.
 \section{Compile}
 	\subsection{Template}
 	\cppfile{compile/template.cpp}
