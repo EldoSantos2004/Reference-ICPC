@@ -1,0 +1,47 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Compile}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Compile}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Template}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Data Structures}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}BIT}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Bitset}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Bit Trie}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Disjoint Set Union Bipartite}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Disjoint Set Union}{3}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Dynamic Conectivity}{3}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Fenwick Tree}{5}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Fenwick Tree 2D}{6}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Merge Sort Tree}{6}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Minimum Cartesian Tree}{6}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Multi Ordered Set}{7}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Ordered Set}{7}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.13}Palindromic Tree}{8}{subsection.2.13}%
+\contentsline {subsection}{\numberline {2.14}Persistent Array}{8}{subsection.2.14}%
+\contentsline {subsection}{\numberline {2.15}Persistent Segment Tree}{9}{subsection.2.15}%
+\contentsline {subsection}{\numberline {2.16}Segment Tree}{10}{subsection.2.16}%
+\contentsline {subsection}{\numberline {2.17}Segment Tree 2D}{10}{subsection.2.17}%
+\contentsline {subsection}{\numberline {2.18}Segment Tree Dynamic}{11}{subsection.2.18}%
+\contentsline {subsection}{\numberline {2.19}Segment Tree Lazy Types}{11}{subsection.2.19}%
+\contentsline {subsection}{\numberline {2.20}Segment Tree Lazy}{12}{subsection.2.20}%
+\contentsline {subsection}{\numberline {2.21}Segment Tree Lazy Range Set}{13}{subsection.2.21}%
+\contentsline {subsection}{\numberline {2.22}Segment Tree Max Subarray Sum}{14}{subsection.2.22}%
+\contentsline {subsection}{\numberline {2.23}Segment Tree Range Update}{15}{subsection.2.23}%
+\contentsline {subsection}{\numberline {2.24}Segment Tree Struct Types}{15}{subsection.2.24}%
+\contentsline {subsection}{\numberline {2.25}Segment Tree Struct}{15}{subsection.2.25}%
+\contentsline {subsection}{\numberline {2.26}Segment Tree Walk}{16}{subsection.2.26}%
+\contentsline {subsection}{\numberline {2.27}Sparse Table}{17}{subsection.2.27}%
+\contentsline {subsection}{\numberline {2.28}Square Root Decomposition}{17}{subsection.2.28}%
+\contentsline {subsection}{\numberline {2.29}Treap}{18}{subsection.2.29}%
+\contentsline {subsection}{\numberline {2.30}Treap 2}{19}{subsection.2.30}%
+\contentsline {subsection}{\numberline {2.31}Treap With Inversion}{20}{subsection.2.31}%
+\contentsline {section}{\numberline {3}Dynamic Programming}{21}{section.3}%
+\contentsline {section}{\numberline {4}Flow}{21}{section.4}%
+\contentsline {section}{\numberline {5}Geometry}{21}{section.5}%
+\contentsline {section}{\numberline {6}Graphs}{21}{section.6}%
+\contentsline {section}{\numberline {7}Linear Algebra}{21}{section.7}%
+\contentsline {section}{\numberline {8}Math}{21}{section.8}%
+\contentsline {section}{\numberline {9}More Topics}{21}{section.9}%
+\contentsline {section}{\numberline {10}Polynomials}{21}{section.10}%
+\contentsline {section}{\numberline {11}Scripts}{21}{section.11}%
+\contentsline {section}{\numberline {12}Strings}{21}{section.12}%
+\contentsline {section}{\numberline {13}Trees}{21}{section.13}%
