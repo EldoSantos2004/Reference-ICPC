@@ -18,3 +18,17 @@ void insertVector(int mask) {
 		mask ^= basis[i]; // Otherwise subtract the basis vector from this vector
 	}
 }
+
+// If you dont need the basis sorted.
+vector<ll> basis;
+void add(ll x)
+{
+  for (int i = 0; i < basis.size(); i++)
+  {
+    x = min(x, x ^ basis[i]);
+  }
+  if (x != 0)
+  {
+    basis.pb(x);
+  }
+}
