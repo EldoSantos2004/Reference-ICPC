@@ -10,18 +10,7 @@
   Space Complexity: O(4n)
 */
 
-// Example num_t struct for sum queries
-struct num_t {
-  long long val;
-  static const num_t null_v;
-  num_t(long long x = 0) : val(x) {}
-  num_t op(const num_t& other) const {
-    return num_t(val + other.val);
-  }
-  num_t lazy_op(const num_t& lazy_val, int len) const {
-    return num_t(val + lazy_val.val * len);
-  }
-};
+// See SegTreeLazy_types for num_t structs
 
 const num_t num_t::null_v = num_t(0);
 
