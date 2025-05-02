@@ -4,9 +4,8 @@
   Constructs suffix automaton for a given string.
   Be careful with overlapping substrings.
 
-  Firstposition if first position string ends in. If you want
-   starting index you need to
-   substract length of the string being searched.
+  Firstposition if first position string ends in. 
+  If you want starting index you need to substract length of the string being searched.
 
   len is length of longest string of state
 

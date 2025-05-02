@@ -1,7 +1,7 @@
 
 /*
                                         Hashed string
-  --------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------
   Class for hashing string. Allows retrieval of hashes of any substring in the string.
 
 	Double hash or use big mod values to avoid problems with collisions
