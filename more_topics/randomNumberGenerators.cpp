@@ -10,6 +10,5 @@ uniform_int_distribution<int>(0, n)(rng)
 std::normal_distribution<> normal_dist(mean, 2)
 exponential_distribution
 
-
 // for shuffling array
 shuffle(permutation.begin(), permutation.end(), rng);
