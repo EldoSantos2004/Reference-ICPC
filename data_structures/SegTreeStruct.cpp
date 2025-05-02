@@ -4,7 +4,6 @@ struct segtree
 {
   int n, k;
   vector<num_t> tree;
-
   void init(int s, vector<ll> arr)
   {
     n = s;
@@ -21,7 +20,6 @@ struct segtree
       tree[i] = tree[i * 2] + tree[i * 2 + 1];
     }
   }
-
   void update(int a, ll b)
   {
     a += (1 << k);
