@@ -57,7 +57,7 @@ vector<T> GCDConvolution(vector<T> A, vector<T> B) {
     A[i] *= B[i];  // pointwise multiplication
   }
   MultipleMobiusTransform(A);
-  return A;       // result C[0..n], where C[d] = sum_{gcd(i,j)=d} A[i]*B[j]
+  return A;  // result C[0..n], where C[d] = sum_{gcd(i,j)=d} A[i]*B[j]
 }
 // Example usage
 vector<long long> A(n+1), B(n+1);
