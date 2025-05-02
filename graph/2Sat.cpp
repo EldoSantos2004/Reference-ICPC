@@ -39,7 +39,7 @@ struct TwoSatSolver {
     }
   }
 
-  // Solves the 2-SAT problem using Kosaraju’s algorithm
+  // Solves the 2-SAT problem using Kosaraju's algorithm
   bool solve_2SAT() {
     // 1st pass: fill the order vector
     order.clear();
@@ -67,13 +67,13 @@ struct TwoSatSolver {
     return true;
   }
 
-  // Adds a disjunction (a ∨ b) to the implication graph
-  // `na` and `nb` indicate negation: if true means ¬a or ¬b
+  // Adds a disjunction (a v b) to the implication graph
+  // 'na' and 'nb' indicate negation: if true means !a or !b
   // Variables are 0-indexed. Bounds are inclusive for each literal (i.e., 0 to n_vars - 1)
   void add_disjunction(int a, bool na, int b, bool nb) {
     // Each variable `x` has two nodes:
-    // x => 2*x, ¬x => 2*x + 1
-    // We encode (a ∨ b) as (¬a ⇒ b) and (¬b ⇒ a)
+    // x => 2*x, !x => 2*x + 1
+    // We encode (a v b) as (!a -> b) and (!b -> a)
     a = 2 * a ^ na;
     b = 2 * b ^ nb;
     int neg_a = a ^ 1;

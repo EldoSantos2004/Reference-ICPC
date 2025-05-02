@@ -2,8 +2,8 @@
   Floyd-Warshall Algorithm (All-Pairs Shortest Paths)
   ---------------------------------------------------
   Indexing: 0-based
-  Time Complexity: O(V³)
-  Space Complexity: O(V²)
+  Time Complexity: O(V^3)
+  Space Complexity: O(V^2)
 
   Input:
     - d: distance matrix of size n x n

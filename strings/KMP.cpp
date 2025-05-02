@@ -3,8 +3,8 @@
   --------------------------------------------------------------------------------------------
   Computes the prefix function for a string.
   Maximum length of substring that ends at position i and is proper prefix (not equal to string itself) of string
-  pf[i]  is the length of the longest proper prefix of the substring  
-  s[0......i]$  which is also a suffix of this substring.
+  pf[i]  is the length of the longest proper prefix of the substring
+  s[0......i]$  which is also a suffix of this substring.
   For matching, one can append the string with a delimites like $ between them
 
   Time Complexity: O(n)

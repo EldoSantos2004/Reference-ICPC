@@ -4,7 +4,7 @@
   Indexing: 0-based
   Node Bounds: [0, n-1] inclusive
   Time Complexity:
-    - Amortized O(log²N) per edge addition
+    - Amortized O(log^2N) per edge addition
   Space Complexity: O(V)
 
   Features:
@@ -13,11 +13,11 @@
     - No deletions supported.
 
   Input:
-    init(n)     — Initializes the data structure for a graph with n nodes.
-    add_edge(a, b) — Adds an undirected edge between nodes a and b.
+    init(n)     - Initializes the data structure for a graph with n nodes.
+    add_edge(a, b) - Adds an undirected edge between nodes a and b.
 
   Output:
-    `bridges` — Global variable representing the current number of bridges.
+    `bridges` - Global variable representing the current number of bridges.
 */
 
 vector<int> par, dsu_2ecc, dsu_cc, dsu_cc_size;
@@ -121,7 +121,7 @@ void add_edge(int a, int b) {
   int cb = find_cc(b);
 
   if (ca != cb) {
-    // Bridge found — connects two different components
+    // Bridge found - connects two different components
     ++bridges;
     // Union by size
     if (dsu_cc_size[ca] > dsu_cc_size[cb]) {

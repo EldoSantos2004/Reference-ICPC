@@ -3,8 +3,8 @@
   ----------------------------------------------------------------
   Indexing: 1-based
   Node Bounds: [1, n]
-  Time Complexity: O(n³) in worst case
-  Space Complexity: O(n²)
+  Time Complexity: O(n^3) in worst case
+  Space Complexity: O(n^2)
 
   Features:
     - Handles odd-length cycles (blossoms)
@@ -13,7 +13,7 @@
 
   Input:
     - n: number of vertices
-    - add_edge(u, v): undirected edges between nodes (1 ≤ u,v ≤ n)
+    - add_edge(u, v): undirected edges between nodes (1 <= u,v <= n)
 
   Output:
     - maximum_matching(): returns size of max matching

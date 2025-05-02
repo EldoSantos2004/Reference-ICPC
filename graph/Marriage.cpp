@@ -2,9 +2,9 @@
   Male-Optimal Stable Marriage Problem (Gale-Shapley Algorithm)
   --------------------------------------------------------------
   Indexing: 0-based
-  Bounds: 0 ≤ i, j < n
-  Time Complexity: O(n²)
-  Space Complexity: O(n²)
+  Bounds: 0 <= i, j < n
+  Time Complexity: O(n^2)
+  Space Complexity: O(n^2)
 
   Input:
     - n: Number of men/women (equal)
@@ -38,7 +38,7 @@ void stableMarriage(int n) {
       int j = gv[i][pun[i]++]; // Next woman on man i's list
 
       if (pv[j] == -1) {
-        // Woman j is free → engage with man i
+        // Woman j is free -> engage with man i
         unmatched--;
         engage;
       } else if (om[j][i] < om[j][pv[j]]) {

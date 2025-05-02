@@ -29,6 +29,7 @@
 \cppfile{../graph/Dijkstra.cpp}
 
 \subsection{Eulerian Path}
+An Eulerian Path is a path that passes through every edge once. For an undirected graph an eulerian path exists if the degree of every node is even or the degree of exactly two nodes is odd. In the first case, the eulerian path is also an eulerian circuit or cycle. In a directed graph, an eulerian path exists if at most one noda has $out_i-in_i=1$ and at most one node has $in_i-out_i=1$. A cycle exists if $in_i-out_i=0$ for all i. 
 \cppfile{../graph/EulerianPath.cpp}
 
 \subsection{Floyd-Warshall}

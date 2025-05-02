@@ -10,8 +10,8 @@
             where g[v] = list of {to, edge_index}
         * Undirected: vector<vector<int>> g
             where g[v] = list of neighbors
-    - seen: vector<bool> seen(E) — only needed for directed version
-    - path: vector<int> path — will be filled in reverse order of traversal
+    - seen: vector<bool> seen(E) - only needed for directed version
+    - path: vector<int> path - will be filled in reverse order of traversal
             reverse(path.begin(), path.end());
 */
 
