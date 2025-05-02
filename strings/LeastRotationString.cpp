@@ -1,6 +1,6 @@
 /*
-                                        Min cyclic shift 
-  --------------------------------------------------------------------------------------------
+                            Min cyclic shift 
+  ----------------------------------------------------------------
   Finds the lexicographically minimum cyclic shift of a string
 
   Time Complexity: O(n)

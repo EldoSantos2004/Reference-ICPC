@@ -1,15 +1,19 @@
 /*
-                                        Suffix Array 
-  --------------------------------------------------------------------------------------------
+                              Suffix Array 
+  ---------------------------------------------------------------
   Computes the suffix array of a string in O(n log n).
   Sorted array of all cyclic shifts of a string.
   If you want sorted suffixes append $ to the end of the string.
-  lc is longest common prefix. Lcp of two substrings j > i is min(lc[i], ....., lc[j - 1]).
+  lc is longest common prefix. Lcp of two substrings j > i
+  is min(lc[i], ....., lc[j - 1]).
 
   To compute Largest common substring of multiple strings
-  Join all strings separating them with special character like $ (it has to be different for each string)
-  Sliding window on lcp array (all string have to appear on the sliding window and 
-  the lcp of the interval will give the length of the substring that appears on all strings)
+  Join all strings separating them with special character like $ 
+  (it has to be different for each string)
+  Sliding window on lcp array (all string have to appear on 
+  the sliding window and 
+  the lcp of the interval will give the length of the substring 
+  that appears on all strings)
 
   Time Complexity: O(n log n)
   Space Complexity: O(n)

@@ -1,10 +1,12 @@
 /*
-                            Heavy Light Decomposition(HLD)
-  --------------------------------------------------------------------------------------------
+                    Heavy Light Decomposition(HLD)
+  ----------------------------------------------------------------------
   Constructs the heavy light decomposition of a tree
 
-  Splits the tree into several paths so that we can reach the root vertex from any
-  v  by traversing at most log n paths. In addition, none of these paths intersect with another.
+  Splits the tree into several paths so that we can reach the 
+  root vertex from any
+  v  by traversing at most log n paths. In addition, none of 
+  these paths intersect with another.
 
   Time Complexity(Creation): O(n log n)
   Time Complexity(Query): O((log n) ^ 2) usually, depending on the query itself

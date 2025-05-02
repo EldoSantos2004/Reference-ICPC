@@ -1,6 +1,6 @@
 /*
-                                        LCA(Lowest Common Ancestor)
-  --------------------------------------------------------------------------------------------
+                        LCA(Lowest Common Ancestor)
+  ----------------------------------------------------------------------
   Computes the lowest common ancestor of two vertices in a tree.
 
   Be careful as implementation is indexed starting with 1

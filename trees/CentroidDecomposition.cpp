@@ -1,6 +1,6 @@
 /*
-																	Centroid Decomposition
-  --------------------------------------------------------------------------------------------
+														Centroid Decomposition
+  --------------------------------------------------------------------
   Finds the centroid decomposition of a given tree. 
 	Any vertex can have at most log n centroid ancestors
 
