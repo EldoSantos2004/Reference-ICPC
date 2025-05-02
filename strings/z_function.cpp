@@ -1,5 +1,19 @@
-// Mayor x tal que el prefijo de s de tamano x es igual al prefijo
-//del sufijo que empieza en la posicion i y tiene tamano x
+/*
+                                            Z_function
+  --------------------------------------------------------------------------------------------
+  Computes the z_function for any string.
+  ith element is equal to the greatest number of characters starting 
+  from the position  i  that coincide with the first characters of  s
+
+  z[i] length of the longest string that is, at the same time, 
+  a prefix of  s  and a prefix of the suffix of  $s$  starting at  i.
+  
+  to compress string, one can run z_function and then find the smallest i that divides n such that i + z[i] = n
+
+  Time Complexity: O(n)
+  Space Complexity: O(n)
+*/
+
 
 vector<int> z_function(string s) {
   int n = s.size();

@@ -26,3 +26,7 @@ while(i && j){
 }
 reverse(all(ans));
 cout << ans << endl;
+
+// For two permutations one can create new array that will map each element from the first permutation to the second.
+// For each element a[i] in the first permutatio, you find which j is a[i] == b[j].
+// After creating this new array, run LIS (Longest Increasing subsequence).

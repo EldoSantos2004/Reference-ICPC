@@ -1,3 +1,16 @@
+/*
+                                            Manacher
+  --------------------------------------------------------------------------------------------
+  Computes the length of the longest palindrome centered at position i.
+
+  p[i] is length of biggest palindrome centered in this position.
+  Be careful with characters that are inserted to account for odd and even palindromes
+
+  Time Complexity: O(n)
+  Space Complexity: O(n)
+
+*/
+
 // Number of palindromes centered at each position
 
 vector<int> manacher_odd(string s)

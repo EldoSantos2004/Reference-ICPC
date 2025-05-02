@@ -1,7 +1,20 @@
-#include <bits/stdc++.h>
-using namespace std;
+/*
+                                        Suffix Array 
+  --------------------------------------------------------------------------------------------
+  Computes the suffix array of a string in O(n log n).
+  Sorted array of all cyclic shifts of a string.
+  If you want sorted suffixes append $ to the end of the string.
+  lc is longest common prefix. Lcp of two substrings j > i is min(lc[i], ....., lc[j - 1]).
 
-using i64 = long long;
+  To compute Largest common substring of multiple strings
+  Join all strings separating them with special character like $ (it has to be different for each string)
+  Sliding window on lcp array (all string have to appear on the sliding window and 
+  the lcp of the interval will give the length of the substring that appears on all strings)
+
+  Time Complexity: O(n log n)
+  Space Complexity: O(n)
+
+*/
 
 struct SuffixArray
 {
@@ -60,16 +73,16 @@ struct SuffixArray
     }
   }
   
+  // Finds if string p appears as substring in the string
+  // might now work perfectly
   int search(string &p){
       int tam = p.size();
       int l = 0, r = n;
       
       string tmp = "";
-      //cout << p << endl;
       while(r > l) {
           int m = l + (r-l)/2;
           tmp = t.substr(sa[m], min(n-sa[m], tam));
-          //cout << m << " " << sa[m] << " " << tmp << endl;
           if(tmp >= p){
               r = m;
           } else {
@@ -88,6 +101,8 @@ struct SuffixArray
       }
   }
   
+
+  // Counts number of times a string p appears as substring in string
   int count(string &p) {
       int x = search(p);
       if(x == -1) return 0;

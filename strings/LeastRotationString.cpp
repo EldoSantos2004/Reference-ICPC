@@ -1,3 +1,12 @@
+/*
+                                        Min cyclic shift 
+  --------------------------------------------------------------------------------------------
+  Finds the lexicographically minimum cyclic shift of a string
+
+  Time Complexity: O(n)
+  Space Complexity: O(n)
+*/
+
 string least_rotation(string s)
 {
 	s += s;

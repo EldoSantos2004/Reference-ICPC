@@ -1,8 +1,17 @@
-const ll N = 2e5+1;
+
+/*
+                                        Hashed string
+  --------------------------------------------------------------------------------------------
+  Class for hashing string. Allows retrieval of hashes of any substring in the string.
+
+	Double hash or use big mod values to avoid problems with collisions
+
+	Time Complexity(Construction): O(n)
+  Space Complexity: O(n)
+*/
+
 const ll MOD = 212345678987654321LL;
 const ll base = 33;
-
-// double hash or big mod values
 
 class HashedString {
   private:
@@ -26,10 +35,12 @@ class HashedString {
 		}
 	}
 
+	// Returns hash of substring [start, end]
 	long long get_hash(int start, int end) {
 		long long raw_val =
 		    (p_hash[end + 1] - (p_hash[start] * pow[end - start + 1]));
 		return (raw_val % M + M) % M;
 	}
 };
+// you cant skip this
 vector<long long> HashedString::pow = {1};

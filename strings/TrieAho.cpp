@@ -1,3 +1,15 @@
+/*
+                                            Trie - AhoCorasick
+  --------------------------------------------------------------------------------------------
+  Builds a trie for subset of strings and computes suffix links.
+  KATCL implementation is cleaner. 
+
+  Time Complexity(Construction): O(m) where m is sum of lengths of strings
+  Space Complexity: O(m)
+*/
+
+
+
 const int K = 26;
 
 struct Vertex {
