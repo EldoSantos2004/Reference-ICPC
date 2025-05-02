@@ -1,9 +1,10 @@
 /*
-  Next and Previous Smaller Elements
+  Next and Previous Smaller / Greater Elements
   ----------------------------------
   Given: array a[0..n-1]
   nextSmaller[i]: index of next element smaller than a[i], or n if none
   prevSmaller[i]: index of previous element smaller than a[i], or -1 if none
+  For GREATER, replace a[s.top()] < a[i] with a[s.top()] > a[i]
   Indexing: 0-based
 */
 vector<int> nextSmaller(vector<int> a, int n) {
