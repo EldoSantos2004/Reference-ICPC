@@ -7,6 +7,9 @@
 // si todas las aristas tinen capacidad 1
 // el algoritmo tiene complejidad O(E sqrt(E))
 
+// to find min cut run bfs from source and find all vertices that can be reached
+// edges between vertices that can be reached and the ones that cant are the min cut
+
 struct FlowEdge {
     int v, u;
     long long cap, flow = 0;
