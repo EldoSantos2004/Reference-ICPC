@@ -1,9 +1,9 @@
 /*
   THIS CODE HAS NOT BEEN TESTED BEFOREHAND
-  Maximum Bipartite Matching — Hopcroft–Karp Algorithm
+  Maximum Bipartite Matching - Hopcroft-Karp Algorithm
   -----------------------------------------------------
   Indexing: 0-based
-  Time Complexity: O(√V * E)
+  Time Complexity: O(sqrt(V) * E)
   Space Complexity: O(V + E)
 
   Input:
@@ -43,7 +43,7 @@ bool bfs() {
     for (int r : g[l]) {
       int matched_l = match_right[r];
       if (matched_l == -1) {
-        found = true; // Free right node reachable → potential augmenting path
+        found = true; // Free right node reachable -> potential augmenting path
       } else if (dist[matched_l] == INF) {
         dist[matched_l] = dist[l] + 1;
         q.push(matched_l);

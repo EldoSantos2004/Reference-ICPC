@@ -11,6 +11,21 @@
 \usepackage{wrapfig}
 \usepackage{amsmath}
 \usepackage{makeidx}
+\usepackage{stmaryrd}
+\usepackage{mathtools} % Asegura que genfrac esté disponible
+
+% Números de Stirling de primera y segunda especie
+\newcommand{\stirlingI}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}}    % [n k]
+\newcommand{\stirlingII}[2]{\genfrac{\{}{\}}{0pt}{}{#1}{#2}} % {n k}
+
+% Números de Euler (primera especie)
+\newcommand{\euler}[2]{\left\langle\!\!\left\langle {#1 \atop #2} \right\rangle\!\!\right\rangle}
+
+\usepackage{amsmath, amssymb} % Si aún no lo tienes
+
+% Valor absoluto o cardinalidad
+\newcommand{\abs}[1]{\left|#1\right|}
+
 %\usepackage{minted}
 \lstset{
   inputencoding=utf8,

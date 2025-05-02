@@ -1,5 +1,5 @@
 /*
-  Fast Walsh–Hadamard Transform (FWHT) for XOR Convolution
+  Fast Walsh-Hadamard Transform (FWHT) for XOR Convolution
   -------------------------------------------------------
   Given two arrays A[0..N-1], B[0..N-1], with N = 1<<k (power of two).
   Computes C[d] = sum_{i xor j = d} A[i] * B[j].

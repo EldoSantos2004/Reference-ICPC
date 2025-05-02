@@ -44,9 +44,6 @@ C++
 41 lines
 1161 bytes
 
-Next, we need to find y from Statement 1 in O(m) or say that it does not exist. For y, the following condition must hold: span((Xj​∖{v})∪{y})=span(Xj​). We know which highest bit disappeared when deleting the integer v from Xj​. Therefore, when adding y∈Xj+1​ to Xj​∖{v}, y must "be responsible" for this disappeared bit.
-
-Then, we can check for each x∈Xj+1​ in O(1) whether it is suitable as y. It is not difficult to verify that x is suitable if and only if cnt(bits & x) mod 2=1, where cnt(t) is a function that returns the integer of set bits in the integer.
 
 int get_the_same_high_bit (int bits, vector <int> &val) {
   for (auto &i : basis) {
