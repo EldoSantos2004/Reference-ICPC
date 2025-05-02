@@ -1,5 +1,5 @@
 /*
-  Segment Tree Walk — Find First Position >= val
+  Segment Tree Walk - Find First Position >= val
   ---------------------------------------------
   Indexing: 0-based
   Bounds: [0, n-1]

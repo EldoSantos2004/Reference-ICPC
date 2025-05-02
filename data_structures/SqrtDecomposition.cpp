@@ -72,7 +72,7 @@ void cut(int a, int b) {
     pos += B.sz();
   }
 
-  // Pass 2: Reorder — move [a, b) to the end
+  // Pass 2: Reorder - move [a, b) to the end
   pos = 0;
   numBlocks = 0;
 

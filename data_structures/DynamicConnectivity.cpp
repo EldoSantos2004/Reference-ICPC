@@ -1,5 +1,5 @@
 /*
-  Offline Dynamic Connectivity — Segment Tree + Rollback DSU
+  Offline Dynamic Connectivity - Segment Tree + Rollback DSU
   -----------------------------------------------------------
   Indexing: 0-based
   Node Bounds: [0, n-1]
@@ -65,7 +65,7 @@ struct DSU {
   }
 };
 
-// Represents a single union operation (on edge u—v)
+// Represents a single union operation (on edge u-v)
 struct query {
   int v, u;
   bool united;

@@ -7,7 +7,7 @@
     - build: O(nm log n log m)
     - point update: O(log n log m)
     - range query [x1..x2][y1..y2]: O(log n log m)
-  Space Complexity: O(4n × 4m)
+  Space Complexity: O(4n x 4m)
 */
 
 const int MAXN = 505;

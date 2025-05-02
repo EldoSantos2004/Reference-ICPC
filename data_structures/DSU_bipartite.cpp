@@ -1,5 +1,5 @@
 /*
-  DSU with Parity — Bipartite Checker
+  DSU with Parity - Bipartite Checker
   -----------------------------------
   Indexing: 0-based
   Node Bounds: [0, n-1] inclusive
@@ -45,7 +45,7 @@ void add_edge(int a, int b) {
   auto [rb, pb] = find_set(b); // rb = root of b, pb = parity from root to b
 
   if (ra == rb) {
-    // Same component: edge (a, b) adds a cycle → check parity
+    // Same component: edge (a, b) adds a cycle -> check parity
     if ((pa ^ pb) == 0) {
       bipartite[ra] = false; // Found odd-length cycle
     }
