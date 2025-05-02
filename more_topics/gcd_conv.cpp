@@ -3,7 +3,7 @@
   ------------------------------------------------------
   Given two sequences A[0..n] and B[0..n], computes C where
     C[d] = sum_{i, j: gcd(i, j) = d} A[i] * B[j]
-  Indexing: 0-based, vectors of size n+1 (ignore index 0 if unused)
+  Indexing: 1-based, vectors of size n+1 (ignore index 0)
   Bounds:
     - i, j, d in [1..n]
   Time Complexity: O(n log log n + n log n) per convolution
