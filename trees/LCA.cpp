@@ -1,3 +1,15 @@
+/*
+                                        LCA(Lowest Common Ancestor)
+  --------------------------------------------------------------------------------------------
+  Computes the lowest common ancestor of two vertices in a tree.
+
+  Be careful as implementation is indexed starting with 1
+
+  Time Complexity(Creation): O(n log n)
+  Time Complexity(Query): O(log n)
+  Space Complexity: O(n log n)
+*/
+
 const int N=200005;
 vector<int> adj[N];
 vector<int> start(N), end1(N), depth(N);

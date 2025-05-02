@@ -1,4 +1,18 @@
-// code for xenia and tree
+/*
+																	Centroid Decomposition
+  --------------------------------------------------------------------------------------------
+  Finds the centroid decomposition of a given tree. 
+	Any vertex can have at most log n centroid ancestors
+
+	The code below is the solution to Xenia and tree.
+	Given tree, queries of two types:
+	1) u - color vertex u
+	2) v - print minimum distance of vertex v to any colored vertex before
+
+
+  Time Complexity: O(n log n)
+  Space Complexity: O(n log n)
+*/
 const int MAXN=200005;
 
 vector<int> adj[MAXN];
