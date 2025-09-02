@@ -90,4 +90,31 @@ struct Dinic {
         }
         return f;
     }
+
+  vector<pair<int, int>> minCut(){
+    vector<pair<int, int>> ans;
+    queue<int> q;
+    q.push(s);
+    vector<bool> vis(n, 0);
+    while((int)q.size()){
+      int cur = q.front();
+      q.pop();
+      vis[cur] = 1;
+      for(int id: adj[cur]){
+        if(edges[id].cap - edges[id].flow <= 0) continue;
+        if(vis[edges[id].u]) continue;
+        vis[edges[id].u] = 1;
+        q.push(edges[id].u);
+      }
+    }
+    set<pair<int, int>> st;
+    for(auto edge: edges){
+      if(vis[edge.v] && !vis[edge.u]) {
+        if(st.count({edge.v, edge.u})) continue;
+        st.insert({edge.v, edge.u});
+        ans.push_back({edge.v, edge.u});
+      }
+    }
+    return ans;
+  }
 };
