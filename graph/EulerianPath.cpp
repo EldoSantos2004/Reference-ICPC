@@ -1,5 +1,6 @@
 /*
   Eulerian Path (Hierholzer's Algorithm)
+  This will find an Eurelian Circuit. If you want an eulerian path. add an edge between the two vertices you want the path to start and end on.
   --------------------------------------
   Time Complexity: O(E)
   Space Complexity: O(V + E)
@@ -28,6 +29,7 @@ void dfs_directed(int node) {
 }
 
 // Undirected Version //
+// Be careful with graph not being connected. Add set to not repeat edges(going from u to v and then from v to u)
 void dfs_undirected(int node) {
   while (!g[node].empty()) {
     int son = g[node].back();
@@ -36,3 +38,4 @@ void dfs_undirected(int node) {
   }
   path.push_back(node); // Post-order insertion
 }
+
