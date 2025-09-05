@@ -19,6 +19,7 @@ struct Dinic {
   const long long flow_inf = 1e18;
   vector<FlowEdge> edges;
   vector<vector<int>> adj;
+  vector<int> sz;
   int n, m = 0;
   int s, t;
   vector<int> level, ptr;
@@ -28,6 +29,7 @@ struct Dinic {
       adj.resize(n);
       level.resize(n);
       ptr.resize(n);
+      sz.resize(n);
   }
 
   void add_edge(int v, int u, long long cap) {
@@ -115,4 +117,28 @@ struct Dinic {
     return ans;
   }
 
+  bool getPath(int cur, vector<int> &path){
+    path.push_back(cur);
+    for(int &i = sz[cur]; i >= 0; i--){
+      int edge_index = adj[cur][i];
+      if(edge_index & 1) continue;
+      if(edges[edge_index].cap - edges[edge_index].flow == 0){
+        i--;
+        getPath(edges[edge_index].u, path);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  vector<vector<int>> getPaths(){
+    vector<vector<int>> ans;
+    vector<int> path;
+    for(int i = 0; i < n; i++) sz[i] = (int)adj[i].size() - 1;
+    while(getPath(s, path)){
+      ans.push_back(path);
+      path.clear();
+    }
+    return ans;
+  }
 };
