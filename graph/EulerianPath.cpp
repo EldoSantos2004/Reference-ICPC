@@ -1,6 +1,11 @@
 /*
   Eulerian Path (Hierholzer's Algorithm)
-  This will find an Eurelian Circuit. If you want an eulerian path. add an edge between the two vertices you want the path to start and end on.
+  This will find an Eurelian Circuit. 
+  For directed graph eulerian path must start on vertex with outdegree[i] == indegree[i] + 1 and ends on indegree[i] = outdegree[i] + 1. 
+  For directed graph eulerian Cycle only exists if indegree[i] = outdegree[i] for all i.
+  For undirected graph eulerian path must start on vertex with odd degree and will end in the other vertex with odd degree.
+  For undirected graph eulerian Cycle only exists degree is even for all vertices.
+  
   --------------------------------------
   Time Complexity: O(E)
   Space Complexity: O(V + E)
@@ -38,4 +43,5 @@ void dfs_undirected(int node) {
   }
   path.push_back(node); // Post-order insertion
 }
+
 
