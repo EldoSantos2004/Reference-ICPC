@@ -1,6 +1,3 @@
-// treap code for applying b * a[i] + c in a range [l, r), reversing, inserting, removing and querying sum
-// be careful to initialize the nodes correctly. review if initial values need to be assigned.
-
 #include <bits/stdc++.h>
 using namespace std;
  
@@ -38,13 +35,15 @@ struct Line{
   };
 };
 
+std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+
 struct Node {
 	Node *l = 0, *r = 0;
 	int y, c = 1;
   ModInt<mod> val, sum;
   Line line;
   bool rev = 0;
-	Node(int val) : val(val), sum(val), y(rand()) {}
+	Node(int val) : val(val), sum(val), y(rng()) {}
 	void recalc();
   void push();
 };
