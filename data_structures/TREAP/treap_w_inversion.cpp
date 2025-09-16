@@ -1,8 +1,10 @@
+std::mt19937 rng(std::chrono::steady_clock::now().time_since_epoch().count());
+
 struct Node {
 	Node *l = 0, *r = 0;
 	int val, y, c = 1;
 	bool rev = 0;
-	Node(int val) : val(val), y(rand()) {}
+	Node(int val) : val(val), y(rng()) {}
 	void recalc();
 	void push();
 };
