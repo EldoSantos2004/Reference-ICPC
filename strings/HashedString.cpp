@@ -27,7 +27,7 @@ class HashedString {
 
   public:
 	HashedString(const string &s) : p_hash(s.size() + 1) {
-		while (pow.size() < s.size()) { pow.push_back((pow.back() * B) % M); }
+		while (pow.size() <= s.size()) { pow.push_back((pow.back() * B) % M); }
 
 		p_hash[0] = 0;
 		for (int i = 0; i < s.size(); i++) {
@@ -44,3 +44,4 @@ class HashedString {
 };
 // you cant skip this
 vector<long long> HashedString::pow = {1};
+
