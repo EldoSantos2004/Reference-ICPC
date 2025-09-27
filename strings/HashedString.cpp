@@ -6,6 +6,8 @@
 
 	Double hash or use big mod values to avoid problems with collisions
 
+	Important to take into account that the values used for the letters are not 0 to 26. it is ascii characters.
+
 	Time Complexity(Construction): O(n)
   Space Complexity: O(n)
 */
@@ -15,14 +17,11 @@ const ll base = 33;
 
 class HashedString {
   private:
-	// change M and B if you want
 	static const long long M = 1e9 + 9;
 	static const long long B = 9973;
 
-	// pow[i] contains B^i % M
 	static vector<long long> pow;
 
-	// p_hash[i] is the hash of the first i characters of the given string
 	vector<long long> p_hash;
 
   public:
@@ -30,18 +29,26 @@ class HashedString {
 		while (pow.size() <= s.size()) { pow.push_back((pow.back() * B) % M); }
 
 		p_hash[0] = 0;
-		for (int i = 0; i < s.size(); i++) {
+		for (int i = 0; i < (int)s.size(); i++) {
 			p_hash[i + 1] = ((p_hash[i] * B) % M + s[i]) % M;
 		}
 	}
-
-	// Returns hash of substring [start, end]
+	// substring [start, end]
 	long long get_hash(int start, int end) {
 		long long raw_val =
 		    (p_hash[end + 1] - (p_hash[start] * pow[end - start + 1]));
 		return (raw_val % M + M) % M;
 	}
+  	// substring [start, end] with l added at the end. Remember it is ascii characters, not the number from 1 to 26 for the hash.
+    long long get_hash(int start, int end, int l){
+      if(start > end) return l;
+      long long val = (p_hash[end + 1] - (p_hash[start] * pow[end - start + 1]));
+     val = (val % M + M) % M;
+      val = (val + l) % mod;
+      return val;
+    }
 };
 // you cant skip this
 vector<long long> HashedString::pow = {1};
+
 
