@@ -42,13 +42,13 @@ class HashedString {
   	// substring [start, end] with l added at the end. Remember it is ascii characters, not the number from 1 to 26 for the hash.
     long long get_hash(int start, int end, int l){
       if(start > end) return l;
-      long long val = (p_hash[end + 1] - (p_hash[start] * pow[end - start + 1]));
-     val = (val % M + M) % M;
-      val = (val + l) % mod;
+      long long val = ((p_hash[end + 1] * B) + l - (p_hash[start] * pow[end - start + 2]));
+      val = (val % M + M) % M;
       return val;
     }
 };
 // you cant skip this
 vector<long long> HashedString::pow = {1};
+
 
 
