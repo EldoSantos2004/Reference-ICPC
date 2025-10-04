@@ -11,9 +11,15 @@ uniform_int_distribution<int> rng(0, numeric_limits<int>::max());
 // then for generating random values just do 
 int random_value = rng(mt);
 
+// if you do not want to create variable
+uniform_int_distribution<int>(0, n)(mt)
 
-std::normal_distribution<> normal_dist(mean, 2)
-exponential_distribution
+// other distributions
+// Normal distribution: mean = 0.0, stddev = 1.0
+normal_distribution<double> normal_dist(0.0, 1.0);
+
+// Exponential distribution: lambda = 1.5
+exponential_distribution<double> exp_dist(1.5);
 
 // for shuffling array
 shuffle(permutation.begin(), permutation.end(), rng);
