@@ -16,207 +16,208 @@
 \contentsline {subsection}{\numberline {3.10}Fenwick Tree}{17}{subsection.3.10}%
 \contentsline {subsection}{\numberline {3.11}Fenwick Tree 2D}{17}{subsection.3.11}%
 \contentsline {subsection}{\numberline {3.12}Li Chao Tree}{18}{subsection.3.12}%
-\contentsline {subsection}{\numberline {3.13}Linked List}{19}{subsection.3.13}%
-\contentsline {subsection}{\numberline {3.14}Merge Sort Tree}{20}{subsection.3.14}%
-\contentsline {subsection}{\numberline {3.15}Minimum Cartesian Tree}{21}{subsection.3.15}%
-\contentsline {subsection}{\numberline {3.16}Multi Ordered Set}{22}{subsection.3.16}%
-\contentsline {subsection}{\numberline {3.17}Ordered Set}{22}{subsection.3.17}%
-\contentsline {subsection}{\numberline {3.18}Palindromic Tree}{22}{subsection.3.18}%
-\contentsline {subsection}{\numberline {3.19}Persistent Array}{24}{subsection.3.19}%
-\contentsline {subsection}{\numberline {3.20}Persistent Segment Tree}{25}{subsection.3.20}%
-\contentsline {subsection}{\numberline {3.21}Polynomial Queries}{26}{subsection.3.21}%
-\contentsline {subsection}{\numberline {3.22}Segment Tree}{27}{subsection.3.22}%
-\contentsline {subsection}{\numberline {3.23}Segment Tree 2D}{28}{subsection.3.23}%
-\contentsline {subsection}{\numberline {3.24}Segment Tree Dynamic}{29}{subsection.3.24}%
-\contentsline {subsection}{\numberline {3.25}Segment Tree Lazy Types}{29}{subsection.3.25}%
-\contentsline {subsection}{\numberline {3.26}Segment Tree Lazy}{30}{subsection.3.26}%
-\contentsline {subsection}{\numberline {3.27}Segment Tree Lazy Range Set}{31}{subsection.3.27}%
-\contentsline {subsection}{\numberline {3.28}Segment Tree Lazy Range Set 2}{32}{subsection.3.28}%
-\contentsline {subsection}{\numberline {3.29}Segment Tree Max Subarray Sum}{34}{subsection.3.29}%
-\contentsline {subsection}{\numberline {3.30}Segment Tree Range Update}{35}{subsection.3.30}%
-\contentsline {subsection}{\numberline {3.31}Segment Tree Struct Types}{35}{subsection.3.31}%
-\contentsline {subsection}{\numberline {3.32}Segment Tree Struct}{36}{subsection.3.32}%
-\contentsline {subsection}{\numberline {3.33}Segment Tree Walk}{37}{subsection.3.33}%
-\contentsline {subsection}{\numberline {3.34}Sparse Table}{38}{subsection.3.34}%
-\contentsline {subsection}{\numberline {3.35}Sparse Table 2D}{38}{subsection.3.35}%
-\contentsline {subsection}{\numberline {3.36}Square Root Decomposition}{40}{subsection.3.36}%
-\contentsline {subsection}{\numberline {3.37}Treap}{41}{subsection.3.37}%
-\contentsline {subsection}{\numberline {3.38}Treap 2}{42}{subsection.3.38}%
-\contentsline {subsection}{\numberline {3.39}Treap With Inversion}{43}{subsection.3.39}%
-\contentsline {subsection}{\numberline {3.40}Treap With Inversions and Range Updates}{44}{subsection.3.40}%
-\contentsline {section}{\numberline {4}Dynamic Programming}{46}{section.4}%
-\contentsline {subsection}{\numberline {4.1}CHT Deque}{46}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Digit DP}{47}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Divide and Conquer DP}{47}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Edit Distance}{48}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Knuth's Algorithm}{48}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}LCS}{49}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Line Container}{49}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Longest Increasing Subsequence}{50}{subsection.4.8}%
-\contentsline {subsection}{\numberline {4.9}SOS DP}{51}{subsection.4.9}%
-\contentsline {section}{\numberline {5}Flow}{51}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Dinic}{51}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Hopcroft-Karp}{53}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Hungarian}{54}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Max Flow Min Cost}{55}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Max Flow}{56}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Min Cost Max Flow}{57}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Push Relabel}{58}{subsection.5.7}%
-\contentsline {section}{\numberline {6}Geometry}{59}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Point Struct}{59}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Sort Points}{60}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Point Struct2}{60}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Antipodal Pairs}{61}{subsection.6.4}%
-\contentsline {subsection}{\numberline {6.5}Area and Perimeter}{61}{subsection.6.5}%
-\contentsline {subsection}{\numberline {6.6}Area Union Circles}{61}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Centroid}{62}{subsection.6.7}%
-\contentsline {subsection}{\numberline {6.8}Circle Inside Circle}{62}{subsection.6.8}%
-\contentsline {subsection}{\numberline {6.9}Circle Outside Circle}{62}{subsection.6.9}%
-\contentsline {subsection}{\numberline {6.10}Closest Pair of Points}{62}{subsection.6.10}%
-\contentsline {subsection}{\numberline {6.11}Common Tangents}{63}{subsection.6.11}%
-\contentsline {subsection}{\numberline {6.12}Convex Hull}{63}{subsection.6.12}%
-\contentsline {subsection}{\numberline {6.13}Segment Intersection with Ray}{63}{subsection.6.13}%
-\contentsline {subsection}{\numberline {6.14}Cut Polygon}{63}{subsection.6.14}%
-\contentsline {subsection}{\numberline {6.15}Delaunay Triangulation}{64}{subsection.6.15}%
-\contentsline {subsection}{\numberline {6.16}Diameter and Width}{66}{subsection.6.16}%
-\contentsline {subsection}{\numberline {6.17}Distance Between Point and Circle}{66}{subsection.6.17}%
-\contentsline {subsection}{\numberline {6.18}Distance Between Point and Line}{66}{subsection.6.18}%
-\contentsline {subsection}{\numberline {6.19}Example of Geometry}{66}{subsection.6.19}%
-\contentsline {subsection}{\numberline {6.20}Half Plane Intersection}{67}{subsection.6.20}%
-\contentsline {subsection}{\numberline {6.21}Incircle}{68}{subsection.6.21}%
-\contentsline {subsection}{\numberline {6.22}Intersection of Two Circles}{68}{subsection.6.22}%
-\contentsline {subsection}{\numberline {6.23}Intersection Line and Circle}{68}{subsection.6.23}%
-\contentsline {subsection}{\numberline {6.24}Intersection Polygon and Circle}{68}{subsection.6.24}%
-\contentsline {subsection}{\numberline {6.25}Intersection Segment and Circle}{69}{subsection.6.25}%
-\contentsline {subsection}{\numberline {6.26}Line Intersection}{69}{subsection.6.26}%
-\contentsline {subsection}{\numberline {6.27}Minkowski Sum}{69}{subsection.6.27}%
-\contentsline {subsection}{\numberline {6.28}Point in Circle}{70}{subsection.6.28}%
-\contentsline {subsection}{\numberline {6.29}Point in Convex Hull}{70}{subsection.6.29}%
-\contentsline {subsection}{\numberline {6.30}Point in Line}{70}{subsection.6.30}%
-\contentsline {subsection}{\numberline {6.31}Point in Perimeter}{70}{subsection.6.31}%
-\contentsline {subsection}{\numberline {6.32}Point in Polygon}{70}{subsection.6.32}%
-\contentsline {subsection}{\numberline {6.33}Point in Segment}{70}{subsection.6.33}%
-\contentsline {subsection}{\numberline {6.34}Points Tangency}{70}{subsection.6.34}%
-\contentsline {subsection}{\numberline {6.35}Projection Point Circle}{71}{subsection.6.35}%
-\contentsline {subsection}{\numberline {6.36}Segment Intersection}{71}{subsection.6.36}%
-\contentsline {subsection}{\numberline {6.37}Smallest Enclosing Circle}{71}{subsection.6.37}%
-\contentsline {subsection}{\numberline {6.38}Smallest Enclosing Rectangle}{72}{subsection.6.38}%
-\contentsline {subsection}{\numberline {6.39}Vantage Point Tree}{72}{subsection.6.39}%
-\contentsline {section}{\numberline {7}Graphs}{73}{section.7}%
-\contentsline {subsection}{\numberline {7.1}2Sat}{73}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Articulation Points}{74}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Bellman-Ford}{75}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}Bipartite Checker}{75}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Bipartite Maximum Matching}{76}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Bipartite Minimum Maximum Matching2}{77}{subsection.7.6}%
-\contentsline {subsection}{\numberline {7.7}Block Cut Tree}{78}{subsection.7.7}%
-\contentsline {subsection}{\numberline {7.8}Blossom}{79}{subsection.7.8}%
-\contentsline {subsection}{\numberline {7.9}Bridges}{81}{subsection.7.9}%
-\contentsline {subsection}{\numberline {7.10}Bridges Online}{82}{subsection.7.10}%
-\contentsline {subsection}{\numberline {7.11}Dijkstra}{84}{subsection.7.11}%
-\contentsline {subsection}{\numberline {7.12}Eulerian Path}{84}{subsection.7.12}%
-\contentsline {subsection}{\numberline {7.13}Floyd-Warshall}{85}{subsection.7.13}%
-\contentsline {subsection}{\numberline {7.14}Kruskal}{85}{subsection.7.14}%
-\contentsline {subsection}{\numberline {7.15}Marriage}{86}{subsection.7.15}%
-\contentsline {subsection}{\numberline {7.16}SCC}{86}{subsection.7.16}%
-\contentsline {subsection}{\numberline {7.17}Stoer-Wagner}{87}{subsection.7.17}%
-\contentsline {section}{\numberline {8}Linear Algebra}{88}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Gaussian Elimination}{88}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Gaussian Elimination Modulo}{89}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}Simplex}{90}{subsection.8.3}%
-\contentsline {section}{\numberline {9}Math}{92}{section.9}%
-\contentsline {subsection}{\numberline {9.1}BinPow}{92}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Combination Rank}{92}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Chinese Remainder Theorem}{92}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Diophantine}{93}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Discrete Logarithm}{94}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Divisors}{94}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Euler Totient (Phi)}{95}{subsection.9.7}%
-\contentsline {subsection}{\numberline {9.8}Fibonacci}{95}{subsection.9.8}%
-\contentsline {subsection}{\numberline {9.9}Matrix Exponentiation}{95}{subsection.9.9}%
-\contentsline {subsection}{\numberline {9.10}Miller Rabin Deterministic}{96}{subsection.9.10}%
-\contentsline {subsection}{\numberline {9.11}Mobius}{97}{subsection.9.11}%
-\contentsline {subsection}{\numberline {9.12}Permutation Rank}{97}{subsection.9.12}%
-\contentsline {subsection}{\numberline {9.13}Prefix Sum Phi}{97}{subsection.9.13}%
-\contentsline {subsection}{\numberline {9.14}Sieve}{98}{subsection.9.14}%
-\contentsline {subsection}{\numberline {9.15}Identities}{98}{subsection.9.15}%
-\contentsline {subsection}{\numberline {9.16}Burnside's Lemma}{98}{subsection.9.16}%
-\contentsline {subsection}{\numberline {9.17}Recursion}{99}{subsection.9.17}%
-\contentsline {subsection}{\numberline {9.18}Theorems}{99}{subsection.9.18}%
-\contentsline {subsection}{\numberline {9.19}Sums}{99}{subsection.9.19}%
-\contentsline {subsection}{\numberline {9.20}Catalan numbers}{99}{subsection.9.20}%
-\contentsline {subsection}{\numberline {9.21}Cayley's formula}{99}{subsection.9.21}%
-\contentsline {subsection}{\numberline {9.22}Geometric series}{99}{subsection.9.22}%
-\contentsline {subsection}{\numberline {9.23}Estimates For Divisors}{100}{subsection.9.23}%
-\contentsline {subsection}{\numberline {9.24}Sum of divisors}{100}{subsection.9.24}%
-\contentsline {subsection}{\numberline {9.25}Pythagorean Triplets}{100}{subsection.9.25}%
-\contentsline {subsection}{\numberline {9.26}Derangements}{100}{subsection.9.26}%
-\contentsline {section}{\numberline {10}Game Theory}{100}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Sprague-Grundy theorem}{100}{subsection.10.1}%
-\contentsline {section}{\numberline {11}Fórmulas y notas}{100}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Números de Stirling del primer tipo}{100}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Números de Stirling del segundo tipo}{100}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Números de Euler}{100}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Números de Catalan}{101}{subsection.11.4}%
-\contentsline {subsection}{\numberline {11.5}Números de Bell}{101}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Números de Bernoulli}{101}{subsection.11.6}%
-\contentsline {subsection}{\numberline {11.7}Fórmula de Faulhaber}{101}{subsection.11.7}%
-\contentsline {subsection}{\numberline {11.8}Función Beta}{101}{subsection.11.8}%
-\contentsline {subsection}{\numberline {11.9}Función zeta de Riemann}{101}{subsection.11.9}%
-\contentsline {subsection}{\numberline {11.10}Funciones generadoras}{101}{subsection.11.10}%
-\contentsline {subsection}{\numberline {11.11}Números armónicos}{102}{subsection.11.11}%
-\contentsline {subsection}{\numberline {11.12}Aproximación de Stirling}{102}{subsection.11.12}%
-\contentsline {subsection}{\numberline {11.13}Ternas pitagóricas}{102}{subsection.11.13}%
-\contentsline {subsection}{\numberline {11.14}Árbol de Stern–Brocot}{102}{subsection.11.14}%
-\contentsline {subsection}{\numberline {11.15}Combinatoria}{102}{subsection.11.15}%
-\contentsline {subsection}{\numberline {11.16}Grafos}{103}{subsection.11.16}%
-\contentsline {subsection}{\numberline {11.17}Teoría de números}{103}{subsection.11.17}%
-\contentsline {subsection}{\numberline {11.18}Primos}{104}{subsection.11.18}%
-\contentsline {subsection}{\numberline {11.19}Números primos de Mersenne}{104}{subsection.11.19}%
-\contentsline {subsection}{\numberline {11.20}Números primos de Fermat}{104}{subsection.11.20}%
-\contentsline {section}{\numberline {12}More Topics}{104}{section.12}%
-\contentsline {subsection}{\numberline {12.1}2D Prefix Sum}{104}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Custom Comparators}{105}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Day of the Week}{105}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Directed MST}{105}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}GCD Convolution}{106}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}int128}{107}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}Iterating Over All Subsets}{108}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}LCM Convolution}{108}{subsection.12.8}%
-\contentsline {subsection}{\numberline {12.9}Manhattan MST}{108}{subsection.12.9}%
-\contentsline {subsection}{\numberline {12.10}Max Manhattan Distance}{109}{subsection.12.10}%
-\contentsline {subsection}{\numberline {12.11}Mo}{109}{subsection.12.11}%
-\contentsline {subsection}{\numberline {12.12}MOD INT}{110}{subsection.12.12}%
-\contentsline {subsection}{\numberline {12.13}Next Permutation}{111}{subsection.12.13}%
-\contentsline {subsection}{\numberline {12.14}Next and Previous Smaller/Greater Element}{111}{subsection.12.14}%
-\contentsline {subsection}{\numberline {12.15}Parallel Binary Search}{111}{subsection.12.15}%
-\contentsline {subsection}{\numberline {12.16}Random Number Generators}{112}{subsection.12.16}%
-\contentsline {subsection}{\numberline {12.17}setprecision}{112}{subsection.12.17}%
-\contentsline {subsection}{\numberline {12.18}Ternary Search}{112}{subsection.12.18}%
-\contentsline {subsection}{\numberline {12.19}Ternary Search Int}{112}{subsection.12.19}%
-\contentsline {subsection}{\numberline {12.20}XOR Convolution}{113}{subsection.12.20}%
-\contentsline {subsection}{\numberline {12.21}XOR Basis}{113}{subsection.12.21}%
-\contentsline {subsection}{\numberline {12.22}XOR Basis Online}{114}{subsection.12.22}%
-\contentsline {section}{\numberline {13}Polynomials}{118}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{118}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}FFT}{119}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}NTT}{120}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Roots NTT}{120}{subsection.13.4}%
-\contentsline {section}{\numberline {14}Strings}{121}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Hashed String}{121}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}KMP}{122}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Least Rotation String}{122}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Manacher}{123}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Suffix Array}{123}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{125}{subsection.14.6}%
-\contentsline {subsection}{\numberline {14.7}Trie Ahocorasick}{128}{subsection.14.7}%
-\contentsline {subsection}{\numberline {14.8}Z Function}{129}{subsection.14.8}%
-\contentsline {section}{\numberline {15}Trees}{129}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{129}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}Heavy Light Decomposition}{130}{subsection.15.2}%
-\contentsline {subsection}{\numberline {15.3}Lowest Common Ancestor (LCA)}{132}{subsection.15.3}%
-\contentsline {subsection}{\numberline {15.4}Tree Diameter}{133}{subsection.15.4}%
-\contentsline {section}{\numberline {16}Scripts}{133}{section.16}%
-\contentsline {subsection}{\numberline {16.1}build.sh}{133}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}stress.sh}{133}{subsection.16.2}%
-\contentsline {subsection}{\numberline {16.3}validate.sh}{134}{subsection.16.3}%
+\contentsline {subsection}{\numberline {3.13}Link Cut Tree}{19}{subsection.3.13}%
+\contentsline {subsection}{\numberline {3.14}Linked List}{22}{subsection.3.14}%
+\contentsline {subsection}{\numberline {3.15}Merge Sort Tree}{23}{subsection.3.15}%
+\contentsline {subsection}{\numberline {3.16}Minimum Cartesian Tree}{24}{subsection.3.16}%
+\contentsline {subsection}{\numberline {3.17}Multi Ordered Set}{25}{subsection.3.17}%
+\contentsline {subsection}{\numberline {3.18}Ordered Set}{25}{subsection.3.18}%
+\contentsline {subsection}{\numberline {3.19}Palindromic Tree}{25}{subsection.3.19}%
+\contentsline {subsection}{\numberline {3.20}Persistent Array}{27}{subsection.3.20}%
+\contentsline {subsection}{\numberline {3.21}Persistent Segment Tree}{28}{subsection.3.21}%
+\contentsline {subsection}{\numberline {3.22}Polynomial Queries}{29}{subsection.3.22}%
+\contentsline {subsection}{\numberline {3.23}Segment Tree}{30}{subsection.3.23}%
+\contentsline {subsection}{\numberline {3.24}Segment Tree 2D}{31}{subsection.3.24}%
+\contentsline {subsection}{\numberline {3.25}Segment Tree Dynamic}{32}{subsection.3.25}%
+\contentsline {subsection}{\numberline {3.26}Segment Tree Lazy Types}{32}{subsection.3.26}%
+\contentsline {subsection}{\numberline {3.27}Segment Tree Lazy}{33}{subsection.3.27}%
+\contentsline {subsection}{\numberline {3.28}Segment Tree Lazy Range Set}{34}{subsection.3.28}%
+\contentsline {subsection}{\numberline {3.29}Segment Tree Lazy Range Set 2}{35}{subsection.3.29}%
+\contentsline {subsection}{\numberline {3.30}Segment Tree Max Subarray Sum}{37}{subsection.3.30}%
+\contentsline {subsection}{\numberline {3.31}Segment Tree Range Update}{38}{subsection.3.31}%
+\contentsline {subsection}{\numberline {3.32}Segment Tree Struct Types}{38}{subsection.3.32}%
+\contentsline {subsection}{\numberline {3.33}Segment Tree Struct}{39}{subsection.3.33}%
+\contentsline {subsection}{\numberline {3.34}Segment Tree Walk}{40}{subsection.3.34}%
+\contentsline {subsection}{\numberline {3.35}Sparse Table}{41}{subsection.3.35}%
+\contentsline {subsection}{\numberline {3.36}Sparse Table 2D}{41}{subsection.3.36}%
+\contentsline {subsection}{\numberline {3.37}Square Root Decomposition}{43}{subsection.3.37}%
+\contentsline {subsection}{\numberline {3.38}Treap}{44}{subsection.3.38}%
+\contentsline {subsection}{\numberline {3.39}Treap 2}{45}{subsection.3.39}%
+\contentsline {subsection}{\numberline {3.40}Treap With Inversion}{46}{subsection.3.40}%
+\contentsline {subsection}{\numberline {3.41}Treap With Inversions and Range Updates}{47}{subsection.3.41}%
+\contentsline {section}{\numberline {4}Dynamic Programming}{49}{section.4}%
+\contentsline {subsection}{\numberline {4.1}CHT Deque}{49}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Digit DP}{50}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Divide and Conquer DP}{50}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Edit Distance}{51}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Knuth's Algorithm}{51}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}LCS}{52}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Line Container}{53}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Longest Increasing Subsequence}{53}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}SOS DP}{54}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Flow}{54}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Dinic}{54}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hopcroft-Karp}{56}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Hungarian}{57}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Max Flow Min Cost}{58}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Max Flow}{60}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Min Cost Max Flow}{60}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Push Relabel}{61}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Geometry}{62}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Point Struct}{62}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Sort Points}{63}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Point Struct2}{63}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Antipodal Pairs}{64}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Area and Perimeter}{64}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Area Union Circles}{64}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Centroid}{65}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Circle Inside Circle}{65}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Circle Outside Circle}{65}{subsection.6.9}%
+\contentsline {subsection}{\numberline {6.10}Closest Pair of Points}{65}{subsection.6.10}%
+\contentsline {subsection}{\numberline {6.11}Common Tangents}{66}{subsection.6.11}%
+\contentsline {subsection}{\numberline {6.12}Convex Hull}{66}{subsection.6.12}%
+\contentsline {subsection}{\numberline {6.13}Segment Intersection with Ray}{66}{subsection.6.13}%
+\contentsline {subsection}{\numberline {6.14}Cut Polygon}{66}{subsection.6.14}%
+\contentsline {subsection}{\numberline {6.15}Delaunay Triangulation}{67}{subsection.6.15}%
+\contentsline {subsection}{\numberline {6.16}Diameter and Width}{69}{subsection.6.16}%
+\contentsline {subsection}{\numberline {6.17}Distance Between Point and Circle}{69}{subsection.6.17}%
+\contentsline {subsection}{\numberline {6.18}Distance Between Point and Line}{69}{subsection.6.18}%
+\contentsline {subsection}{\numberline {6.19}Example of Geometry}{69}{subsection.6.19}%
+\contentsline {subsection}{\numberline {6.20}Half Plane Intersection}{70}{subsection.6.20}%
+\contentsline {subsection}{\numberline {6.21}Incircle}{71}{subsection.6.21}%
+\contentsline {subsection}{\numberline {6.22}Intersection of Two Circles}{71}{subsection.6.22}%
+\contentsline {subsection}{\numberline {6.23}Intersection Line and Circle}{71}{subsection.6.23}%
+\contentsline {subsection}{\numberline {6.24}Intersection Polygon and Circle}{71}{subsection.6.24}%
+\contentsline {subsection}{\numberline {6.25}Intersection Segment and Circle}{72}{subsection.6.25}%
+\contentsline {subsection}{\numberline {6.26}Line Intersection}{72}{subsection.6.26}%
+\contentsline {subsection}{\numberline {6.27}Minkowski Sum}{72}{subsection.6.27}%
+\contentsline {subsection}{\numberline {6.28}Point in Circle}{73}{subsection.6.28}%
+\contentsline {subsection}{\numberline {6.29}Point in Convex Hull}{73}{subsection.6.29}%
+\contentsline {subsection}{\numberline {6.30}Point in Line}{73}{subsection.6.30}%
+\contentsline {subsection}{\numberline {6.31}Point in Perimeter}{73}{subsection.6.31}%
+\contentsline {subsection}{\numberline {6.32}Point in Polygon}{73}{subsection.6.32}%
+\contentsline {subsection}{\numberline {6.33}Point in Segment}{73}{subsection.6.33}%
+\contentsline {subsection}{\numberline {6.34}Points Tangency}{74}{subsection.6.34}%
+\contentsline {subsection}{\numberline {6.35}Projection Point Circle}{74}{subsection.6.35}%
+\contentsline {subsection}{\numberline {6.36}Segment Intersection}{74}{subsection.6.36}%
+\contentsline {subsection}{\numberline {6.37}Smallest Enclosing Circle}{74}{subsection.6.37}%
+\contentsline {subsection}{\numberline {6.38}Smallest Enclosing Rectangle}{75}{subsection.6.38}%
+\contentsline {subsection}{\numberline {6.39}Vantage Point Tree}{75}{subsection.6.39}%
+\contentsline {section}{\numberline {7}Graphs}{76}{section.7}%
+\contentsline {subsection}{\numberline {7.1}2Sat}{76}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Articulation Points}{77}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Bellman-Ford}{78}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Bipartite Checker}{78}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Bipartite Maximum Matching}{79}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Bipartite Minimum Maximum Matching2}{80}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Block Cut Tree}{81}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Blossom}{82}{subsection.7.8}%
+\contentsline {subsection}{\numberline {7.9}Bridges}{84}{subsection.7.9}%
+\contentsline {subsection}{\numberline {7.10}Bridges Online}{85}{subsection.7.10}%
+\contentsline {subsection}{\numberline {7.11}Dijkstra}{87}{subsection.7.11}%
+\contentsline {subsection}{\numberline {7.12}Eulerian Path}{87}{subsection.7.12}%
+\contentsline {subsection}{\numberline {7.13}Floyd-Warshall}{88}{subsection.7.13}%
+\contentsline {subsection}{\numberline {7.14}Kruskal}{88}{subsection.7.14}%
+\contentsline {subsection}{\numberline {7.15}Marriage}{89}{subsection.7.15}%
+\contentsline {subsection}{\numberline {7.16}SCC}{90}{subsection.7.16}%
+\contentsline {subsection}{\numberline {7.17}Stoer-Wagner}{90}{subsection.7.17}%
+\contentsline {section}{\numberline {8}Linear Algebra}{91}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Gaussian Elimination}{91}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Gaussian Elimination Modulo}{92}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Simplex}{93}{subsection.8.3}%
+\contentsline {section}{\numberline {9}Math}{95}{section.9}%
+\contentsline {subsection}{\numberline {9.1}BinPow}{95}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Combination Rank}{95}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Chinese Remainder Theorem}{95}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Diophantine}{96}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Discrete Logarithm}{97}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Divisors}{97}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Euler Totient (Phi)}{98}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Fibonacci}{98}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Matrix Exponentiation}{98}{subsection.9.9}%
+\contentsline {subsection}{\numberline {9.10}Miller Rabin Deterministic}{99}{subsection.9.10}%
+\contentsline {subsection}{\numberline {9.11}Mobius}{100}{subsection.9.11}%
+\contentsline {subsection}{\numberline {9.12}Permutation Rank}{100}{subsection.9.12}%
+\contentsline {subsection}{\numberline {9.13}Prefix Sum Phi}{100}{subsection.9.13}%
+\contentsline {subsection}{\numberline {9.14}Sieve}{101}{subsection.9.14}%
+\contentsline {subsection}{\numberline {9.15}Identities}{101}{subsection.9.15}%
+\contentsline {subsection}{\numberline {9.16}Burnside's Lemma}{102}{subsection.9.16}%
+\contentsline {subsection}{\numberline {9.17}Recursion}{102}{subsection.9.17}%
+\contentsline {subsection}{\numberline {9.18}Theorems}{102}{subsection.9.18}%
+\contentsline {subsection}{\numberline {9.19}Sums}{102}{subsection.9.19}%
+\contentsline {subsection}{\numberline {9.20}Catalan numbers}{102}{subsection.9.20}%
+\contentsline {subsection}{\numberline {9.21}Cayley's formula}{102}{subsection.9.21}%
+\contentsline {subsection}{\numberline {9.22}Geometric series}{103}{subsection.9.22}%
+\contentsline {subsection}{\numberline {9.23}Estimates For Divisors}{103}{subsection.9.23}%
+\contentsline {subsection}{\numberline {9.24}Sum of divisors}{103}{subsection.9.24}%
+\contentsline {subsection}{\numberline {9.25}Pythagorean Triplets}{103}{subsection.9.25}%
+\contentsline {subsection}{\numberline {9.26}Derangements}{103}{subsection.9.26}%
+\contentsline {section}{\numberline {10}Game Theory}{103}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Sprague-Grundy theorem}{103}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Fórmulas y notas}{103}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Números de Stirling del primer tipo}{103}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Números de Stirling del segundo tipo}{103}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Números de Euler}{103}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Números de Catalan}{104}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}Números de Bell}{104}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Números de Bernoulli}{104}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Fórmula de Faulhaber}{104}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Función Beta}{104}{subsection.11.8}%
+\contentsline {subsection}{\numberline {11.9}Función zeta de Riemann}{104}{subsection.11.9}%
+\contentsline {subsection}{\numberline {11.10}Funciones generadoras}{104}{subsection.11.10}%
+\contentsline {subsection}{\numberline {11.11}Números armónicos}{105}{subsection.11.11}%
+\contentsline {subsection}{\numberline {11.12}Aproximación de Stirling}{105}{subsection.11.12}%
+\contentsline {subsection}{\numberline {11.13}Ternas pitagóricas}{105}{subsection.11.13}%
+\contentsline {subsection}{\numberline {11.14}Árbol de Stern–Brocot}{105}{subsection.11.14}%
+\contentsline {subsection}{\numberline {11.15}Combinatoria}{105}{subsection.11.15}%
+\contentsline {subsection}{\numberline {11.16}Grafos}{106}{subsection.11.16}%
+\contentsline {subsection}{\numberline {11.17}Teoría de números}{106}{subsection.11.17}%
+\contentsline {subsection}{\numberline {11.18}Primos}{107}{subsection.11.18}%
+\contentsline {subsection}{\numberline {11.19}Números primos de Mersenne}{107}{subsection.11.19}%
+\contentsline {subsection}{\numberline {11.20}Números primos de Fermat}{107}{subsection.11.20}%
+\contentsline {section}{\numberline {12}More Topics}{107}{section.12}%
+\contentsline {subsection}{\numberline {12.1}2D Prefix Sum}{107}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Custom Comparators}{108}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Day of the Week}{108}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Directed MST}{108}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}GCD Convolution}{109}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}int128}{110}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Iterating Over All Subsets}{111}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}LCM Convolution}{111}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}Manhattan MST}{111}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}Max Manhattan Distance}{112}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}Mo}{112}{subsection.12.11}%
+\contentsline {subsection}{\numberline {12.12}MOD INT}{113}{subsection.12.12}%
+\contentsline {subsection}{\numberline {12.13}Next Permutation}{114}{subsection.12.13}%
+\contentsline {subsection}{\numberline {12.14}Next and Previous Smaller/Greater Element}{114}{subsection.12.14}%
+\contentsline {subsection}{\numberline {12.15}Parallel Binary Search}{114}{subsection.12.15}%
+\contentsline {subsection}{\numberline {12.16}Random Number Generators}{115}{subsection.12.16}%
+\contentsline {subsection}{\numberline {12.17}setprecision}{115}{subsection.12.17}%
+\contentsline {subsection}{\numberline {12.18}Ternary Search}{115}{subsection.12.18}%
+\contentsline {subsection}{\numberline {12.19}Ternary Search Int}{115}{subsection.12.19}%
+\contentsline {subsection}{\numberline {12.20}XOR Convolution}{116}{subsection.12.20}%
+\contentsline {subsection}{\numberline {12.21}XOR Basis}{116}{subsection.12.21}%
+\contentsline {subsection}{\numberline {12.22}XOR Basis Online}{117}{subsection.12.22}%
+\contentsline {section}{\numberline {13}Polynomials}{121}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{121}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}FFT}{122}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}NTT}{123}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Roots NTT}{123}{subsection.13.4}%
+\contentsline {section}{\numberline {14}Strings}{124}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Hashed String}{124}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}KMP}{125}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Least Rotation String}{125}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Manacher}{126}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Suffix Array}{126}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{128}{subsection.14.6}%
+\contentsline {subsection}{\numberline {14.7}Trie Ahocorasick}{131}{subsection.14.7}%
+\contentsline {subsection}{\numberline {14.8}Z Function}{132}{subsection.14.8}%
+\contentsline {section}{\numberline {15}Trees}{132}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{132}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Heavy Light Decomposition}{133}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Lowest Common Ancestor (LCA)}{135}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Tree Diameter}{136}{subsection.15.4}%
+\contentsline {section}{\numberline {16}Scripts}{136}{section.16}%
+\contentsline {subsection}{\numberline {16.1}build.sh}{136}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}stress.sh}{136}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}validate.sh}{137}{subsection.16.3}%
