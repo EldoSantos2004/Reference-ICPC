@@ -1,6 +1,6 @@
 // adds d * (i - l + 1) + a to range [l, r]
 // d * (i - l + 1) = d*(1-l) + d*i
-// Sum = A × segment_length + B × sum_of_indices_in_segment 
+// Sum = A x segment_length + B x sum_of_indices_in_segment 
 
 struct sum_t {
   ll val;
