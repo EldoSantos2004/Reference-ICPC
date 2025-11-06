@@ -41,3 +41,62 @@ XOR_conv(A, B, C, 20);
 for (int d = 0; d < (1<<20); d++){
   cout << C[d] << (d==(1<<20)?'\n':' ');
 }
+
+
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+#define int long long
+
+const int mod = 998244353;
+
+int inverse(int x, int mod) {
+	return x == 1 ? 1 : mod - mod / x * inverse(mod % x, mod) % mod;
+}
+
+void xormul(vector<int> a, vector<int> b, vector<int> &c) {
+	int m = (int) a.size();
+	c.resize(m);
+	for (int n = m / 2; n > 0; n /= 2)
+		for (int i = 0; i < m; i += 2 * n)
+			for (int j = 0; j < n; j++) {
+				int x = a[i + j], y = a[i + j + n];
+				a[i + j] = (x + y) % mod;
+				a[i + j + n] = (x - y + mod) % mod;
+			}
+	for (int n = m / 2; n > 0; n /= 2)
+		for (int i = 0; i < m; i += 2 * n)
+			for (int j = 0; j < n; j++) {
+				int x = b[i + j], y = b[i + j + n];
+				b[i + j] = (x + y) % mod;
+				b[i + j + n] = (x - y + mod) % mod;
+			}
+	for (int i = 0; i < m; i++)
+		c[i] = a[i] * b[i] % mod;
+	for (int n = 1; n < m; n *= 2)
+		for (int i = 0; i < m; i += 2 * n)
+			for (int j = 0; j < n; j++) {
+				int x = c[i + j], y = c[i + j + n];
+				c[i + j] = (x + y) % mod;
+				c[i + j + n] = (x - y + mod) % mod;
+			}
+	int mrev = inverse(m, mod);
+	for (int i = 0; i < m; i++)
+		c[i] = c[i] * mrev % mod;
+}
+
+int32_t main() {
+	ios::sync_with_stdio(0); cin.tie(0);
+	int n; cin >> n;
+	vector<int> a(1 << n), b(1 << n), c;
+	for (int i = 0; i < (1 << n); i++)
+		cin >> a[i];
+	for (int i = 0; i < (1 << n); i++)
+		cin >> b[i];
+	xormul(a, b, c);
+	for (int i = 0; i < (1 << n); i++)
+		cout << c[i] << ' ';
+}
