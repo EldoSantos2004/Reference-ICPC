@@ -179,50 +179,52 @@
 \contentsline {subsection}{\numberline {11.20}Números primos de Fermat}{110}{subsection.11.20}%
 \contentsline {section}{\numberline {12}More Topics}{110}{section.12}%
 \contentsline {subsection}{\numberline {12.1}2D Prefix Sum}{110}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}CDQ Divide and Conquer}{110}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Count Segments Around Index}{111}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Custom Comparators}{111}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Day of the Week}{111}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Directed MST}{112}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}GCD Convolution}{113}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}int128}{114}{subsection.12.8}%
-\contentsline {subsection}{\numberline {12.9}Iterating Over All Subsets}{114}{subsection.12.9}%
-\contentsline {subsection}{\numberline {12.10}LCM Convolution}{114}{subsection.12.10}%
-\contentsline {subsection}{\numberline {12.11}Manhattan MST}{115}{subsection.12.11}%
-\contentsline {subsection}{\numberline {12.12}Max Manhattan Distance}{116}{subsection.12.12}%
-\contentsline {subsection}{\numberline {12.13}Mo}{116}{subsection.12.13}%
-\contentsline {subsection}{\numberline {12.14}MOD INT}{117}{subsection.12.14}%
-\contentsline {subsection}{\numberline {12.15}Next Permutation}{117}{subsection.12.15}%
-\contentsline {subsection}{\numberline {12.16}Next and Previous Smaller/Greater Element}{118}{subsection.12.16}%
-\contentsline {subsection}{\numberline {12.17}Parallel Binary Search}{118}{subsection.12.17}%
-\contentsline {subsection}{\numberline {12.18}Random Number Generators}{119}{subsection.12.18}%
-\contentsline {subsection}{\numberline {12.19}setprecision}{119}{subsection.12.19}%
-\contentsline {subsection}{\numberline {12.20}Ternary Search}{119}{subsection.12.20}%
-\contentsline {subsection}{\numberline {12.21}Ternary Search Int}{119}{subsection.12.21}%
-\contentsline {subsection}{\numberline {12.22}XOR Convolution}{119}{subsection.12.22}%
-\contentsline {subsection}{\numberline {12.23}XOR Basis}{120}{subsection.12.23}%
-\contentsline {subsection}{\numberline {12.24}XOR Basis Online}{121}{subsection.12.24}%
-\contentsline {section}{\numberline {13}Polynomials}{125}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{125}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Binary Exp FFT}{126}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}FFT}{127}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}NTT}{128}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Roots NTT}{128}{subsection.13.5}%
-\contentsline {section}{\numberline {14}Strings}{129}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Hashed String}{129}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}KMP}{129}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Least Rotation String}{130}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Manacher}{131}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Suffix Array}{131}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{133}{subsection.14.6}%
-\contentsline {subsection}{\numberline {14.7}Trie Ahocorasick}{136}{subsection.14.7}%
-\contentsline {subsection}{\numberline {14.8}Z Function}{137}{subsection.14.8}%
-\contentsline {section}{\numberline {15}Trees}{137}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{137}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}Heavy Light Decomposition}{138}{subsection.15.2}%
-\contentsline {subsection}{\numberline {15.3}Lowest Common Ancestor (LCA)}{140}{subsection.15.3}%
-\contentsline {subsection}{\numberline {15.4}Tree Diameter}{141}{subsection.15.4}%
-\contentsline {section}{\numberline {16}Scripts}{141}{section.16}%
-\contentsline {subsection}{\numberline {16.1}build.sh}{141}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}stress.sh}{141}{subsection.16.2}%
-\contentsline {subsection}{\numberline {16.3}validate.sh}{141}{subsection.16.3}%
+\contentsline {subsection}{\numberline {12.2}CDQ D\&C FFT}{110}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}CDQ Divide and Conquer}{110}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Count Segments Around Index}{112}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Custom Comparators}{113}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Day of the Week}{113}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Directed MST}{113}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}GCD Convolution}{114}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}int128}{115}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}Iterating Over All Subsets}{116}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}LCM Convolution}{116}{subsection.12.11}%
+\contentsline {subsection}{\numberline {12.12}Manhattan MST}{117}{subsection.12.12}%
+\contentsline {subsection}{\numberline {12.13}Max Manhattan Distance}{117}{subsection.12.13}%
+\contentsline {subsection}{\numberline {12.14}Mo}{117}{subsection.12.14}%
+\contentsline {subsection}{\numberline {12.15}MOD INT}{118}{subsection.12.15}%
+\contentsline {subsection}{\numberline {12.16}Next Permutation}{119}{subsection.12.16}%
+\contentsline {subsection}{\numberline {12.17}Next and Previous Smaller/Greater Element}{119}{subsection.12.17}%
+\contentsline {subsection}{\numberline {12.18}Parallel Binary Search}{119}{subsection.12.18}%
+\contentsline {subsection}{\numberline {12.19}Random Number Generators}{120}{subsection.12.19}%
+\contentsline {subsection}{\numberline {12.20}setprecision}{120}{subsection.12.20}%
+\contentsline {subsection}{\numberline {12.21}Ternary Search}{120}{subsection.12.21}%
+\contentsline {subsection}{\numberline {12.22}Ternary Search Int}{121}{subsection.12.22}%
+\contentsline {subsection}{\numberline {12.23}XOR Convolution}{121}{subsection.12.23}%
+\contentsline {subsection}{\numberline {12.24}XOR Basis}{122}{subsection.12.24}%
+\contentsline {subsection}{\numberline {12.25}XOR Basis Online}{123}{subsection.12.25}%
+\contentsline {section}{\numberline {13}Polynomials}{127}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{127}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Binary Exp FFT}{128}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}FFT}{129}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}NTT}{130}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Roots NTT}{130}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Strings}{131}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Hashed String}{131}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}KMP}{131}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Least Rotation String}{132}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Manacher}{133}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Suffix Array}{133}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{135}{subsection.14.6}%
+\contentsline {subsection}{\numberline {14.7}Trie Ahocorasick}{138}{subsection.14.7}%
+\contentsline {subsection}{\numberline {14.8}Z Function}{139}{subsection.14.8}%
+\contentsline {section}{\numberline {15}Trees}{139}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{139}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Heavy Light Decomposition}{140}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Lowest Common Ancestor (LCA)}{142}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Tree Diameter}{143}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Virtual Tree}{143}{subsection.15.5}%
+\contentsline {section}{\numberline {16}Scripts}{145}{section.16}%
+\contentsline {subsection}{\numberline {16.1}build.sh}{145}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}stress.sh}{145}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}validate.sh}{145}{subsection.16.3}%

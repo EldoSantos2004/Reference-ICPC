@@ -43,7 +43,7 @@ int getlca(int x, int y) {
 }
 
 // DFS on the virtual tree to perform DP.
-// Parameter c — target color for which counting is performed.
+// Parameter c - target color for which counting is performed.
 
 void dfs_calc(int v, int p, int c, int &ans) {
     dp[v][0] = dp[v][1] = 0;
@@ -71,7 +71,7 @@ void dfs_calc(int v, int p, int c, int &ans) {
 void calc_aux(int c, int &ans) {
     auto p = ver[c];
     if (p.empty()) return;
-    // Sort vertices by entry time (tin) — DFS traversal order.
+    // Sort vertices by entry time (tin) - DFS traversal order.
     sort(p.begin(), p.end(), [&](const int a, const int b) { return tin[a] < tin[b]; });
     vector<int> verstk = {1}; // Initialize stack with the root of tree T (vertex 1).
     aux_g[1].clear();
