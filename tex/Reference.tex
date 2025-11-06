@@ -45,4 +45,33 @@
 
   \section{Scripts}
   \input{scripts.tex}
+
+  \begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|p{6cm}|c|}
+  \hline
+  \textbf{specifier} & \textbf{Output} & \textbf{Example} \\ \hline
+
+  d or i & Signed decimal integer & 392 \\ \hline
+  u & Unsigned decimal integer & 7235 \\ \hline
+  o & Unsigned octal & 610 \\ \hline
+  x & Unsigned hexadecimal integer (lowercase) & 7fa \\ \hline
+  X & Unsigned hexadecimal integer (uppercase) & 7FA \\ \hline
+  f & Decimal floating point, lowercase & 392.65 \\ \hline
+  F & Decimal floating point, uppercase & 392.65 \\ \hline
+  e & Scientific notation (mantissa/exponent), lowercase & 3.9265e+2 \\ \hline
+  E & Scientific notation (mantissa/exponent), uppercase & 3.9265E+2 \\ \hline
+  g & Use the shortest representation: \%e or \%f & 392.65 \\ \hline
+  G & Use the shortest representation: \%E or \%F & 392.65 \\ \hline
+  a & Hexadecimal floating point, lowercase & -0xc.90fep-2 \\ \hline
+  A & Hexadecimal floating point, uppercase & -0XC.90FEP-2 \\ \hline
+  c & Character & a \\ \hline
+  s & String of characters & sample \\ \hline
+  p & Pointer address & b8000000 \\ \hline
+  n & Nothing printed. The argument must be a pointer to a \texttt{signed int}. The number of characters written so far is stored. & \\ \hline
+  \% & A \% followed by another \% prints a single \% & \% \\ \hline
+
+  \end{tabular}
+  \end{table}
+
 \end{document}
