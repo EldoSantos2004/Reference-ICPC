@@ -1,82 +1,71 @@
-#define forn(i,n) for(int i=0;i<int(n);++i)
-#define forsn(i,s,n) for(int i=s;i<int(n);++i)
-#define forall(i,c) for(typeof(c.begin()) i=c.begin();i!=c.end();++i)
-#define DBG(X) cerr << #X << " = " << X << endl;
-typedef vector<int> vint;
-typedef vector<vint> vvint;
+#include <bits/stdc++.h>
+using namespace std;
 
-void showmt();
+typedef long long ll;
 
-/* begin notebook */
+int ckmin(int &a, int b) { return a > b ? ((a = b), true) : false; }
 
-#define MAXN 256
-#define INFTO 0x7f7f7f7f
-int n;
-int mt[MAXN][MAXN]; // Matriz de costos (X * Y)
-int xy[MAXN], yx[MAXN]; // Matching resultante (X->Y, Y->X)
-
-int lx[MAXN], ly[MAXN], slk[MAXN], slkx[MAXN], prv[MAXN];
-char S[MAXN], T[MAXN];
-
-void updtree(int x) {
-	forn(y, n) if (lx[x] + ly[y] - mt[x][y] < slk[y]) {
-		slk[y] = lx[x] + ly[y] - mt[x][y];
-		slkx[y] = x;
-	}
-}
-int hungar() {
-	forn(i, n) {
-		ly[i] = 0;
-		lx[i] = *max_element(mt[i], mt[i]+n);
-	}
-	memset(xy, -1, sizeof(xy));
-	memset(yx, -1, sizeof(yx));
-
-	forn(m, n) {
-		memset(S, 0, sizeof(S));
-		memset(T, 0, sizeof(T));
-		memset(prv, -1, sizeof(prv));
-		memset(slk, 0x7f, sizeof(slk));
-		queue<int> q;
-		#define bpone(e, p) { q.push(e); prv[e] = p; S[e] = 1; updtree(e); }
-		forn(i, n) if (xy[i] == -1) { bpone(i, -2); break; }
-
-		int x=0, y=-1;
-		while (y==-1) {
-			while (!q.empty() && y==-1) {
-				x = q.front(); q.pop();
-				forn(j, n) if (mt[x][j] == lx[x] + ly[j] && !T[j]) {
-					if (yx[j] == -1) { y = j; break; }
-					T[j] = 1;
-					bpone(yx[j], x);
+template <class T> vector<int> hungarian(const vector<vector<T>> &C) {
+	int J = C.size();
+	int W = C[0].size();
+	assert(J <= W);
+	// job[w] = job assigned to w-th worker, or -1 if no job assigned
+	// note: a W-th worker was added for convenience
+	vector<int> job(W + 1, -1);
+	vector<T> h(W);  // Johnson potentials
+	const T inf = numeric_limits<T>::max();
+	// assign j_cur-th job using Dijkstra with potentials
+	for (int j_cur = 0; j_cur < J; j_cur++) {
+		int w_cur = W;  // unvisited worker with minimum distance
+		job[w_cur] = j_cur;
+		vector<T> dist(W + 1, inf);  // Johnson-reduced distances
+		dist[W] = 0;
+		vector<bool> vis(W + 1);     // whether visited yet
+		vector<int> prv(W + 1, -1);  // previous worker on shortest path
+		while (job[w_cur] != -1) {   // Dijkstra step: pop min worker from heap
+			T min_dist = inf;
+			vis[w_cur] = true;
+			int w_next = -1;  // next unvisited worker with minimum distance
+			// consider extending shortest path by w_cur -> job[w_cur] -> w
+			for (int w = 0; w < W; w++) {
+				if (!vis[w]) {
+					// sum of reduced edge weights w_cur -> job[w_cur] -> w
+					T edge = C[job[w_cur]][w] - h[w];
+					if (w_cur != W) {
+						edge -= C[job[w_cur]][w_cur] - h[w_cur];
+						assert(edge >= 0);
+					}
+					if (ckmin(dist[w], dist[w_cur] + edge)) { prv[w] = w_cur; }
+					if (ckmin(min_dist, dist[w])) { w_next = w; }
 				}
 			}
-			if (y!=-1) break;
-			int dlt = INFTO;
-			forn(j, n) if (!T[j]) dlt = min(dlt, slk[j]);
-			forn(k, n) {
-				if (S[k]) lx[k] -= dlt;
-				if (T[k]) ly[k] += dlt;
-				if (!T[k]) slk[k] -= dlt;
-			}
-//			q = queue<int>();
-			forn(j, n) if (!T[j] && !slk[j]) {
-				if (yx[j] == -1) {
-					x = slkx[j]; y = j; break;
-				} else {
-					T[j] = 1;
-					if (!S[yx[j]]) bpone(yx[j], slkx[j]);
-				}
-			}
+			w_cur = w_next;
 		}
-		if (y!=-1) {
-			for(int p = x; p != -2; p = prv[p]) {
-				yx[y] = p;
-				int ty = xy[p]; xy[p] = y; y = ty;
-			}
-		} else break;
+		for (int w = 0; w < W; w++) {  // update potentials
+			ckmin(dist[w], dist[w_cur]);
+			h[w] += dist[w];
+		}
+		while (w_cur != W) {  // update job assignment
+			job[w_cur] = job[prv[w_cur]];
+			w_cur = prv[w_cur];
+		}
 	}
-	int res = 0;
-	forn(i, n) res += mt[i][xy[i]];
-	return res;
+	return job;
+}
+int main(){
+  ios_base::sync_with_stdio(false); cin.tie(NULL);
+  int n; cin >> n;
+  vector<vector<int>> a(n, vector<int>(n));
+  for(int i = 0; i < n; i++){
+    for(int j = 0; j < n; j++){
+      cin >> a[i][j];
+    }
+  }
+  vector<int> m = hungarian(a);
+  ll ans = 0;
+  for(int i = 0; i < n; i++){
+    ans += a[m[i]][i];
+  }
+  cout << ans << endl;
+  for(int i = 0; i < n; i++) cout << i + 1 << " " << m[i] + 1 << endl;
 }
