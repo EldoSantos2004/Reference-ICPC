@@ -6,6 +6,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+typedef long long ll;
+
 #include <ext/pb_ds/priority_queue.hpp> 
 using namespace __gnu_pbds;
 
@@ -16,9 +18,6 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
-#pragma once
-
-// #include <bits/extc++.h> /// include-line, keep-include
 
 const ll INF = numeric_limits<ll>::max() / 4;
 
@@ -96,4 +95,30 @@ struct MCMF {
 						pi[e.to] = v, ch = 1;
 		assert(it >= 0); // negative cost cycle
 	}
+
+
+  // Might need stress testing 
+  vector<vector<int>> getPaths(int s, int t){
+    vector<vector<int>> paths;
+    while(1){
+      paths.push_back({});
+      if(getPath(s, t, paths.back()) == false){
+        paths.pop_back();
+        break;
+      }
+    }
+    return paths;
+  }
+
+  bool getPath(int cur, int t, vector<int>& path){
+    path.push_back(cur);
+    if(cur == t) return true;
+    for(auto &e: ed[cur]){
+      if(e.flow == 1 && e.cap == 1){
+        e.flow = 0;
+        return getPath(e.to, t, path);
+      }
+    }
+    return false;
+  }
 };
