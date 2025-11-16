@@ -73,6 +73,7 @@ struct query {
 };
 
 // Segment Tree for storing edge intervals [l, r]
+// be careful with the insertion time and sizes
 struct QueryTree {
   vector<vector<query>> t; // Each node stores queries that are active in that time segment
   DSU dsu;
