@@ -33,6 +33,7 @@ void dfs(int v, int p = -1) {
       low[v] = min(low[v], low[to]);
       // Articulation point condition for non-root
       if (low[to] >= tin[v] && p != -1) {
+        // be careful as this may make the same articulation point appear many times
         // v is an articulation point
         // handle_cutpoint(v);
       }
@@ -58,3 +59,4 @@ void find_cutpoints() {
       dfs(i);
   }
 }
+
