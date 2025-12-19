@@ -220,11 +220,13 @@
 \contentsline {subsection}{\numberline {14.8}Z Function}{139}{subsection.14.8}%
 \contentsline {section}{\numberline {15}Trees}{139}{section.15}%
 \contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{139}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}Heavy Light Decomposition}{140}{subsection.15.2}%
-\contentsline {subsection}{\numberline {15.3}Lowest Common Ancestor (LCA)}{142}{subsection.15.3}%
-\contentsline {subsection}{\numberline {15.4}Tree Diameter}{143}{subsection.15.4}%
-\contentsline {subsection}{\numberline {15.5}Virtual Tree}{143}{subsection.15.5}%
-\contentsline {section}{\numberline {16}Scripts}{145}{section.16}%
-\contentsline {subsection}{\numberline {16.1}build.sh}{145}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}stress.sh}{145}{subsection.16.2}%
-\contentsline {subsection}{\numberline {16.3}validate.sh}{145}{subsection.16.3}%
+\contentsline {subsection}{\numberline {15.2}HLD subtree query}{140}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Heavy Light Decomposition}{140}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Kruskal Reconstruction Tree}{142}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Lowest Common Ancestor (LCA)}{144}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Tree Diameter}{144}{subsection.15.6}%
+\contentsline {subsection}{\numberline {15.7}Virtual Tree}{145}{subsection.15.7}%
+\contentsline {section}{\numberline {16}Scripts}{146}{section.16}%
+\contentsline {subsection}{\numberline {16.1}build.sh}{146}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}stress.sh}{146}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}validate.sh}{147}{subsection.16.3}%

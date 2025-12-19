@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  6 NOV 2025 15:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  6 NOV 2025 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,36 +1013,36 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../trees/HLD.cpp [140]
+(../trees/hld_subtree.cpp) (../trees/HLD.cpp [140]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [141])
-(../trees/LCA.cpp
-Underfull \vbox (badness 2503) has occurred while \output is active []
-
-
+ [141]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [142])
-(../trees/TreeDiameter.cpp)
-Underfull \vbox (badness 4556) has occurred while \output is active []
-
-
-(../trees/virtual_tree.cpp [143]
+)
+(../trees/kruskal_reconstruction.cpp [142]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [144]))
+ [143])
+(../trees/LCA.cpp) (../trees/TreeDiameter.cpp [144]) (../trees/virtual_tree.cpp
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [145]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+))
 (./scripts.tex
 (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(../scripts/build.sh) (../scripts/stress.sh) (../scripts/validate.sh))
+(../scripts/build.sh) (../scripts/stress.sh [146]) (../scripts/validate.sh))
 Underfull \hbox (badness 10000) in paragraph at lines 62--62
 []\OT1/cmr/m/n/10 Scientific no-ta-tion (man-tis-sa/-ex-po-
  []
@@ -1053,21 +1053,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
 AED: lastpage setting LastPage
-[145] [146
-
-] (./Reference.aux)
+[147] (./Reference.aux)
 Package rerunfilecheck Info: File `Reference.out' has not changed.
-(rerunfilecheck)             Checksum: 774E2EBB5A241EFEB63DB4E1556397FC;32699.
+(rerunfilecheck)             Checksum: 864E091FCFE4F7CFB0CB301ADEA94784;33053.
  ) 
 Here is how much of TeX's memory you used:
- 29613 strings out of 478268
- 463722 string characters out of 5846347
- 1519269 words of memory out of 5000000
- 35785 multiletter control sequences out of 15000+600000
+ 29809 strings out of 478268
+ 466820 string characters out of 5846347
+ 1526755 words of memory out of 5000000
+ 35842 multiletter control sequences out of 15000+600000
  478983 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,14n,71p,513b,2088s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1096,10 +1091,10 @@ ist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texm
 f-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-
 dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Reference.pdf (146 pages, 1214169 bytes).
+Output written on Reference.pdf (147 pages, 1224829 bytes).
 PDF statistics:
- 15285 PDF objects out of 15390 (max. 8388607)
- 14939 compressed objects within 150 object streams
- 11228 named destinations out of 12825 (max. 500000)
- 1833 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 15459 PDF objects out of 18468 (max. 8388607)
+ 15110 compressed objects within 152 object streams
+ 11361 named destinations out of 12825 (max. 500000)
+ 1849 words of extra memory for PDF output out of 10000 (max. 10000000)
 
