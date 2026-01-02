@@ -1,5 +1,4 @@
-const ll inf=1e18;
-
+const ll inf=1e13;
 struct Node {
 	ll maxi, l_max, r_max, sum;
   Node(ll _maxi, ll _l_max, ll _r_max, ll _sum){
@@ -9,13 +8,13 @@ struct Node {
     sum=_sum;
   }
 	Node operator+(Node b) {
-		return {max(max(maxi, b.maxi), r_max + b.l_max),
-      max(l_max, sum + b.l_max), max(b.r_max, r_max + b.sum),
+		return {max(max(maxi, b.maxi), max(r_max + b.l_max, 0LL)),
+      max(l_max, max(sum + b.l_max, 0LL)), max(b.r_max, max(r_max + b.sum, 0LL)),
       sum + b.sum};
 	}
 	
 };
-
+ 
 struct SegmentTreeMaxSubSum{
   int n; 
   vector<Node> t;
