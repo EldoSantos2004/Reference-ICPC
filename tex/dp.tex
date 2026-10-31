@@ -1,3 +1,26 @@
+\subsection{Monotone CHT}
+C++17. Insert lines $y=mx+b$ in the slope order selected by
+\texttt{INCREASING\_SLOPES}; equal slopes are allowed.
+\texttt{MIN\_QUERY} selects minimum (\texttt{true}) or maximum
+(\texttt{false}). Defaults: minimum, nonincreasing slopes.
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Query} & \textbf{Slope order} & \textbf{\texttt{query(x)} order} \\
+\hline
+Minimum & Nonincreasing & Nondecreasing $x$ \\
+Minimum & Nondecreasing & Nonincreasing $x$ \\
+Maximum & Nonincreasing & Nonincreasing $x$ \\
+Maximum & Nondecreasing & Nondecreasing $x$ \\
+\end{tabular}
+\end{center}
+\texttt{add} and \texttt{query}: amortized $O(1)$;
+\texttt{query\_bs}: $O(\log n)$ with arbitrary $x$ order,
+without changing the query pointer. Insertions and queries may be
+interleaved. Query only when nonempty. Inputs are signed 64-bit;
+results are \texttt{\_\_int128\_t}.
+\cppfile{../dp/CHT.cpp}
+
 \subsection{CHT Deque}
 \cppfile{../dp/CHTDeque.cpp}
 
