@@ -21,6 +21,20 @@ interleaved. Query only when nonempty. Inputs are signed 64-bit;
 results are \texttt{\_\_int128\_t}.
 \cppfile{../dp/CHT.cpp}
 
+
+\subsection{CHT with Counts}
+C++17. Returns \texttt{(value, cnt)}: optimize the value and prefer
+smaller counts on ties, for both minimum and maximum queries.
+Uses the slope and query orders in the Monotone CHT table above;
+equal slopes are allowed. \texttt{add} and \texttt{query} take
+amortized $O(1)$. Query only when nonempty.
+
+This version compares \texttt{long double} values directly; the
+count breaks ties only when computed values compare equal. Each
+line keeps the supplied count. Both variants define \texttt{CHT};
+use one definition at a time.
+\cppfile{../dp/CHTCount.cpp}
+
 \subsection{CHT Deque}
 \cppfile{../dp/CHTDeque.cpp}
 
