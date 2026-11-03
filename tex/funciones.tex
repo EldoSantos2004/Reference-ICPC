@@ -16,7 +16,7 @@
 	reverse & f, l & da vuelta\\\hline
 	partition, stable\_partition & f, l, pred & pred(i) ad, !pred(i) atras\\\hline
 	%min, max & e1, e2 & men / may & $1$\\\hline
-	min\_element, max\_element & f, l, [comp] & \textit{it} min, max de [f,l]\\\hline
+	min\_element, max\_element & f, l, [comp] & \textit{it} min, max de [f,l)\\\hline
 	lexicographical\_compare & f1,l1,f2,l2 & \textit{bool} con [f1,l1]<[f2,l2]\\\hline
 	next/prev\_permutation & f,l & deja en [f,l) la perm sig, ant\\\hline
 	set\_intersection, & f1, l1, f2, l2, res & [res, $\ldots$) la op. de conj\\
@@ -33,7 +33,7 @@
 	\_\_builtin\_clz & unsigned int & Cant. de ceros desde la izquierda.\\\hline
 	\_\_builtin\_ctz & unsigned int & Cant. de ceros desde la derecha.\\\hline
 	\_\_builtin\_popcount & unsigned int & Cant. de 1’s en x.\\\hline
-	\_\_builtin\_parity & unsigned int & 1 si x es par, 0 si es impar.\\\hline
+	\_\_builtin\_parity & unsigned int & 1 si la cantidad de bits en 1 es impar.\\\hline
 	\_\_builtin\_XXXXXXll & unsigned ll & = pero para long long's.\\\hline
 \end{tabular}\newpage
 
@@ -62,3 +62,26 @@
 	\texttt{\%} & A \% followed by another \% will write a single \%. & \% \\
 	\hline
 \end{tabular}
+
+\begingroup
+\raggedright
+\subsection{C++17 Function Examples}
+Runnable examples with expected results in comments. Iterator ranges
+use $[first,last)$: the end iterator is excluded. For an inclusive
+vector interval $[l,r]$, pass \texttt{begin()+l} and
+\texttt{begin()+r+1}. All indices below are zero-based.
+
+\begin{itemize}
+\item Reordering: reverse, sort, stable sort, rotate, partial sort,
+selection, and permutations.
+\item Searching: bounds, binary search, find, counts, predicates,
+minimum/maximum, and clamp.
+\item Editing: deduplication, erase-remove, replacement, fill,
+transform, and filtered copying.
+\item Numeric and string helpers: sums, prefixes, differences, dot
+products, gcd/lcm, substrings, parsing, and conversion.
+\item Sorted set operations and heap algorithms.
+\end{itemize}
+Each group is a separate function; \texttt{main} runs all examples.
+\lstinputlisting[style=C++,showstringspaces=false]{../compile/STLExamples.cpp}
+\endgroup
