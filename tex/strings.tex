@@ -16,6 +16,22 @@
 \subsection{Suffix Automaton}
 \cppfile{../strings/SuffixAutomaton.cpp}
 
+
+\subsection{Suffix Automaton Extended}
+C++17. Alternative implementation with occurrence counts, lexicographic
+queries, matching, and substring statistics. Positions are zero-based;
+\texttt{kthSmallest} uses one-based $k$. Compile each version separately.
+\begin{lstlisting}[style=C++]
+// Quick example (inside main):
+SuffixAutomaton sam("ababa");
+sam.search("aba");              // 0
+sam.occurrences("aba");         // 2
+sam.allOccurrences("aba");      // {0, 2}
+sam.kthSmallestDistinct(3);     // "aba"
+sam.lcs("cabac");               // "aba"
+\end{lstlisting}
+\cppfile{../strings/suffix_automaton.hpp}
+
 \subsection{Trie Ahocorasick}
 \cppfile{../strings/TrieAho.cpp}
 
