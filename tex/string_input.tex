@@ -1,0 +1,42 @@
+\begingroup
+\raggedright
+\subsection{String Input and getline}
+\texttt{cin >> s} reads a whitespace-separated word.
+\texttt{getline(cin, s)} reads a whole line, preserving leading and
+trailing spaces and accepting empty lines. It consumes the newline
+without storing it. Include \texttt{<string>}, \texttt{<iostream>},
+\texttt{<sstream>} for parsing, and \texttt{<limits>} for \texttt{ignore}.
+
+\medskip
+\textbf{A number followed by lines.} Formatted extraction leaves the
+newline in the stream. If the strings start on the next line, discard
+the rest of the number's line before calling \texttt{getline}:
+\begin{lstlisting}[style=C++,showstringspaces=false]
+int n;
+string line;
+if (cin >> n) {
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    for (int i = 0; i < n && getline(cin, line); ++i) {
+        // Process line; it may contain spaces or be empty.
+    }
+}
+\end{lstlisting}
+This intentionally discards any text after the number on that same
+line. To read that remainder instead, call \texttt{getline} directly.
+
+\medskip
+\textbf{Whitespace and EOF.} \texttt{getline(cin >> ws, s)} is a
+shortcut only when all leading whitespace and blank lines may be
+skipped. Use plain \texttt{getline} to preserve them.
+\texttt{while (getline(cin, s))} reads until EOF, including a final
+nonempty line without a trailing newline. The same patterns work
+with \texttt{ifstream} for files and \texttt{istringstream} for strings.
+\texttt{cin.get(ch)} reads one character including whitespace;
+\texttt{cin >> ch} skips whitespace.
+
+\medskip
+\textbf{Runnable examples.} The streams below contain sample input;
+replace them with \texttt{cin} for judge input. Quoted output makes
+spaces and empty strings visible.
+\lstinputlisting[style=C++,showstringspaces=false]{../compile/StringInputExamples.cpp}
+\endgroup
