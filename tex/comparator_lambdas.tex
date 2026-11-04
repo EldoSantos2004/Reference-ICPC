@@ -1,0 +1,38 @@
+\par\medskip
+\begin{minipage}{\linewidth}
+\raggedright
+\textbf{1. Sorting with a lambda.} \texttt{[](parameters) \{ body \}}
+creates a small function. The first example sorts integers descending;
+the second sorts pairs by decreasing score, then increasing id.
+For a struct, use the same logic with fields such as \texttt{x.score}
+and \texttt{x.id}. Use \texttt{const T\&} for larger objects.
+\lstinputlisting[style=C++,showstringspaces=false,gobble=4,firstnumber=1,firstline=18,lastline=29]{../compile/LambdaComparatorExamples.cpp}
+\end{minipage}
+
+\par\medskip
+\begin{minipage}{\linewidth}
+\raggedright
+\textbf{2. A priority queue with the same desired order.}
+A heap needs the opposite comparison, so return \texttt{before(y,x)}.
+\texttt{decltype(lower\_priority)} is the lambda's type; pass the
+lambda object to the constructor (needed in C++17).
+\lstinputlisting[style=C++,showstringspaces=false,gobble=4,firstnumber=1,firstline=35,lastline=43]{../compile/LambdaComparatorExamples.cpp}
+\end{minipage}
+
+\par\medskip
+\begin{minipage}{\linewidth}
+\raggedright
+\textbf{3. Sets and maps with a lambda.} This orders strings by
+length descending, then alphabetically. A map compares its keys.
+\lstinputlisting[style=C++,showstringspaces=false,gobble=4,firstnumber=1,firstline=50,lastline=61]{../compile/LambdaComparatorExamples.cpp}
+A set keeps one key when neither compares before the other;
+the alphabetical tie-break keeps different equal-length words.
+Use \texttt{multiset} to retain duplicates.
+\end{minipage}
+
+\par\medskip
+\textbf{Captures and alternatives.} \texttt{[]} captures nothing,
+\texttt{[x]} copies \texttt{x}, and \texttt{[\&x]} refers to the
+existing object, which must stay alive. A comparator can also be a
+named \texttt{bool} function passed to \texttt{sort}, or a struct
+with \texttt{bool operator()(const T\&, const T\&) const}.
