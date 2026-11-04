@@ -85,3 +85,37 @@ products, gcd/lcm, substrings, parsing, and conversion.
 Each group is a separate function; \texttt{main} runs all examples.
 \lstinputlisting[style=C++,showstringspaces=false]{../compile/STLExamples.cpp}
 \endgroup
+
+
+\begingroup
+\raggedright
+\subsection{Comparators}
+For \texttt{sort} and ordered containers, \texttt{comp(a,b)} is true
+when \texttt{a} comes before \texttt{b}. In a
+\texttt{priority\_queue}, true means \texttt{a} has lower priority
+than \texttt{b}; the queue exposes the last element in that order.
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Comparator} & \textbf{\texttt{sort} order} & \textbf{Queue pop order} \\
+\hline
+\texttt{less<int>} & Smallest first & Largest first \\
+\texttt{greater<int>} & Largest first & Smallest first \\
+\end{tabular}
+\end{center}
+Queue output below means repeated \texttt{top()} and \texttt{pop()};
+a heap is not a fully sorted array. To make a queue pop in a desired
+\texttt{before(a,b)} order, compare \texttt{before(b,a)}.
+
+A comparator must define a strict weak ordering: \texttt{comp(x,x)}
+is false; comparisons and equivalence must be transitive. Use strict
+comparisons, never \texttt{<=} or \texttt{>=}. Reverse by swapping
+arguments, not by negating the result. Keep comparison keys unchanged
+while elements are stored in an ordered container or heap.
+
+The runnable examples show ascending/descending integers, pairs with
+mixed field directions, custom structs with explicit tie-breaks,
+named functions, C++17 lambdas, stable sorting, and set equivalence.
+Every example includes its exact output order in comments.
+\lstinputlisting[style=C++,showstringspaces=false]{../compile/ComparatorExamples.cpp}
+\endgroup
