@@ -1,0 +1,37 @@
+\begingroup
+\raggedright
+\subsection{Scientific Notation}
+\texttt{aeb} and \texttt{aEb} mean $a\times10^b$. A positive
+exponent shifts the decimal point right; a negative exponent shifts
+it left. The exponent is an integer.
+
+\begin{center}
+\begin{tabular}{lll}
+\textbf{Literal} & \textbf{Value} & \textbf{Type} \\
+\hline
+\texttt{1e3} & $1000$ & \texttt{double} \\
+\texttt{2.5e-3} & $0.0025$ & \texttt{double} \\
+\texttt{-4.2E+2} & $-420$ & \texttt{double} \\
+\texttt{1e-9L} & $10^{-9}$ & \texttt{long double} \\
+\texttt{1000000000LL} & $10^9$ (exact integer) & \texttt{long long} \\
+\end{tabular}
+\end{center}
+Scientific literals are floating-point values, even \texttt{1e9}.
+Use integer literals with \texttt{LL} when exact integer constants
+are needed. Read exponent-form input with floating-point types or
+\texttt{stod}/\texttt{stold}; integer parsers only consume the
+initial integer prefix.
+
+With \texttt{scientific} or \texttt{fixed}, \texttt{setprecision(p)}
+sets digits after the decimal point. With \texttt{defaultfloat},
+it sets significant digits. Stream flags and precision persist;
+\texttt{defaultfloat} resets the float format, not the precision.
+\texttt{uppercase}/\texttt{nouppercase} choose \texttt{E}/\texttt{e}.
+Formatting rounds the display without changing the stored value.
+\begin{samepage}
+\medskip
+\textbf{Quick fixed-format snippet.} Ten digits after the decimal point:
+\cppfile{../more_topics/setprecision.cpp}
+\end{samepage}
+\lstinputlisting[style=C++,showstringspaces=false]{../compile/ScientificNotationExamples.cpp}
+\endgroup
