@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  4 NOV 2026 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.12)  5 NOV 2026 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,7 +537,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (../compile/MatplotlibExample.py)
-<../compile/matplotlib_example.png, id=1685, 404.712pt x 187.902pt>
+<../compile/matplotlib_example.png, id=1695, 404.712pt x 187.902pt>
 File: ../compile/matplotlib_example.png Graphic file (type png)
 <use ../compile/matplotlib_example.png>
 Package pdftex.def Info: ../compile/matplotlib_example.png  used on input line 
@@ -1029,131 +1029,136 @@ Underfull \hbox (badness 1028) in paragraph at lines 372--374
 nte
  []
 
-[127]) (./more_topics.tex (../more_topics/2DPrefixSum.cpp)
+[127]) (./generating_functions.tex [128
+
+]
+Underfull \vbox (badness 6708) has occurred while \output is active []
+
+ [129
+
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 116.
+
+
+Underfull \vbox (badness 4096) has occurred while \output is active []
+
+ [130]
+[131] [132]) (./more_topics.tex (../more_topics/2DPrefixSum.cpp)
 (../more_topics/cdq_dnc_fft.cpp) (../more_topics/cdq_divide_and_conquer.cpp
-[128]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [133
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [129]
+ [134])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(../more_topics/count_segments_around_index.cpp)
+(../more_topics/day_of_week.cpp) (../more_topics/DirectedMST.cpp [135]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [136])
+(../more_topics/gcd_conv.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [137])
+(../more_topics/int128.cpp) (../more_topics/iterating_over_all_subsets.cpp)
+(../more_topics/lcm_conv.cpp [138])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(../more_topics/manhattan_mst.cpp [139]) (../more_topics/MaxManhattanDist.cpp)
+(../more_topics/matroid_intersection.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [140])
+(../more_topics/matroid_bipartite.cpp) (../more_topics/matroid_colorful.cpp
+[141]) (../more_topics/matroid_graphic.cpp)
+(../more_topics/matroid_partition.cpp) (../more_topics/matroid_prime_field.cpp
+[142]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../more_topics/count_segments_around_index.cpp [130])
-(../more_topics/day_of_week.cpp) (../more_topics/DirectedMST.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [131]
+(../more_topics/matroid_truncated.cpp [143]) (../more_topics/matroid_xor.cpp)
+(../more_topics/mo.cpp [144]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../more_topics/gcd_conv.cpp [132]) (../more_topics/int128.cpp)
-(../more_topics/iterating_over_all_subsets.cpp [133])
-(../more_topics/lcm_conv.cpp) (../more_topics/manhattan_mst.cpp [134])
-(../more_topics/MaxManhattanDist.cpp) (../more_topics/matroid_intersection.cpp
-[135])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(../more_topics/matroid_bipartite.cpp [136])
-(../more_topics/matroid_colorful.cpp) (../more_topics/matroid_graphic.cpp)
-[137] (../more_topics/matroid_partition.cpp)
-(../more_topics/matroid_prime_field.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [138])
-(../more_topics/matroid_truncated.cpp) (../more_topics/matroid_xor.cpp)
-[139] (../more_topics/mo.cpp) (../more_topics/mod_int.cpp [140])
-(../more_topics/next_permutation.cpp)
+(../more_topics/mod_int.cpp) (../more_topics/next_permutation.cpp [145])
 (../more_topics/NextAndPrevSmaller_Greater.cpp)
-(../more_topics/ParallelBinarySearch.cpp [141])
-(../more_topics/randomNumberGenerators.cpp) (../more_topics/TernarySearch.cpp
-[142]) (../more_topics/TernarySearchInt.cpp) (../more_topics/xor_conv.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [143])
-(../more_topics/XorBasis.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [144])
-(../more_topics/XorBasisOnline.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [145]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [146]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [147]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [148]))
-(./polynomials.tex (../polynomials/berlekamp_massey.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [149])
-(../polynomials/binary_exp_fft.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [150])
-(../polynomials/FFT.cpp
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [151])
-(../polynomials/NTT.cpp) (../polynomials/roots_ntt.txt [152])) (./strings.tex
-(../strings/HashedString.cpp) (../strings/KMP.cpp [153]
+(../more_topics/ParallelBinarySearch.cpp [146])
+(../more_topics/randomNumberGenerators.cpp) (../more_topics/TernarySearch.cpp)
+(../more_topics/TernarySearchInt.cpp) (../more_topics/xor_conv.cpp [147]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../strings/LeastRotationString.cpp [154]) (../strings/manacher.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [155])
-(../strings/SuffixArray.cpp
+ [148]
+(../more_topics/XorBasis.cpp) (../more_topics/XorBasisOnline.cpp [149]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [156]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [150]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [151]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [152]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+))
+(./polynomials.tex (../polynomials/berlekamp_massey.cpp [153]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../strings/SuffixAutomaton.cpp [157]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [158]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [159]
+(../polynomials/binary_exp_fft.cpp [154]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../strings/suffix_automaton.hpp [160]
+(../polynomials/FFT.cpp [155]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(../polynomials/NTT.cpp [156]) (../polynomials/roots_ntt.txt)) (./strings.tex
+(../strings/HashedString.cpp [157]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(../strings/KMP.cpp [158]) (../strings/LeastRotationString.cpp)
+(../strings/manacher.cpp [159]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(../strings/SuffixArray.cpp [160]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [161]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+ [161])
+(../strings/SuffixAutomaton.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [162]
@@ -1168,10 +1173,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [164]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
+ [164])
+(../strings/suffix_automaton.hpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [165]
@@ -1186,16 +1189,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [167])
-(../strings/TrieAho.cpp) (../strings/z_function.cpp [168])) (./trees.tex
+ [167]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-(../trees/CentroidDecomposition.cpp [169]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
-(../trees/hld_subtree.cpp) (../trees/HLD.cpp [170]
+ [168]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [169]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [170]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1205,48 +1217,64 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
-(../trees/kruskal_reconstruction.cpp [172]
+(../strings/TrieAho.cpp [172]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 )
+(../strings/z_function.cpp [173])) (./trees.tex
+(../trees/CentroidDecomposition.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [173]
-(../trees/LCA.cpp) (../trees/TreeDiameter.cpp) [174] (../trees/virtual_tree.cpp
-
+ [174])
+(../trees/hld_subtree.cpp) (../trees/HLD.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [175]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-))
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [176])
+(../trees/kruskal_reconstruction.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [177]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(../trees/LCA.cpp [178]) (../trees/TreeDiameter.cpp) (../trees/virtual_tree.cpp
+[179]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [180]))
 (./scripts.tex
 (/usr/local/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-(../scripts/build.sh) (../scripts/stress.sh [176]) (../scripts/validate.sh))
+(../scripts/build.sh) (../scripts/stress.sh) (../scripts/validate.sh [181]))
 
 AED: lastpage setting LastPage
-[177
+[182
 
 ] (./Reference.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Reference.out' has not changed.
-(rerunfilecheck)             Checksum: B5E8E9FDF2E0789A9E99534390B11AA7;35821.
+(rerunfilecheck)             Checksum: 79B08DF800B213A4E3FAB1189CA5331B;36141.
  ) 
 Here is how much of TeX's memory you used:
- 32933 strings out of 478268
- 519419 string characters out of 5846347
- 1632934 words of memory out of 5000000
- 36689 multiletter control sequences out of 15000+600000
+ 33147 strings out of 478268
+ 522041 string characters out of 5846347
+ 1639408 words of memory out of 5000000
+ 36788 multiletter control sequences out of 15000+600000
  478982 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,14n,71p,513b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,16n,71p,513b,2202s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -1273,10 +1301,10 @@ st/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2022/texmf-dist
 fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2022/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2022/texmf-dis
 t/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Reference.pdf (177 pages, 1470631 bytes).
+Output written on Reference.pdf (182 pages, 1525494 bytes).
 PDF statistics:
- 18331 PDF objects out of 18468 (max. 8388607)
- 17920 compressed objects within 180 object streams
- 13563 named destinations out of 15390 (max. 500000)
- 1990 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 18517 PDF objects out of 22161 (max. 8388607)
+ 18100 compressed objects within 181 object streams
+ 13675 named destinations out of 15390 (max. 500000)
+ 2006 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -187,63 +187,65 @@
 \contentsline {subsection}{\numberline {11.18}Primos}{128}{subsection.11.18}%
 \contentsline {subsection}{\numberline {11.19}Números primos de Mersenne}{128}{subsection.11.19}%
 \contentsline {subsection}{\numberline {11.20}Números primos de Fermat}{128}{subsection.11.20}%
-\contentsline {section}{\numberline {12}More Topics}{128}{section.12}%
-\contentsline {subsection}{\numberline {12.1}2D Prefix Sum}{128}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}CDQ D\&C FFT}{128}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}CDQ Divide and Conquer}{128}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Count Segments Around Index}{130}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Day of the Week}{131}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Directed MST}{131}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}GCD Convolution}{132}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}int128}{133}{subsection.12.8}%
-\contentsline {subsection}{\numberline {12.9}Iterating Over All Subsets}{133}{subsection.12.9}%
-\contentsline {subsection}{\numberline {12.10}LCM Convolution}{134}{subsection.12.10}%
-\contentsline {subsection}{\numberline {12.11}Manhattan MST}{134}{subsection.12.11}%
-\contentsline {subsection}{\numberline {12.12}Max Manhattan Distance}{135}{subsection.12.12}%
-\contentsline {subsection}{\numberline {12.13}Matroid Intersection}{135}{subsection.12.13}%
-\contentsline {subsection}{\numberline {12.14}Matroid Bipartite}{136}{subsection.12.14}%
-\contentsline {subsection}{\numberline {12.15}Matroid Colorful}{137}{subsection.12.15}%
-\contentsline {subsection}{\numberline {12.16}Matroid Graphic}{137}{subsection.12.16}%
-\contentsline {subsection}{\numberline {12.17}Matroid Partition}{138}{subsection.12.17}%
-\contentsline {subsection}{\numberline {12.18}Matroid Prime Field}{138}{subsection.12.18}%
-\contentsline {subsection}{\numberline {12.19}Matroid Truncated}{139}{subsection.12.19}%
-\contentsline {subsection}{\numberline {12.20}Matroid XOR}{139}{subsection.12.20}%
-\contentsline {subsection}{\numberline {12.21}Mo}{140}{subsection.12.21}%
-\contentsline {subsection}{\numberline {12.22}MOD INT}{140}{subsection.12.22}%
-\contentsline {subsection}{\numberline {12.23}Next Permutation}{141}{subsection.12.23}%
-\contentsline {subsection}{\numberline {12.24}Next and Previous Smaller/Greater Element}{141}{subsection.12.24}%
-\contentsline {subsection}{\numberline {12.25}Parallel Binary Search}{141}{subsection.12.25}%
-\contentsline {subsection}{\numberline {12.26}Random Number Generators}{142}{subsection.12.26}%
-\contentsline {subsection}{\numberline {12.27}Ternary Search}{142}{subsection.12.27}%
-\contentsline {subsection}{\numberline {12.28}Ternary Search Int}{143}{subsection.12.28}%
-\contentsline {subsection}{\numberline {12.29}XOR Convolution}{143}{subsection.12.29}%
-\contentsline {subsection}{\numberline {12.30}XOR Basis}{144}{subsection.12.30}%
-\contentsline {subsection}{\numberline {12.31}XOR Basis Online}{145}{subsection.12.31}%
-\contentsline {section}{\numberline {13}Polynomials}{149}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{149}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Binary Exp FFT}{150}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}FFT}{151}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}NTT}{152}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Roots NTT}{152}{subsection.13.5}%
-\contentsline {section}{\numberline {14}Strings}{153}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Hashed String}{153}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}KMP}{153}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Least Rotation String}{154}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Manacher}{155}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Suffix Array}{156}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{157}{subsection.14.6}%
-\contentsline {subsection}{\numberline {14.7}Suffix Automaton Extended}{160}{subsection.14.7}%
-\contentsline {subsection}{\numberline {14.8}Trie Ahocorasick}{168}{subsection.14.8}%
-\contentsline {subsection}{\numberline {14.9}Z Function}{168}{subsection.14.9}%
-\contentsline {section}{\numberline {15}Trees}{169}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{169}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}HLD subtree query}{170}{subsection.15.2}%
-\contentsline {subsection}{\numberline {15.3}Heavy Light Decomposition}{170}{subsection.15.3}%
-\contentsline {subsection}{\numberline {15.4}Kruskal Reconstruction Tree}{172}{subsection.15.4}%
-\contentsline {subsection}{\numberline {15.5}Lowest Common Ancestor (LCA)}{174}{subsection.15.5}%
-\contentsline {subsection}{\numberline {15.6}Tree Diameter}{174}{subsection.15.6}%
-\contentsline {subsection}{\numberline {15.7}Virtual Tree}{175}{subsection.15.7}%
-\contentsline {section}{\numberline {16}Scripts}{176}{section.16}%
-\contentsline {subsection}{\numberline {16.1}build.sh}{176}{subsection.16.1}%
-\contentsline {subsection}{\numberline {16.2}stress.sh}{176}{subsection.16.2}%
-\contentsline {subsection}{\numberline {16.3}validate.sh}{177}{subsection.16.3}%
+\contentsline {subsection}{\numberline {11.21}Binomial Inversion}{128}{subsection.11.21}%
+\contentsline {subsection}{\numberline {11.22}Generating Functions}{129}{subsection.11.22}%
+\contentsline {section}{\numberline {12}More Topics}{133}{section.12}%
+\contentsline {subsection}{\numberline {12.1}2D Prefix Sum}{133}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}CDQ D\&C FFT}{133}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}CDQ Divide and Conquer}{133}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Count Segments Around Index}{135}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Day of the Week}{135}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Directed MST}{135}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}GCD Convolution}{137}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}int128}{138}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}Iterating Over All Subsets}{138}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}LCM Convolution}{138}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}Manhattan MST}{139}{subsection.12.11}%
+\contentsline {subsection}{\numberline {12.12}Max Manhattan Distance}{140}{subsection.12.12}%
+\contentsline {subsection}{\numberline {12.13}Matroid Intersection}{140}{subsection.12.13}%
+\contentsline {subsection}{\numberline {12.14}Matroid Bipartite}{141}{subsection.12.14}%
+\contentsline {subsection}{\numberline {12.15}Matroid Colorful}{141}{subsection.12.15}%
+\contentsline {subsection}{\numberline {12.16}Matroid Graphic}{142}{subsection.12.16}%
+\contentsline {subsection}{\numberline {12.17}Matroid Partition}{142}{subsection.12.17}%
+\contentsline {subsection}{\numberline {12.18}Matroid Prime Field}{142}{subsection.12.18}%
+\contentsline {subsection}{\numberline {12.19}Matroid Truncated}{143}{subsection.12.19}%
+\contentsline {subsection}{\numberline {12.20}Matroid XOR}{144}{subsection.12.20}%
+\contentsline {subsection}{\numberline {12.21}Mo}{144}{subsection.12.21}%
+\contentsline {subsection}{\numberline {12.22}MOD INT}{145}{subsection.12.22}%
+\contentsline {subsection}{\numberline {12.23}Next Permutation}{145}{subsection.12.23}%
+\contentsline {subsection}{\numberline {12.24}Next and Previous Smaller/Greater Element}{146}{subsection.12.24}%
+\contentsline {subsection}{\numberline {12.25}Parallel Binary Search}{146}{subsection.12.25}%
+\contentsline {subsection}{\numberline {12.26}Random Number Generators}{147}{subsection.12.26}%
+\contentsline {subsection}{\numberline {12.27}Ternary Search}{147}{subsection.12.27}%
+\contentsline {subsection}{\numberline {12.28}Ternary Search Int}{147}{subsection.12.28}%
+\contentsline {subsection}{\numberline {12.29}XOR Convolution}{147}{subsection.12.29}%
+\contentsline {subsection}{\numberline {12.30}XOR Basis}{149}{subsection.12.30}%
+\contentsline {subsection}{\numberline {12.31}XOR Basis Online}{149}{subsection.12.31}%
+\contentsline {section}{\numberline {13}Polynomials}{153}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Berlekamp Massey}{153}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Binary Exp FFT}{154}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}FFT}{155}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}NTT}{156}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Roots NTT}{157}{subsection.13.5}%
+\contentsline {section}{\numberline {14}Strings}{157}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Hashed String}{157}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}KMP}{158}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Least Rotation String}{159}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Manacher}{159}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Suffix Array}{160}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Suffix Automaton}{162}{subsection.14.6}%
+\contentsline {subsection}{\numberline {14.7}Suffix Automaton Extended}{165}{subsection.14.7}%
+\contentsline {subsection}{\numberline {14.8}Trie Ahocorasick}{172}{subsection.14.8}%
+\contentsline {subsection}{\numberline {14.9}Z Function}{173}{subsection.14.9}%
+\contentsline {section}{\numberline {15}Trees}{174}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Centroid Decomposition}{174}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}HLD subtree query}{175}{subsection.15.2}%
+\contentsline {subsection}{\numberline {15.3}Heavy Light Decomposition}{175}{subsection.15.3}%
+\contentsline {subsection}{\numberline {15.4}Kruskal Reconstruction Tree}{177}{subsection.15.4}%
+\contentsline {subsection}{\numberline {15.5}Lowest Common Ancestor (LCA)}{178}{subsection.15.5}%
+\contentsline {subsection}{\numberline {15.6}Tree Diameter}{179}{subsection.15.6}%
+\contentsline {subsection}{\numberline {15.7}Virtual Tree}{179}{subsection.15.7}%
+\contentsline {section}{\numberline {16}Scripts}{181}{section.16}%
+\contentsline {subsection}{\numberline {16.1}build.sh}{181}{subsection.16.1}%
+\contentsline {subsection}{\numberline {16.2}stress.sh}{181}{subsection.16.2}%
+\contentsline {subsection}{\numberline {16.3}validate.sh}{181}{subsection.16.3}%

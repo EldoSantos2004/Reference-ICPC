@@ -416,3 +416,9 @@ Permutations of a set such that none of the elements appear in their original po
 	
 	\subsection{Números primos de Fermat}
 		Números primos de la forma $F_p=2^{2^p}+1$, solo se conocen cinco: 3, 5, 17, 257, 65537. Un polígono de $n$ lados es construible si y solo si $n$ es el producto de algunas potencias de dos y distintos primos de Fermat.
+	
+	\subsection{Binomial Inversion}
+		Sean $f$ y $g$ funciones definidas en los enteros no negativos. Entonces:
+		\begin{align*}
+			g(n) &= \sum_{k=0}^{n} \binom{n}{k} f(k) \quad \iff \quad f(n) = \sum_{k=0}^{n} (-1)^{n-k} \binom{n}{k} g(k)
+		\end{align*}
