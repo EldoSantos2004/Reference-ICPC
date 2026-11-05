@@ -1,0 +1,37 @@
+\begingroup
+\raggedright
+\subsection{Fraction: Exact Rational Arithmetic}
+C++17 (GCC/Clang). \texttt{Fraction(n,d)} represents $n/d$;
+\texttt{Fraction(n)} is the integer $n$. Every result is reduced by
+$\gcd$, its denominator is positive, and zero is stored as $0/1$.
+Supports \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, unary minus,
+compound assignments and all six comparisons. Comparisons use exact
+cross products, so the class also works with \texttt{sort},
+\texttt{set} and \texttt{map} keys.
+
+Numerator and denominator are signed 64-bit integers. Arithmetic
+and cross products use \texttt{\_\_int128} intermediates, then reduce
+before checking that the result fits; this is not arbitrary precision.
+An unrepresentable reduced result throws \texttt{overflow\_error};
+a zero constructor denominator throws \texttt{invalid\_argument},
+and division by a zero fraction throws \texttt{domain\_error}.
+Access parts with \texttt{num()} and \texttt{den()}.
+Output uses \texttt{n/d}; an explicit \texttt{long double} conversion
+is available when an approximation is wanted.
+Each arithmetic operation costs $O(\log M)$ for gcd reduction;
+comparisons use a constant number of integer operations.
+Here $M$ bounds the intermediate integer magnitudes.
+\lstinputlisting[style=C++,showstringspaces=false]{../mathematics/Fraction.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+Fraction a(2, 4), b(1, 3); // a is reduced to 1/2.
+std::cout << a << '\n';                  // 1/2
+std::cout << a + b << ' ' << a - b << '\n'; // 5/6 1/6
+std::cout << a * b << ' ' << a / b << '\n'; // 1/6 3/2
+std::cout << (b < a) << '\n';             // 1
+Fraction c(3, -6);                        // -1/2
+c += 1;                                  // 1/2
+\end{lstlisting}
+\end{minipage}
+\par
+\endgroup
