@@ -1,0 +1,650 @@
+\begingroup
+\raggedright
+\subsection{Subset Sum, Knapsack and Max-Plus: Six Variants}
+\label{sec:knapsack-six}
+These are six useful parameter regimes from
+\href{https://codeforces.com/blog/entry/98663}{errorgorn's tutorial},
+with independently written implementations, derivations and examples.
+Choose the method by its assumptions, not just by the word ``knapsack''.
+All weights below are \emph{positive integers}. Subset sum asks for an
+\emph{exact} target. The bounded, distinct-weight and window knapsack
+implementations return the best value with weight \emph{at most} the
+capacity; choosing nothing is allowed. NDPC exact-fill knapsack is a
+separate subsection afterward.
+
+\textbf{Notation and implementation conventions.}
+$N$ is the input length, $C$ a target/capacity, $S=\sum_i w_i$,
+$D$ a maximum weight, and $d$ a number of distinct weights.
+These meanings are restated where needed.
+The C++17 headers use namespace \texttt{knapsack\_ref}; include the
+header corresponding to the method. Only the NDPC listing contains
+\texttt{main}. Array sizes and integer index arithmetic must fit
+\texttt{int} and available memory. Knapsack values, sums, differences
+and products in these generic headers must fit \texttt{long long}.
+For larger values, change the value type and its numeric limits together.
+
+\begin{center}
+\begin{tabular}{p{0.40\columnwidth}p{0.49\columnwidth}}
+\textbf{Assumption / goal} & \textbf{Method / time} \\
+\hline
+All subset sums; total $S$ manageable & Coalesce equal weights, then bitsets; $O(N+S+(S/64+1)\sqrt S)$ \\
+One subset-sum target; $w_i\le D$ & Balanced states; $O(ND)$ \\
+Bounded copies per type & Residues and a monotone deque; $O(NC)$ \\
+One concave max-plus operand & SMAWK; $O(n+m)$ \\
+0/1 items; $d$ distinct weights & Group and convolve; $O(N\log N+dC)$ \\
+Unlimited copies; $w_i\le D$, huge $C$ & Repeatedly double a short window; $O(N+D^2\log(C+2))$ \\
+\end{tabular}
+\end{center}
+
+\subsubsection{1. All Subset Sums: Compress Repeated Weights}
+\textbf{Problem.} Each of $N$ items may be taken once. Determine every
+attainable sum from $0$ to $S=\sum_i w_i$. A boolean array costs $O(NS)$.
+A bitset packs 64 states into a word: initially only bit zero is set,
+and one item of weight $w$ performs
+\[
+ B\gets B\mathbin{\vert}(B\ll w).
+\]
+The shift uses the \emph{old} $B$, so the item is used at most once.
+For a manually stored bitset, update words from high to low for the
+same reason. A shift by an exact multiple of 64 needs a separate
+case: shifting a 64-bit word by 64 is undefined.
+
+\textbf{Reduce the number of shifts.} Let $c_w$ be the number of
+remaining copies of weight $w$. Process weights in increasing order.
+For odd $c_w$, retain one copy of $w$ and replace the other copies by
+$(c_w-1)/2$ bundles of weight $2w$. For positive even $c_w$, retain two
+copies and create $(c_w-2)/2$ bundles of weight $2w$.
+Add these bundles to the count for $2w$, which will be processed later.
+A bundle is one binary choice representing two copies, not an
+unbounded item.
+
+\textbf{Why all sums survive.} With one retained copy, selecting
+$e\in\{0,1\}$ singles and $t$ pairs gives $e+2t$ original copies,
+covering every count from zero through the original odd $c_w$.
+With two retained copies, $e\in\{0,1,2\}$ covers both parities and
+every count through the original even $c_w$. Conversely, every new
+selection uses at most $c_w$ original copies. Thus the replacement
+preserves exactly the attainable sums; applying it repeatedly does too.
+
+\textbf{Why only $O(\sqrt S)$ shifts.} Total weight is conserved.
+If $k$ distinct positive weights remain, their total is at least
+$1+2+\cdots+k=k(k+1)/2\le S$. At most two copies of each survive,
+so there are at most $2k=O(\sqrt S)$ bitset updates.
+Counting/scanning takes $O(N+S)$; the shifts take
+$O((S/64+1)\sqrt S)$. The implementation uses $O(S)$ integer counters
+and $O(S/64+1)$ bitset words. This is a bound in terms of the
+\emph{total sum}, not an arbitrary small target.
+
+\textbf{Example.} Eight copies of weight two become two copies of two,
+three copies of four; processing the latter leaves one four and one
+eight. The final weights $[2,2,4,8]$ attain exactly
+$0,2,4,\ldots,16$. Add an original weight three and one bitset shift
+also gives the corresponding odd sums. Zero-weight items may be
+ignored for feasibility; negative weights require another method.
+\lstinputlisting[style=C++,showstringspaces=false,firstline=1,lastline=33]{../dp/SubsetSumSpeedups.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+auto B = knapsack_ref::subset_sum_all({2, 2, 3});
+int target = 7;
+bool possible = (B[target / 64] >> (target % 64)) & 1;
+// Check 0 <= target <= total sum before indexing.
+// Attainable sums: 0, 2, 3, 4, 5, 7.
+\end{lstlisting}
+\end{minipage}
+\par
+
+\subsubsection{2. One Subset-Sum Target: Balanced States in O(ND)}
+\textbf{Problem.} Each item may be used once, $1\le w_i\le D$, and we
+only need to decide whether target $C$ is attainable. Here $D$ is
+\emph{maximum item weight}, not the number of distinct weights.
+The running time is $O(ND)$, independent of the numerical size of $C$.
+Return true for $C=0$, and false when $C>S$.
+
+\textbf{Start near the target.} Use zero-based indices. Take the
+longest prefix $[0,k)$ whose sum $P$ is strictly smaller than $C$.
+Because the next item has weight at most $D$, $C-D\le P<C$.
+Any target solution can be reached from this prefix by removing some
+prefix items and adding some suffix items.
+
+There is an order of these operations that stays in the narrow band
+$[C-D,C+D]$. Below $C$, add a required suffix item; above $C$, remove
+a prefix item that is absent from the desired solution. The required
+kind of operation always exists: otherwise the remaining operations
+could not bring the current sum to $C$. Every step changes the total
+by at most $D$. We may choose additions in increasing index order and
+removals in decreasing index order; the same argument still applies
+because any remaining item of the required kind is suitable.
+Stop immediately if the total is $C$.
+
+\textbf{Compress the choice of removed prefix.} After processing
+suffix indices through $r$, store a boundary $l\in[0,k]$ for each
+band total $s$. Indices $[0,l)$ of the initial prefix are still fixed
+as selected. The last removed prefix index, if any, is $l$; future
+removals may use only indices smaller than $l$. Initially $l=k$.
+All already processed suffix choices and prefix indices at least $l$
+are accounted for in the state's witness.
+
+For the same $(s,r)$, retain only the \emph{largest} feasible $l$:
+it permits every future removal allowed by a smaller boundary.
+Future suffix choices depend only on $r$, not on the history.
+Equivalently, one can define feasibility with $[0,l)$ fixed and the
+processed interval after it flexible; feasibility for a larger
+boundary implies feasibility for a smaller one. This is the dominance
+that replaces a third DP dimension by one integer.
+
+\textbf{Transitions and their order.}
+\begin{enumerate}
+\item Copy the previous suffix layer, representing skipping item $r$.
+From each old total below $C$, also add $w_r$, keeping its boundary.
+Only old-layer states are used, so item $r$ cannot be added twice.
+\item Scan totals above $C$ from high to low. From boundary $l$,
+removing fixed prefix item $j<l$ creates total $s-w_j$ and boundary
+$j$. Descending totals ensure that if this new total is still above
+$C$, its own removals are processed later in the same scan.
+\item At total $s$, let $l_{\rm old}$ be the boundary before adding
+this suffix item. Try only
+$\max(0,l_{\rm old})\le j<l_{\rm new}$.
+Indices smaller than $l_{\rm old}$ were already tried from this total
+in an earlier layer, and their results remain available because
+skipping later suffix items is permitted.
+\end{enumerate}
+For a fixed total, boundaries never decrease as suffix items are
+processed. The newly tried ranges of $j$ therefore never overlap.
+There are $2D+1$ totals and at most $k$ removals per total over the
+\emph{whole run}, giving $O(ND)$ time. Two layers use $O(D)$ space.
+The array index for total $s$ is $s-C+D$; index $D$ is the target.
+A value $-1$ means unreachable, while boundary zero is reachable.
+
+\textbf{Example.} Weights $[4,3,5]$, target eight: the initial prefix
+has total seven. Add five to obtain twelve, then remove the prefix
+item four to obtain eight. A DP that kept only totals at most eight
+would discard the necessary intermediate total twelve.
+\lstinputlisting[style=C++,showstringspaces=false,firstline=35,lastline=68]{../dp/SubsetSumSpeedups.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+using knapsack_ref::subset_sum_small_weights;
+bool yes = subset_sum_small_weights({4, 3, 5}, 8); // true
+bool no  = subset_sum_small_weights({4, 3, 5}, 6); // false
+\end{lstlisting}
+\end{minipage}
+\par
+This is an exact deterministic algorithm. Randomly shuffling signed
+items and retaining an experimentally chosen band is a different,
+heuristic approach without this guarantee. The balancing technique
+originates with Pisinger; see
+\href{https://doi.org/10.1006/jagm.1999.1034}{Linear Time Algorithms
+for Knapsack Problems with Bounded Weights (1999)}.
+
+\subsubsection{3. Bounded Knapsack: Residues and a Monotone Deque}
+\textbf{Problem.} Type $i$ has weight $w_i$, value $v_i$ and at most
+$K_i$ copies; maximize value with weight at most $C$.
+Here $N$ counts \emph{types}, not all expanded copies.
+Let $F[c]$ be the best value with budget $c$ before this type, and
+$G[c]$ the answer afterward. Initially $F[c]=0$ for every $c$, since
+unused budget is permitted. The ordinary transition is
+\[
+ G[c]=\max_{0\le t\le K_i,\;tw_i\le c}
+       \{F[c-tw_i]+t v_i\}.
+\]
+Trying every copy count costs too much when $K_i$ is large.
+
+\textbf{Fix one residue.} Write $c=r+t w_i$, with $0\le r<w_i$.
+If $s$ is the number of weight steps assigned to the old DP, then
+$t-s$ is the number of new copies:
+\[
+ G[r+t w_i]=t v_i+
+ \max_{\max(0,t-K_i)\le s\le t}
+       \{F[r+s w_i]-s v_i\}.
+\]
+For increasing $t$, this is a sliding maximum over a window of
+$K_i+1$ candidates. Store pairs $(s,F[r+s w_i]-s v_i)$ in a deque.
+Before querying, remove expired indices $s<t-K_i$ from the front.
+When inserting a new candidate, remove back entries with no larger
+value: the newer candidate is at least as valuable and expires later.
+The front is then the maximum. Insert $s=t$ before querying so taking
+zero copies is included. Every index enters and leaves at most once.
+
+\textbf{Why use an old layer?} Reading partially updated $G$ would
+allow extra copies of this type. Copy $F$ before the residue loops.
+All residues together contain $C+1$ states, so one type takes $O(C)$,
+all types $O(NC)$, with $O(C)$ extra space.
+Replace $K_i$ by $\min(K_i,\lfloor C/w_i\rfloor)$ first.
+Types with $w_i>C$ cannot be taken.
+
+\textbf{Example.} Suppose the old DP is all zero, a type has
+$(w,v,K)=(3,5,2)$, and $C=8$. In residue two, budgets $2,5,8$ give
+$t=0,1,2$. The candidates are $0,-5,-10$, and the resulting values
+are $0,5,10$. At budget eleven, the old candidate $s=0$ would expire:
+three copies are forbidden even though they would fit the budget.
+\lstinputlisting[style=C++,showstringspaces=false]{../dp/BoundedKnapsack.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+auto dp = knapsack_ref::bounded_knapsack(
+    8, {{3, 5, 2}, {2, 4, 1}});
+// dp[8] = 14: two weight-3 copies and one weight-2 copy.
+\end{lstlisting}
+\end{minipage}
+\par
+
+\textbf{Optional pruning before the DP.} For a fixed weight $w$,
+no solution uses more than $\lfloor C/w\rfloor$ copies in total,
+even if many types have that weight. Sort those types by decreasing
+value and retain only the best that many copies, reducing the final
+type's count if necessary. Do this using counts; do not expand huge
+multiplicities. Replacing a retained low-value copy by a higher-value
+copy of the same weight can only improve a solution, so the pruning
+is safe. Across all weights there are at most
+\[
+ \sum_{w=1}^{C}\lfloor C/w\rfloor=O(C\log(C+1))
+\]
+retained copies, hence at most that many nonempty types. Combining
+pruning with the deque DP gives
+$O(N\log N+C\min(N,C\log(C+1)))$ time, including a simple sort.
+The displayed function is the $O(NC)$ core; apply this pruning
+separately when it reduces the number of types.
+
+\subsubsection{4. Max-Plus Convolution with Concavity}
+\textbf{Problem.} Given arrays $A$ of length $n$ and $B$ of length
+$m$, compute
+\[
+ H[k]=\max_{\substack{0\le i<n\\0\le k-i<m}}
+           (A[i]+B[k-i]),\quad 0\le k<n+m-1.
+\]
+This combines two independent DP choices whose sizes add to $k$.
+The generic double loop costs $O(nm)$. Ordinary FFT convolution uses
+addition and multiplication, so it does not directly compute this
+maximum-and-addition operation.
+
+\textbf{Use the correct curvature.} A sequence $B$ is discretely
+\emph{concave} if $B[t+1]-B[t]$ is nonincreasing. For example,
+$[0,9,15,16]$ has differences $[9,6,1]$ and is concave.
+A convex sequence has nondecreasing differences.
+The fast maximization methods here require concavity; negating both
+operands gives the corresponding \emph{min-plus} method for convex
+operands. A finite sequence of length one is both convex and concave.
+
+\textbf{Case A: both operands are concave.} Start with
+$H[0]=A[0]+B[0]$. Merge the two already sorted lists of differences
+in decreasing order and append each difference to the running value.
+For any $k$, the largest $k$ differences of their union maximize the
+sum. Since each list is decreasing, the selected differences can be
+chosen as a prefix of each list; such prefixes correspond to legal
+indices $i$ and $k-i$. This proves the merge rule in $O(n+m)$ time.
+For $A=[0,8,11]$, $B=[0,6,7]$, merge $[8,3]$ and $[6,1]$ to obtain
+$[8,6,3,1]$, hence $H=[0,8,14,17,18]$.
+
+\textbf{Case B: only $B$ is concave.} Build an implicit matrix with
+row $k$ and column $i$:
+\[
+ M[k,i]=A[i]+B[k-i],\qquad i\le k<i+m.
+\]
+A row maximum is exactly $H[k]$. We evaluate entries on demand;
+materializing the whole matrix would lose the speedup.
+For columns $i<j$ where both entries exist, define the advantage of
+$j$ over $i$ as
+\[
+ g(k)=A[j]-A[i]+B[k-j]-B[k-i].
+\]
+Let $\Delta B[t]=B[t]-B[t-1]$. Then
+\[
+ g(k+1)-g(k)=\Delta B[k+1-j]-\Delta B[k+1-i]\ge0,
+\]
+since the earlier difference of a concave sequence is no smaller.
+Thus once a right column is at least as good as a left column,
+it stays so in later rows. This property holds for every submatrix:
+the matrix is \emph{totally monotone for row maxima}. With ties
+resolved to the right, maximizing columns are nondecreasing.
+No concavity assumption is made on $A$.
+
+\textbf{Boundary comparisons matter.} Legal columns of row $k$ form
+$[\max(0,k-m+1),\min(n-1,k)]$. Assigning all illegal cells the same
+numeric minus infinity can destroy total monotonicity in submatrices
+containing only illegal entries. Instead compare ordered columns
+$i<j$ as follows:
+\begin{enumerate}
+\item If $j>k$, prefer $i$: $j$ is too far right.
+\item Otherwise, if $k-i\ge m$, prefer $j$: $i$ is too far left.
+\item Otherwise both entries are valid; compare their values,
+preferring $j$ on equality.
+\end{enumerate}
+For two fixed columns this preference still switches only from left
+to right as the row increases. Every full row has a legal column,
+so its reported optimum is legal. The implementation accepts finite
+values; its knapsack caller uses budget states initialized to zero,
+so unreachable-state sentinels are unnecessary.
+
+\textbf{How SMAWK finds all maxima in linear time.}
+\begin{enumerate}
+\item \emph{Reduce columns.} Process columns from left to right,
+keeping a stack of candidates. Compare a new column against the
+stack top at the row corresponding to the stack's current height.
+If the new column wins, pop the old one. Otherwise retain it when
+there is space. Total monotonicity makes a popped column unnecessary:
+later rows prefer the new column, and earlier rows have their
+candidates protected by earlier stack positions. Keep at most one
+candidate per row. Each column is pushed/popped at most once.
+\item \emph{Recurse on odd-positioned rows.} Solve rows at positions
+$1,3,5,\ldots$ using the reduced columns. Their maximizing columns
+are in nondecreasing order.
+\item \emph{Interpolate even-positioned rows.} A row between two
+solved rows searches only between their maximizing columns. At an
+end, use the first/last candidate as the missing bound. These search
+intervals overlap only at endpoints, so the total scan is linear.
+\end{enumerate}
+The first reduction costs $O(n+m)$. Recursion halves the row count
+and has at most the previous row count in columns; remaining work
+forms a geometric series. Time and memory are $O(n+m)$.
+The following header includes both the SMAWK version and the shorter
+two-concave-array merge version.
+\lstinputlisting[style=C++,showstringspaces=false]{../dp/ConcaveMaxPlus.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+using knapsack_ref::max_plus_concave;
+auto H = max_plus_concave({0, 4, 10}, {0, 7, 10});
+// B differences: 7, 3. A need not be concave.
+// H = {0, 7, 11, 17, 20}.
+\end{lstlisting}
+\end{minipage}
+\par
+For comparison, the same monotone maximizing indices also allow a
+simpler divide-and-conquer search: solve the middle row, restrict
+left rows to columns no larger than its optimum, and right rows to
+columns no smaller. That is generally logarithmically slower;
+SMAWK is what gives the linear bound used in the next variant.
+
+\subsubsection{5. 0/1 Knapsack with Few Distinct Weights}
+\textbf{Problem.} There are $N$ individual items, each available once,
+capacity $C$, but only $d$ distinct usable weights. Processing every
+item separately costs $O(NC)$; group by weight to obtain
+$O(N\log N+dC)$ including sorting.
+
+\textbf{Summarize one weight group.} Suppose its weight is $w$ and
+its values in descending order are $v_1\ge v_2\ge\cdots\ge v_K$.
+If exactly $t$ copies from this group are taken, the best choice is
+the $t$ largest values. Define
+$P[0]=0$ and $P[t]=\sum_{j=1}^{t}v_j$.
+Since $P[t]-P[t-1]=v_t$ is nonincreasing, $P$ is concave.
+Keep only $\min(K,\lfloor C/w\rfloor)$ values: additional copies
+cannot fit. Values may be negative because choosing zero copies
+remains an option.
+
+\textbf{Derive the convolution.} Let $F[c]$ be the previous best
+value with budget $c$ and $G[c]$ the new answer. For residue
+$r\in[0,w)$, form $A[s]=F[r+sw]$. Then
+\[
+ G[r+tw]=\max_{0\le j\le\min(t,K)}
+                \{A[t-j]+P[j]\}=(A\star_{\max,+}P)[t].
+\]
+Thus call the one-concave-operand convolution from variant 4 and
+retain only entries corresponding to budgets at most $C$.
+Build every residue from an \emph{old} copy of $F$ so the group
+cannot be reused. $F[c]=0$ initially for every budget, making all
+$A$ entries finite and implementing ``weight at most'' consistently.
+
+\textbf{Account for all work.} The lengths of all $A$ arrays for one
+weight sum to $C+1$. Repeating $P$ in $w$ residue calls costs at most
+$w(K+1)\le C+w=O(C)$ because $w\le C$.
+The full convolution outputs are also $O(C)$ in total. Therefore
+one weight group costs $O(C)$ even though it makes several calls.
+The arbitrary old array $A$ usually is not concave; use SMAWK, not
+the merge of two sorted difference lists. Memory is $O(N+C)$ for
+the groups and DP, with $O(C)$ temporary convolution storage.
+
+\textbf{Example.} Capacity eight; weight-two values $[9,6,1]$ give
+$P=[0,9,15,16]$. After this group, the budget DP is
+$[0,0,9,9,15,15,16,16,16]$.
+Now process a weight-three item worth eight. At budget eight,
+take the two best weight-two items plus the weight-three item:
+weight seven, value $9+6+8=23$. Budget states correctly allow the
+one unused unit.
+\lstinputlisting[style=C++,showstringspaces=false]{../dp/DistinctWeightKnapsack.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+auto dp = knapsack_ref::distinct_weight_knapsack(
+    8, {{2, 9}, {2, 6}, {2, 1}, {3, 8}});
+// dp[8] == 23. Each listed item can be taken only once.
+\end{lstlisting}
+\end{minipage}
+\par
+
+\subsubsection{6. Unbounded Knapsack with Small Weights, Huge Capacity}
+\textbf{Problem.} Item types have $1\le w_i\le D$, unlimited copies,
+and values $v_i$. Capacity $C$ can be far too large for an array of
+length $C+1$. Return the optimum with total weight at most $C$ in
+$O(N+D^2\log(C+2))$ time. No concavity is assumed here.
+For duplicate weights, keep only the greatest value.
+
+\textbf{Turn a budget into an exact sum safely.} Add a dummy item
+of weight one and value zero, available without limit. Any unused
+capacity can now be filled with dummy items, preserving value.
+Conversely, removing dummy items leaves a feasible budget solution.
+Let $F[s]$ be this padded exact-sum optimum. Every $s\ge0$ is
+reachable, $F[0]=0$, and $F[C]$ is the desired answer.
+The dummy is appropriate here because unused capacity is allowed;
+it must not be added to the NDPC exact-fill problem.
+
+\textbf{Balanced partition lemma.} Take any multiset of items, dummy
+items included, and assign its items one at a time to the lighter
+of two piles. If the difference in pile weights was at most $D$,
+adding a weight at most $D$ to the lighter pile leaves a difference
+at most $D$. Starting from two empty piles proves that a total $s$
+can be partitioned into $a+b=s$ with $|a-b|\le D$.
+Apply this to an optimal multiset. Each part's value is at most
+$F[a]$ or $F[b]$, and combining two optimal parts is feasible.
+Therefore
+\[
+ F[s]=\max_{\substack{a+b=s,\;a,b\ge0\\|a-b|\le D}}
+                    \{F[a]+F[b]\}.
+\]
+Unlimited copies are essential: combining independently optimal
+parts may repeat an item type arbitrarily often.
+
+\textbf{Compute only a window.} Define a routine for center $T$
+returning $F[s]$ for $\max(0,T-D)\le s\le T+D$.
+If $T\le2D$, all these indices are at most $3D$; obtain them from
+a normal unbounded DP precomputed through $3D$ in $O(D^2)$.
+Otherwise recursively compute the window centered at
+$h=\lfloor T/2\rfloor$. For any $s\in[T-D,T+D]$, the balanced
+split obeys
+\[
+ \left\lceil\frac{s-D}{2}\right\rceil\le a,b\le
+ \left\lfloor\frac{s+D}{2}\right\rfloor,
+\]
+so both indices lie in $[h-D,h+D]$, including when $T$ is odd.
+Convolve the child's window with itself using the ordinary double
+loop. If its first absolute index is $L$, entries $i,j$ produce
+absolute total $s=2L+i+j$. Keep only totals in the parent's window.
+Taking \emph{all} child pairs is safe: they are feasible solutions,
+and the balanced partition lemma ensures an optimal pair is present.
+
+\textbf{Why logarithmic in capacity.} The centers are
+$C,\lfloor C/2\rfloor,\lfloor C/4\rfloor,\ldots$ until at most $2D$.
+Each window has at most $2D+1$ entries, each double loop costs
+$O(D^2)$, and there is only one recursive child at each level.
+This gives the claimed time. The code releases the child at each
+return, using $O(D+\log(C+2))$ extra memory rather than storing
+all windows. It supports $D\ge1$, $C\le10^{18}$ and integer index
+sizes large enough for $3D+1$.
+
+\textbf{Example.} For types $(w,v)=(2,5),(3,8)$, capacity ten has
+optimum 26 from $3+3+2+2$. For capacity $41$ and $D=3$, the parent
+needs totals $[38,44]$ and its child, centered at 20, stores
+$[17,23]$. Every total in the parent has a balanced split entirely
+inside the child. This avoids computing all answers up to 41 and
+works the same way when 41 is replaced by $10^{18}$.
+\lstinputlisting[style=C++,showstringspaces=false]{../dp/UnboundedKnapsackWindow.hpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+long long ans = knapsack_ref::unbounded_knapsack_window(
+    10, 3, {{2, 5}, {3, 8}}); // 26
+\end{lstlisting}
+\end{minipage}
+\par
+The grouped-weight and short-window techniques are also developed in
+\href{https://arxiv.org/abs/1802.06440}{Axiotis and Tzamos,
+Capacitated Dynamic Programming: Faster Knapsack and Graph Algorithms}.
+The implementations here use explicit integer window endpoints and
+budget-state conventions throughout.
+
+\subsection{NDPC N: Exact-Fill Knapsack with Many Huge Queries}
+\label{sec:ndpc-knapsack}
+\textbf{Problem and bounds.}
+\href{https://atcoder.jp/contests/ndpc/tasks/ndpc2026_n}{Next DP
+Contest, N -- Knapsack}: type $i$ has weight $i$ and value $v_i$,
+for $1\le i\le n$; every type has unlimited copies. Each query asks
+for maximum value at \emph{exactly} weight $W$.
+Official bounds are $n\le4000$, $q\le2\cdot10^5$,
+$0\le v_i\le10^9$, $1\le W\le10^9$.
+A weight-one type exists, so every nonnegative exact weight is
+reachable. The listing below implements the supplied algorithm,
+with explicit-width density comparisons and a guarded unreachable
+state. Under these bounds, 64-bit values suffice because an answer
+is at most $W\max_i v_i\le10^{18}$. Outside these bounds, recheck
+both arithmetic and the $O(n^2)$ memory requirement.
+
+\subsubsection*{Step 1: Sort Types by Value per Unit Weight}
+An item $a$ precedes $b$ when $v_a/a>v_b/b$. Compare
+$v_a b$ and $v_b a$ using integer arithmetic; do not divide or compare
+floating-point ratios. Break equal-density ties by smaller original
+index. Let \texttt{order} contain the original indices in this order,
+and let $p=\texttt{order[0]}$. The weight of the best-density type
+is $p$, not its position zero in the sorted list.
+Ties cause no difficulty: replacements need only preserve value,
+not strictly increase it.
+
+\subsubsection*{Step 2: Reduce Every Large Query to at Most n Squared}
+Let $L=n^2$. For every exact weight $W\ge L$, there exists an optimum
+containing type $p$. To prove this, an optimum uses at least $n$
+items because every item weighs at most $n$. Among any $p$ of those
+items, the $p+1$ prefix sums have two equal residues modulo $p$.
+The nonempty block between them weighs a positive multiple of $p$.
+Replace that block by copies of type $p$. Its weight stays equal,
+and its value does not decrease because $p$ has maximum density.
+Thus an optimum containing $p$ exists, even if a different optimum
+originally omitted it.
+
+Writing $F[W]$ for the exact optimum, this proves
+$F[W]=F[W-p]+v_p$ whenever $W\ge L$.
+The forward inequality follows by removing $p$ from that optimum;
+the reverse follows by adding $p$ to an optimum for $W-p$.
+Repeatedly apply the equality until the remaining weight is at most
+$L$. For $W>L$, the number of removed copies is
+\[
+ t=\left\lceil\frac{W-L}{p}\right\rceil,\qquad R=W-tp.
+\]
+Then $L-p<R\le L$, and the answer is $F[R]+t v_p$.
+For $W\le L$, set $t=0,R=W$. This explains both the ceiling and
+why its argument is $W-L$, rather than $W$ itself. The large part
+can use the best-density item, but greedily filling \emph{all} of a
+small query with it is not valid.
+
+\subsubsection*{Step 3: Avoid n Transitions at Every Small Weight}
+The ordinary exact-fill DP is
+\[
+ F[0]=0,\qquad F[w]=\max_{1\le i\le\min(n,w)}
+                            \{F[w-i]+v_i\}.
+\]
+Computing it through $L$ costs $O(n^3)$. A density-rank lemma lets
+us restrict the candidate final item. For exact weight $w$, some
+optimum uses a type among the first
+\[
+ K(w)=\min\left(n,\left\lceil\frac{2n^2}{w}\right\rceil\right)
+\]
+entries of \texttt{order}. Remove that item from this optimum; its
+remainder is an optimum of smaller exact weight, by the usual
+optimal-substructure argument. Consequently it suffices to try these
+$K(w)$ types in the recurrence, ignoring any whose weight exceeds
+$w$. Increasing $w$ makes every needed predecessor already available.
+This is a statement about \emph{at least one item} in an optimum;
+it does not say all its items have high density.
+
+\textbf{Why the rank lemma holds.} The nontrivial number-theoretic
+ingredient is the following classical Frobenius bound:
+for $h\ge2$ distinct positive integers with gcd one, maximum $M$,
+and second largest $M_2$, the largest unrepresentable integer is
+at most $2\lfloor M/h\rfloor M_2-M$ (Erd\H{o}s--Graham).
+In particular it is at most $2M^2/h-M$.
+Here is how that bound yields the exact statement used by the code.
+
+Fix a rank $k<n$ and assume $w\ge2n^2/k$. Take any optimum omitting
+the first $k$ types; if none exists the claim already holds.
+Let $q$ be its highest-density used type, and let
+$g=\gcd(w_1,\ldots,w_k,w_q)$, where these $w_j$ denote the weights
+of the sorted types. Divide those $k+1$ distinct weights by $g$,
+obtaining a gcd-one set $A$ with maximum $M\le n/g$.
+For any chosen top-$k$ weight $a\in A$, the Frobenius bound gives
+\[
+ F_A+a\le\frac{2M^2}{k+1}<\frac{2M^2}{k}.
+\]
+Thus any integer $x\ge2M^2/k$ can be represented using $A$ while
+including a top-$k$ weight: first reserve $a$, then represent $x-a$.
+Here $F_A$ means the Frobenius number, not the knapsack DP.
+
+We need a sufficiently large weight divisible by $g$ to replace.
+As long as at least $g$ items remain in the optimum, equal residues
+of $g+1$ prefix sums identify a nonempty block divisible by $g$.
+Remove such blocks repeatedly and let their combined weight be $B$.
+At most $g-1$ items remain, so
+\[
+ B\ge w-(g-1)n\ge\frac{2n^2}{gk}.
+\]
+For the last inequality, subtract the right side from
+$2n^2/k-(g-1)n$ to get
+$(g-1)n(2n/(gk)-1)\ge0$.
+Indeed, $k+1$ distinct positive multiples of $g$ are at most $n$,
+so $g(k+1)\le n$. Therefore
+$B/g\ge2n^2/(g^2k)\ge2M^2/k$, and $B/g$ is an integer.
+Represent it by $A$ while including a top-$k$ weight, then multiply
+back by $g$. This replaces exactly weight $B$ using only top-$k$
+types and type $q$. Every replacement type has density at least
+that of $q$, which was highest among the removed items, so value
+cannot decrease. We have constructed an optimum using a top-$k$
+type, proving the claim. If $k=n$, it is immediate.
+Taking $k=K(w)$ gives the restricted recurrence above.
+
+This proof uses the classical Frobenius theorem as an external
+lemma; the algorithmic reduction and its inequalities are shown
+explicitly. See
+\href{https://arxiv.org/abs/2110.02503}{Chan and He, More on
+Change-Making and Related Problems}, Sections 4--5.
+The distinction between exact weight and an at-most capacity is
+necessary: the same factor two must not be applied blindly to
+other knapsack definitions.
+
+\subsubsection*{Step 4: Complexity, Code and a Query Walkthrough}
+The transition count is
+\[
+ \sum_{w=1}^{n^2}\min\left(n,
+              \left\lceil\frac{2n^2}{w}\right\rceil\right)
+ =O(n^2\log(n+1)).
+\]
+For small $w$ use the cap $n$; for the rest use the harmonic-series
+bound $\sum_{w=a}^{b}1/w=O(\log(b/a)+1)$.
+Sorting costs $O(n\log n)$, queries $O(1)$ each, and memory is
+$O(n^2)$. At $n=4000$, the 64-bit DP alone occupies about 128 MB
+(decimal), so this is not a small-memory method.
+
+\textbf{Example.} Let $n=3$ and $[v_1,v_2,v_3]=[2,5,7]$.
+Densities are $2,2.5,7/3$, hence \texttt{order} is $[2,3,1]$,
+$p=2$ and $L=9$. For query $W=20$,
+$t=\lceil(20-9)/2\rceil=6$ and $R=8$.
+The precomputed optimum is $F[8]=20$, giving
+$20+6\cdot5=50$. For the small query $W=3$, the best answer is
+seven; taking one best-density item and leaving one unit empty
+would violate exact fill. The DP supplies the correct remainder.
+\newpage
+\lstinputlisting[style=C++,showstringspaces=false]{../dp/NDPC_Knapsack.cpp}
+\begin{minipage}{\linewidth}
+\begin{lstlisting}[style=C++,showstringspaces=false]
+// Input:             Output:
+// 3 4                7
+// 2 5 7              20
+// 3                  22
+// 8                  50
+// 9
+// 20
+\end{lstlisting}
+\end{minipage}
+\par
+\par
+\endgroup
