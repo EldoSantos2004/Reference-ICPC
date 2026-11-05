@@ -1,0 +1,346 @@
+\clearpage
+\begingroup
+\raggedright
+\subsection{Generating Functions}
+\label{gf:catalog:start}
+\small
+An ordinary generating function (OGF) is $F(x)=\sum_{n\ge0}a_nx^n$;
+its answer is $a_n=[x^n]F(x)$. An exponential generating function
+(EGF) is $F(x)=\sum_{n\ge0}a_nx^n/n!$; its answer is
+\textbf{$a_n=n![x^n]F(x)$}. An extra variable marks another quantity:
+$[x^nu^k]$ selects size $n$ and statistic $k$.
+
+Use formal power series: when only degrees through $N$ matter,
+truncate after $x^N$. Positive weights make the infinite products
+well-defined coefficient by coefficient. Unless specified otherwise,
+$n\ge0$, $k\ge1$, $w_i>0$, and impossible counting binomials are zero.
+Square roots below use the branch with constant term $1$.
+The numbered entries correspond to the 81 formulas in this catalog.
+
+% Each entry is one breakable-table row: pages may break between rows,
+% but the formula and its interpretation always remain together.
+\newcommand{\GFentry}[3]{%
+  \par\addvspace{3pt}\noindent
+  \begin{minipage}{\linewidth}
+  \phantomsection\label{gf:entry:#1}%
+  \setlength{\tabcolsep}{4pt}%
+  \begin{tabular}{@{}p{\dimexpr.48\linewidth-\tabcolsep\relax}p{\dimexpr.52\linewidth-\tabcolsep\relax}@{}}
+  \raggedright\makebox[2.3em][l]{\textbf{#1}}$\displaystyle #2$
+  & \raggedright #3\tabularnewline
+  \end{tabular}
+  \end{minipage}\par
+}
+
+\subsubsection*{Basic counting (OGF)}
+Every interpretation here is $[x^n]F(x)$.
+\GFentry{1}{\frac{1}{1-x}}
+  {$1$: one possibility for each nonnegative size.}
+\GFentry{2}{\frac{1}{1-cx}}
+  {$c^n$: length-$n$ strings over an alphabet of $c$ symbols.}
+\GFentry{3}{(1+x)^m}
+  {$\binom{m}{n}$: choose $n$ of $m$ distinct objects.}
+\GFentry{4}{\frac{1}{(1-x)^k}}
+  {$\binom{n+k-1}{k-1}$: solutions of $a_1+\cdots+a_k=n$ with $a_i\ge0$.}
+\GFentry{5}{\frac{x^k}{(1-x)^k}}
+  {$\binom{n-1}{k-1}$: solutions with every $a_i\ge1$.}
+\GFentry{6}{\frac{x}{(1-x)^2}}
+  {$n$: size-weighted counts and sums.}
+\GFentry{7}{\frac{x(1+x)}{(1-x)^3}}
+  {$n^2$.}
+\GFentry{8}{\frac{x(1+4x+x^2)}{(1-x)^4}}
+  {$n^3$.}
+\GFentry{9}{\frac{x^r}{(1-x)^{r+1}}}
+  {$\binom{n}{r}$, for fixed $r\ge0$. Multiply the GF by $r!$ to obtain the falling factorial $n(n-1)\cdots(n-r+1)$.}
+\GFentry{10}{\frac{-\log(1-x)}{1-x}}
+  {Harmonic numbers $H_n=\sum_{j=1}^n1/j$, with $H_0=0$.}
+More generally, for $r\ge1$,
+\[
+  \sum_{n\ge0}n^rx^n
+  =\left(x\frac{d}{dx}\right)^r\frac{1}{1-x}.
+\]
+\href{https://dlmf.nist.gov/26.3}{Binomial generating-function identities.}
+
+\subsubsection*{Subset sum, knapsack, and compositions (OGF)}
+Let $S\subseteq\{1,2,\ldots\}$ be allowed part sizes and
+$A(x)=\sum_{s\in S}x^s$. Products combine independent choices;
+powers and geometric series assemble ordered sequences.
+\GFentry{11}{\prod_{i=1}^m(1+x^{w_i})}
+  {Subsets of indexed items with total weight $n$. Equal-weight items remain distinct.}
+\GFentry{12}{\prod_{i=1}^m\frac{1}{1-x^{w_i}}}
+  {Coin combinations totaling $n$, with unlimited copies of each type. Order does not matter.}
+\GFentry{13}{\prod_{i=1}^m\frac{1-x^{(b_i+1)w_i}}{1-x^{w_i}}}
+  {Combinations totaling $n$, with at most $b_i$ copies of type $i$, where $b_i\ge0$.}
+\GFentry{14}{\prod_{i=1}^m(1+ux^{w_i})}
+  {$[x^nu^k]$: subsets of weight $n$ with exactly $k$ selected items.}
+\GFentry{15}{\left(\frac{1-x^{b+1}}{1-x}\right)^k}
+  {Ordered tuples $a_1+\cdots+a_k=n$ with $0\le a_i\le b$, where $b\ge0$.}
+\GFentry{16}{A(x)^k}
+  {Ordered sequences of exactly $k$ allowed parts totaling $n$.}
+\GFentry{17}{\frac{1}{1-A(x)}}
+  {Ordered sequences of any number of allowed parts, including the empty sequence.}
+\GFentry{18}{\frac{1-x}{1-2x}}
+  {Compositions into arbitrary positive parts: coefficient $1$ at $n=0$, and $2^{n-1}$ for $n\ge1$.}
+For coins $1,3,4$, compare
+\[
+\begin{aligned}
+  \frac{1}{(1-x)(1-x^3)(1-x^4)}
+    &\quad\text{unordered combinations},\\
+  \frac{1}{1-x-x^3-x^4}
+    &\quad\text{ordered sequences}.
+\end{aligned}
+\]
+Entry 15 gives the bounded-sum formula
+\[
+  \sum_{j=0}^k(-1)^j\binom{k}{j}
+  \binom{n-j(b+1)+k-1}{k-1}.
+\]
+\href{https://aofa.cs.princeton.edu/50ac/}{Product and sequence constructions.}
+
+\subsubsection*{Integer partitions (OGF)}
+Parts are positive and their order is ignored: $1+3$ and $3+1$
+are the same partition. An infinite product need only include
+part sizes through $N$ when computing through degree $N$.
+\GFentry{19}{\prod_{j\ge1}\frac{1}{1-x^j}}
+  {$p(n)$: unrestricted integer partitions of $n$.}
+\GFentry{20}{\prod_{j\ge1}(1+x^j)}
+  {Partitions of $n$ into distinct parts.}
+\GFentry{21}{\prod_{j\ge1}\frac{1}{1-x^{2j-1}}}
+  {Partitions into odd parts. This is the same series as entry 20.}
+\GFentry{22}{\prod_{j=1}^{k}\frac{1}{1-x^j}}
+  {Partitions with every part at most $k$; equivalently, partitions into at most $k$ parts.}
+\GFentry{23}{\frac{x^k}{\prod_{j=1}^{k}(1-x^j)}}
+  {Partitions into exactly $k$ positive parts.}
+\GFentry{24}{\prod_{j\ge1}\frac{1}{1-ux^j}}
+  {$[x^nu^k]$: partitions of $n$ into exactly $k$ parts.}
+\GFentry{25}{\prod_{i=1}^{k}\frac{1-x^{m+i}}{1-x^i}}
+  {Gaussian binomial ${k+m\brack k}_x$: partitions fitting a $k\times m$ rectangle, with at most $k$ parts, each at most $m$.}
+\href{https://dlmf.nist.gov/27.14}{Unrestricted partitions};
+\href{https://dlmf.nist.gov/26.9}{restricted partitions}.
+
+\subsubsection*{Recurrences, lattice paths, and ordered trees (OGF)}
+Write $C(x)=(1-\sqrt{1-4x})/(2x)$, with $C(0)=1$.
+\GFentry{26}{\frac{x}{1-x-x^2}}
+  {Fibonacci numbers $F_n$, where $F_0=0$ and $F_1=1$.}
+\GFentry{27}{\frac{1}{1-x-x^2-\cdots-x^d}}
+  {Compositions with allowed parts $1,\ldots,d$, including the empty composition.}
+\GFentry{28}{\frac{1+x}{1-x-x^2}}
+  {Binary strings of length $n$ without adjacent $1$s: $F_{n+2}$.}
+\GFentry{29}{\frac{1}{\sqrt{1-4x}}}
+  {$\binom{2n}{n}$: walks with $n$ up-steps and $n$ down-steps, with no nonnegativity restriction.}
+\GFentry{30}{C(x)=\frac{1-\sqrt{1-4x}}{2x}}
+  {Catalan numbers $C_n=\binom{2n}{n}/(n+1)$: balanced parentheses with $n$ pairs, Dyck paths, or full ordered binary trees with $n$ internal nodes.}
+\GFentry{31}{C(x)^k}
+  {$\dfrac{k}{2n+k}\binom{2n+k}{n}$: ordered forests of $k$ plane rooted trees with $n$ total edges.}
+\GFentry{32}{T(x)=1+xT(x)^r}
+  {For $r\ge2$ and $T(0)=1$, full ordered $r$-ary trees with $n$ internal nodes: $\binom{rn}{n}/((r-1)n+1)$.}
+\GFentry{33}{\frac{1-x-\sqrt{1-2x-3x^2}}{2x^2}}
+  {Motzkin paths with $n$ up, down, or horizontal steps, staying nonnegative and ending at height $0$.}
+\GFentry{34}{\frac{1-x-\sqrt{1-6x+x^2}}{2x}}
+  {Large Schr\"oder paths from $(0,0)$ to $(n,n)$ with east, north, and diagonal steps, staying at or below $y=x$.}
+\GFentry{35}{\frac{1}{1-x-y}}
+  {$[x^ay^b]=\binom{a+b}{a}$: grid paths using east and north steps.}
+\GFentry{36}{\frac{1}{1-x-y-xy}}
+  {$[x^ay^b]$: Delannoy paths to $(a,b)$ using east, north, and diagonal $(1,1)$ steps.}
+\GFentry{37}{\frac{1}{\sqrt{1-6x+x^2}}}
+  {Central Delannoy numbers: unrestricted east/north/diagonal paths from $(0,0)$ to $(n,n)$.}
+\GFentry{38}{\big((I-xM)^{-1}\big)_{ij}}
+  {Length-$n$ walks from $i$ to $j$, where $M_{ij}$ counts edges $i\to j$. Useful for automata and forbidden-pattern problems.}
+Entry 38 follows from $(I-xM)^{-1}=I+xM+x^2M^2+\cdots$.
+For $a_n=\sum_{i=1}^d c_i a_{n-i}$ when $n\ge d$, including initial conditions gives
+\[
+  F(x)=\frac{
+    \displaystyle\sum_{j=0}^{d-1}
+      \left(a_j-\sum_{i=1}^{j}c_i a_{j-i}\right)x^j
+  }{1-\displaystyle\sum_{i=1}^d c_ix^i}.
+\]
+\href{https://dlmf.nist.gov/26.5}{Catalan numbers};
+\href{https://dlmf.nist.gov/26.6}{other lattice-path numbers}.
+
+\subsubsection*{Inversions in permutations (polynomials)}
+Here the exponent of $q$ is the inversion count, not the length.
+For fixed length $m$, let $[j]_q=1+q+\cdots+q^{j-1}$ and
+$[m]_q!=\prod_{j=1}^m[j]_q$.
+\GFentry{39}{[m]_q!}
+  {$[q^r]$: permutations of $m$ distinct elements with exactly $r$ inversions. The same polynomial counts by major index.}
+\GFentry{40}{\frac{[m]_q!}{[m_1]_q!\cdots[m_t]_q!}}
+  {$[q^r]$: distinct permutations of a multiset with multiplicities $m_1,\ldots,m_t$, summing to $m$, with exactly $r$ inversions.}
+\href{https://dlmf.nist.gov/26.14}{Permutation-statistic generating functions.}
+
+\subsubsection*{Labeled permutations and cycles (EGF)}
+\textbf{Read $a_n=n![x^n]F(x)$ throughout the EGF entries.}
+For an extra marker, use $n![x^nu^k]F(x,u)$.
+\GFentry{41}{e^x}
+  {$1$: one unordered set on a given collection of $n$ labels.}
+\GFentry{42}{e^{kx}}
+  {$k^n$: functions from $n$ labeled objects to $k$ labeled boxes; empty boxes are allowed.}
+\GFentry{43}{\frac{1}{1-x}}
+  {$n!$: all permutations. Contrast the OGF interpretation in entry 1.}
+\GFentry{44}{-\log(1-x)}
+  {$(n-1)!$ for $n\ge1$: permutations consisting of one cycle. The constant coefficient is zero.}
+\GFentry{45}{\frac{e^{-x}}{1-x}}
+  {Derangements $D_n$: permutations without fixed points.}
+\GFentry{46}{\frac{e^{(u-1)x}}{1-x}}
+  {$n![x^nu^k]$: permutations with exactly $k$ fixed points, equal to $\binom{n}{k}D_{n-k}$.}
+\GFentry{47}{e^{x+x^2/2}}
+  {Involutions: permutations with only cycles of lengths $1$ and $2$.}
+\GFentry{48}{e^{x^2/2}}
+  {Perfect matchings on $n$ labeled vertices. For $n=2m$, $(2m)!/(2^m m!)$; zero for odd $n$.}
+\GFentry{49}{\exp\left(\sum_{j\in S}\frac{x^j}{j}\right)}
+  {Permutations with every cycle length in $S\subseteq\{1,2,\ldots\}$.}
+\GFentry{50}{(1-x)^{-u}}
+  {$n![x^nu^k]={n\brack k}$: permutations with exactly $k$ cycles, the unsigned first-kind Stirling numbers.}
+Equivalently, for fixed $k$ cycles,
+\[
+  \sum_{n\ge0}{n\brack k}\frac{x^n}{n!}
+  =\frac{(-\log(1-x))^k}{k!}.
+\]
+\href{https://aofa.cs.princeton.edu/70permutations/}{Permutation families};
+\href{https://dlmf.nist.gov/26.8}{Stirling generating functions}.
+
+\subsubsection*{Set partitions and other labeled families (EGF)}
+Objects are labeled; blocks are unordered unless stated otherwise.
+The extraction rule is still $a_n=n![x^n]F(x)$.
+\GFentry{51}{\frac{(e^x-1)^k}{k!}}
+  {$S(n,k)$: partitions of $n$ labeled objects into $k$ nonempty, unordered blocks (second-kind Stirling numbers).}
+\GFentry{52}{(e^x-1)^k}
+  {$k!S(n,k)$: surjections onto $k$ labeled boxes, all nonempty.}
+\GFentry{53}{e^{e^x-1}}
+  {Bell numbers: all set partitions of $n$ labeled objects.}
+\GFentry{54}{\frac{1}{2-e^x}}
+  {Ordered Bell/Fubini numbers: partitions whose nonempty blocks are placed in an order.}
+\GFentry{55}{\exp\left(\sum_{j\in S}\frac{x^j}{j!}\right)}
+  {Set partitions with every block size in $S\subseteq\{1,2,\ldots\}$.}
+\GFentry{56}{\left(\sum_{j\in S}\frac{x^j}{j!}\right)^k}
+  {Assignments of $n$ labeled objects to $k$ labeled boxes, with every occupancy in $S\subseteq\{0,1,\ldots\}$. Include $0$ to allow empty boxes.}
+\GFentry{57}{\sec x+\tan x}
+  {Alternating permutations $a_1<a_2>a_3<\cdots$.}
+\GFentry{58}{\frac{1-u}{e^{(u-1)x}-u}}
+  {$n![x^nu^k]$: permutations with $k$ descents (Eulerian numbers). At $u=1$, take the limit $1/(1-x)$.}
+\GFentry{59}{\frac{x}{e^x-1}}
+  {Bernoulli numbers, with $B_1=-1/2$. Used for sums of powers, rather than counting objects.}
+Two specializations of entry 55 are $e^{e^x-1-x}$ for no singleton
+blocks, and $e^{x^r/r!}$ for all blocks of size $r$.
+\href{https://dlmf.nist.gov/26.7}{Bell numbers};
+\href{https://dlmf.nist.gov/26.8}{Stirling numbers};
+\href{https://mathweb.ucsd.edu/~projectp/warmups/eQ.html}{alternating permutations};
+\href{https://dlmf.nist.gov/26.14}{Eulerian numbers};
+\href{https://dlmf.nist.gov/24.2}{Bernoulli numbers}.
+
+\subsubsection*{Labeled trees and graphs (EGF)}
+Let $T(x)$ be the unique formal series with $T=xe^T$, $T(0)=0$,
+and let $U(x)=T(x)-T(x)^2/2$. Continue to extract $n![x^n]$.
+\GFentry{60}{T(x)=xe^{T(x)}}
+  {Rooted labeled trees: $n^{n-1}$ for $n\ge1$.}
+\GFentry{61}{U(x)=T(x)-\frac{T(x)^2}{2}}
+  {Unrooted labeled trees: $n^{n-2}$ for $n\ge2$, and one tree for $n=1$.}
+\GFentry{62}{e^{T(x)}}
+  {Labeled forests with one chosen root per component: $(n+1)^{n-1}$ for $n\ge1$, and one empty forest.}
+\GFentry{63}{\frac{1}{1-T(x)}}
+  {Functions from $n$ vertices to themselves, equivalently directed functional graphs: $n^n$ for $n\ge1$, and one empty object.}
+\GFentry{64}{\log H(x)}
+  {Connected simple undirected graphs on $n$ labeled vertices, where $H(x)$ is the EGF for all such graphs.}
+In entry 64,
+\[
+  H(x)=\sum_{n\ge0}2^{\binom{n}{2}}\frac{x^n}{n!}.
+\]
+Every graph is an unordered set of its connected components, so
+$H(x)=\exp(\text{connected-graph EGF})$. The identity is formal;
+analytic convergence is unnecessary.
+\href{https://aofa.cs.princeton.edu/60trees/}{Tree families};
+\href{https://aofa.cs.princeton.edu/50ac/}{labeled constructions}.
+
+\subsubsection*{Divisor sums (Lambert series / OGF)}
+These series have no constant term; extract $[x^n]$ for $n\ge1$.
+Here $d(n)$ counts divisors, $\sigma_r(n)=\sum_{d\mid n}d^r$,
+$\varphi$ is Euler's totient, and $\mu$ is the M\"obius function.
+\GFentry{65}{\sum_{j\ge1}f(j)\frac{x^j}{1-x^j}}
+  {$\sum_{d\mid n}f(d)$: a divisor sum of any arithmetic function $f$.}
+\GFentry{66}{\sum_{j\ge1}\frac{x^j}{1-x^j}}
+  {$d(n)$: the number of positive divisors of $n$.}
+\GFentry{67}{\sum_{j\ge1}j^r\frac{x^j}{1-x^j}}
+  {$\sigma_r(n)$: the sum of $r$-th powers of divisors. For $r=1$, the usual sum of divisors.}
+\GFentry{68}{\sum_{j\ge1}\varphi(j)\frac{x^j}{1-x^j}}
+  {$n$: this series equals $x/(1-x)^2$, expressing $\sum_{d\mid n}\varphi(d)=n$.}
+\GFentry{69}{\sum_{j\ge1}\mu(j)\frac{x^j}{1-x^j}}
+  {$1$ if $n=1$, otherwise $0$: this series equals $x$, the basic M\"obius-inversion identity.}
+\href{https://dlmf.nist.gov/27.7}{Lambert-series identities.}
+
+\subsubsection*{Probability generating functions (PGF)}
+For $P(x)=\mathbb E[x^X]$, $[x^n]P(x)=\Pr(X=n)$.
+Products combine independent random variables. Write $q=1-p$;
+for geometric and negative-binomial distributions, $0<p\le1$.
+\GFentry{70}{q+px}
+  {Bernoulli: one trial with success probability $p$.}
+\GFentry{71}{(q+px)^m}
+  {Binomial: successes in $m$ independent trials, with probability $\binom{m}{n}p^nq^{m-n}$.}
+\GFentry{72}{\frac{p}{1-qx}}
+  {Geometric: failures before the first success, with probability $pq^n$. Support starts at $0$.}
+\GFentry{73}{\left(\frac{p}{1-qx}\right)^k}
+  {Failures before the $k$-th success: probability $\binom{n+k-1}{k-1}p^kq^n$.}
+\GFentry{74}{e^{\lambda(x-1)}}
+  {Poisson, $\lambda\ge0$: probability $e^{-\lambda}\lambda^n/n!$.}
+\GFentry{75}{\left(\frac{x+x^2+\cdots+x^d}{d}\right)^k}
+  {The sum of $k$ independent fair $d$-sided dice. Removing the factors $1/d$ gives the counting GF.}
+\[
+  \mathbb E[X]=P'(1),\qquad
+  \operatorname{Var}(X)=P''(1)+P'(1)-P'(1)^2.
+\]
+\href{https://www.math.kth.se/matstat/gru/sf2940/lectnotemat5.pdf}{Probability generating functions (KTH notes).}
+
+\subsubsection*{Multiplicative functions (Dirichlet series)}
+This is a separate representation:
+$D(s)=\sum_{n\ge1}a_n/n^s$, not a coefficient of $x^n$.
+Read the right column as the sequence $a_n$. Multiplication gives
+Dirichlet convolution. Identities may be read formally, or in a
+half-plane of convergence. Here $\zeta$ is the Riemann zeta function.
+\GFentry{76}{\zeta(s)}
+  {$1$.}
+\GFentry{77}{\zeta(s)^2}
+  {$d(n)$: divisor count.}
+\GFentry{78}{\zeta(s)\zeta(s-r)}
+  {$\sigma_r(n)$: sum of $r$-th powers of divisors.}
+\GFentry{79}{\frac{1}{\zeta(s)}}
+  {M\"obius function $\mu(n)$.}
+\GFentry{80}{\frac{\zeta(s-1)}{\zeta(s)}}
+  {Euler's totient $\varphi(n)$.}
+\GFentry{81}{\frac{\zeta(s)}{\zeta(2s)}}
+  {$\mu(n)^2$: the indicator that $n$ is squarefree.}
+\href{https://dlmf.nist.gov/27.4}{Dirichlet-series identities.}
+
+\subsubsection*{Transformations and coefficient recipes}
+In OGF rows, write $A(x)=\sum a_nx^n$ and $B(x)=\sum b_nx^n$.
+EGF rows use factorial-normalized coefficients instead.
+\GFentry{R1}{x^rA(x)}
+  {OGF shift: coefficient $a_{n-r}$; negative indices are zero.}
+\GFentry{R2}{A(cx)}
+  {OGF scaling: coefficient $c^na_n$.}
+\GFentry{R3}{\frac{A(x)}{1-x}}
+  {OGF prefix sums: coefficient $\sum_{i=0}^n a_i$.}
+\GFentry{R4}{(1-x)A(x)}
+  {OGF differences: coefficient $a_n-a_{n-1}$, with $a_{-1}=0$.}
+\GFentry{R5}{xA'(x)}
+  {OGF weighting by size: coefficient $na_n$.}
+\GFentry{R6}{A(x)B(x)}
+  {OGF ordinary convolution: coefficient $\sum_{i=0}^n a_i b_{n-i}$.}
+\GFentry{R7}{A(x)B(x)}
+  {EGF binomial convolution: represented count $\sum_{i=0}^n\binom{n}{i}a_i b_{n-i}$.}
+\GFentry{R8}{e^{A(x)}}
+  {EGF for unordered sets of labeled components counted by $A$, requiring $A(0)=0$.}
+\GFentry{R9}{\frac{A(x)^k}{k!}}
+  {EGF for exactly $k$ unordered labeled components counted by $A$, requiring $A(0)=0$.}
+\GFentry{R10}{\frac{1}{1-x}A\!\left(\frac{x}{1-x}\right)}
+  {OGF binomial transform: coefficient $\sum_{i=0}^n\binom{n}{i}a_i$.}
+\GFentry{R11}{\left.\frac{\partial F(x,u)}{\partial u}\right|_{u=1}}
+  {If $u$ marks a statistic, coefficients give its total over all objects of each size. Divide by the object count for an average; multiply EGF coefficients by $n!$ first.}
+\href{https://aofa.cs.princeton.edu/30gf/}{Generating-function constructions and transformations.}
+
+\medskip
+\textbf{Modular computations.} EGF factorial inverses and formal-series
+operations such as $\exp$, $\log$, and integration divide by factorials
+or integers. The usual algorithms modulo a prime $p$ assume all
+needed denominators are invertible; in particular, the standard
+factorial-inverse approach uses degrees below $p$.
+\par
+\phantomsection\label{gf:catalog:end}
+\endgroup
+\clearpage
