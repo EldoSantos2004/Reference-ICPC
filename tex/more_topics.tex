@@ -33,6 +33,50 @@
 
 \subsection{Max Manhattan Distance}
 \cppfile{../more_topics/MaxManhattanDist.cpp}
+\subsection{Matroid Intersection}
+\cppfile{../more_topics/matroid_intersection.cpp}
+
+\subsection{Matroid Bipartite}
+Given a bipartite graph $G=(U,V)$, the ground set is $U$. A subset of $U$ is independent if it can be perfectly matched to some subset of $V$.
+
+Note: DFS arrays are managed using a timer to avoid $\mathcal{O}(|V|)$ \texttt{fill()} operations on every \texttt{check()} call, which is critical since \texttt{check()} is called $|S| \times |E \setminus S|$ times per step.
+\cppfile{../more_topics/matroid_bipartite.cpp}
+
+\subsection{Matroid Colorful}
+\textbf{Ground Set:} A set of elements where each element is assigned exactly one color.
+
+\textbf{Independent Set:} A subset of elements where all chosen elements have strictly distinct colors (at most one element per color).
+
+\textbf{Implementation:} Maintained with a boolean array tracking active colors. To \texttt{check()} if an element can be added, verify its color is currently marked as false (unused).
+\cppfile{../more_topics/matroid_colorful.cpp}
+
+\subsection{Matroid Graphic}
+\textbf{Ground Set:} The edges of an undirected graph.
+
+\textbf{Independent Set:} A subset of edges that contains no cycles (i.e., forms a forest).
+
+\textbf{Implementation:} Maintained using a Disjoint Set Union (DSU). To \texttt{check()} if adding an edge maintains independence, verify its endpoints belong to different DSU components.
+\cppfile{../more_topics/matroid_graphic.cpp}
+
+\subsection{Matroid Partition}
+\textbf{Ground Set:} A set of elements partitioned into disjoint categories $G_1, G_2, \dots, G_k$, each with a defined maximum capacity $C_i$.
+
+\textbf{Independent Set:} A subset of elements where the number of chosen elements belonging to category $G_i$ is less than or equal to $C_i$.
+
+\textbf{Implementation:} Maintained with an integer frequency array. To \texttt{check()} if an element can be added, verify the current frequency of its category is strictly less than its capacity limit.
+\cppfile{../more_topics/matroid_partition.cpp}
+
+\subsection{Matroid Prime Field}
+A set of vectors is independent if they are linearly independent over a prime field. Why it's useful in CP: If you map the edges of a graph to generic random vectors over $\mathbb{Z}_p$, then independence of edges is equivalent to independence of the corresponding vectors. This allows you to reduce problems about graphic matroids to problems about linear algebra over a prime field.
+\cppfile{../more_topics/matroid_prime_field.cpp}
+
+\subsection{Matroid Truncated}
+This is a highly composable utility. If you need a matroid that behaves exactly like $M$ but is restricted to a maximum rank (size) $K$, you can wrap $M$. This is useful for problems like "find a spanning tree with at most $K$ red edges" (intersect Graphic with a Truncated Colorful Matroid).
+\cppfile{../more_topics/matroid_truncated.cpp}
+
+\subsection{Matroid XOR}
+A subset of integers is independent if no subset XORs to $0$. This is commonly intersected with Graphic or Partition matroids for problems involving basis selection under constraints.
+\cppfile{../more_topics/matroid_xor.cpp}
 
 \subsection{Mo}
 \cppfile{../more_topics/mo.cpp}
