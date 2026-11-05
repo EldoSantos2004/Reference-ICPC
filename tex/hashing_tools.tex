@@ -1,0 +1,312 @@
+\begingroup
+\raggedright
+\subsection{Hashing Toolkit: Choosing the Right Hash}
+C++17 (GCC/Clang). These implementations supplement the existing
+\texttt{HashedString} below. All new headers use namespace
+\texttt{hashing\_ref}; keep their dependency headers in the same folder.
+The shared \texttt{HashCore.hpp} appears first. Ranges are zero-based
+$[l,r)$, including empty ranges. Actual string sizes and segment-tree
+index arithmetic must fit \texttt{int} and available memory.
+Represented lengths and multiset counts must fit \texttt{uint64\_t}.
+The checked length operations throw \texttt{overflow\_error} if not.
+
+\begin{center}
+\begin{tabular}{p{0.37\columnwidth}p{0.52\columnwidth}}
+\textbf{Need} & \textbf{Use} \\
+\hline
+Order-sensitive string equality & \texttt{Hash}, \texttt{PrefixHash} \\
+Concatenated / repeated strings & \texttt{operator*}, \texttt{repeated} \\
+Same elements with multiplicities & \texttt{MultisetHash}, \texttt{MultisetPrefix} \\
+A dynamic set of distinct keys & \texttt{SetHash} with membership tracking \\
+A board/state changed in few slots & \texttt{ZobristContext}, \texttt{ZobristState} \\
+Character replacements and palindromes & \texttt{DynamicStringHash} \\
+Rotation-invariant candidate filter & \texttt{RotationTraceHash}; verify matching candidates \\
+\end{tabular}
+\end{center}
+
+\textbf{Shared parameters.} String hashes use the prime
+$M=2^{61}-1$ and two separately sampled bases, fixed for the entire
+process. Multiplication uses unsigned 128-bit intermediates.
+A byte is encoded as its unsigned value plus one, in $[1,256]$;
+zero bytes are supported. Each equality key includes length as well
+as both residues. Hashes from different processes, seeds or contexts
+are not interchangeable. Do not edit stored hash fields directly.
+The randomization is for contest fingerprints, not security.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/HashCore.hpp}
+
+\subsubsection{Collision Guide: What the Probability Refers To}
+Unequal hashes prove inequality for the represented comparison;
+equal hashes generally mean ``candidate match''. Ordinary string,
+collection, and Zobrist equality methods are Monte Carlo. Verify
+against the original data if an exact answer is required.
+The rotation class provides such a verification method explicitly.
+
+\textbf{Ideal uniform-hash model.} Suppose distinct objects receive
+independent uniform values among $R$ possibilities. A fixed unequal
+pair collides with probability $1/R$. For $Q$ specified comparisons,
+the union bound gives at most $Q/R$. Among all pairs of $K$ objects,
+it gives at most $\binom K2/R$, capped at one.
+The exact birthday probability in this ideal model is
+\[
+ 1-\prod_{i=0}^{K-1}\left(1-\frac{i}{R}\right)
+ \approx 1-\exp\left(-\frac{K(K-1)}{2R}\right).
+\]
+Thus comparing a million hashes against one fixed object is a
+very different risk from deduplicating a million hashes among
+themselves. The number of potentially bad pairs matters.
+
+\textbf{Polynomial hashes are not independent random labels.}
+For two fixed, different strings of the same length $L$, subtracting
+their polynomial hashes gives a nonzero polynomial of degree at most
+$L-1$ over the prime field. A nonzero degree-$d$ polynomial has at most
+$d$ roots. Here each base is uniform over $R=M-258$ choices, so a
+single-base collision has probability at most
+$\min(1,(L-1)/R)$. With two independently sampled bases, the fixed-pair
+bound is the square of that quantity. Different lengths are
+separated by the stored length. These are worst-case bounds, not
+claims that every collision probability equals $1/M$ or $1/M^2$.
+For many pairs, use a union bound over a fixed set of possible
+comparisons; independence between collision events is unnecessary.
+Input objects must be independent of the sampled parameters for
+this argument. The degree bound can become weak for huge virtual
+strings, even when their short descriptions fit in memory.
+
+\textbf{Practical rules.} Use the same sampled bases for all objects
+that will be compared. Keep both residues; compressing the pair to
+one machine word loses information. A fixed polynomial base can be
+targeted by specially constructed inputs. Plain overflow arithmetic
+modulo $2^{64}$ is not a prime field, so the polynomial root argument
+does not apply there. The unsigned wrapping in the multiset and
+Zobrist implementations below has a different purpose and analysis.
+The two seeded mixers in collection hashing are a practical
+fingerprint scheme; they are not a proof of independent random
+labels for every possible key. Matrix traces from one family also
+must not be counted as independent hashes.
+
+\subsection{Composable Double Hash}
+For a string $s$, each component represents
+$H(s)=\sum_{i=0}^{|s|-1}(\operatorname{byte}(s_i)+1)B^i\pmod M$.
+A \texttt{Hash} stores two values of $H$, their $B^{|s|}$ factors,
+the inverse factors, and the length.
+The empty string has hash zero, powers one and length zero.
+
+\textbf{Concatenation is a monoid operation.} If $a$ is followed by
+$c$, then $H(ac)=H(a)+B^{|a|}H(c)$. Powers and inverse powers multiply.
+This operation is associative, has the empty string as its identity,
+and preserves order: generally $a*c\ne c*a$.
+For example, concatenate the hashes of \texttt{"ab"} and
+\texttt{"cd"} to get the hash of \texttt{"abcd"}, without its text.
+Each concatenation costs $O(1)$.
+
+\textbf{Removing a known prefix.} If $a$ is a prefix of $c$, then
+$H(c\setminus a)=(H(c)-H(a))B^{-|a|}$.
+The inverse factor is already stored, so \texttt{c/a} costs $O(1)$.
+The operator assumes a real prefix; it does not check membership.
+Prefix tables guarantee this precondition when extracting substrings.
+\texttt{PrefixHash(s)} builds in $O(n)$ time and space;
+\texttt{get(l,r)} gives a normalized substring hash in $O(1)$.
+
+\textbf{Repetition.} Binary exponentiation works on any associative
+operation with an identity. \texttt{repeated(h,k)} concatenates $k$
+copies in $O(\log(k+1))$ time and $O(1)$ extra space; $k=0$ gives
+empty. It checks the represented length first and avoids an unused
+final squaring that could overflow even when the answer fits.
+A numerical ordering of hash residues is not lexicographic string
+ordering; use the comparison helper in the next subsection.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/ComposableHash.hpp}
+
+\subsection{Hashing Recipes: LCP, Comparison and Periods}
+\textbf{LCP.} Substring equality allows a binary search on the common
+prefix length. \texttt{lcp(a,i,b,j,limit)} returns at most
+\texttt{limit} matched bytes in $O(\log(n+1))$ hash queries.
+\texttt{compare(a,l,r,b,i,j)} then compares the first differing byte;
+if one substring is exhausted, the shorter one comes first.
+It returns $-1$, zero or $1$, with the same Monte Carlo caveat as
+substring equality. Byte comparisons use unsigned character values.
+
+\textbf{Period versus a whole number of repeated blocks.}
+For a nonempty substring $s[l..r)$ and $1\le k\le r-l$, period $k$
+means $s[l..r-k)=s[l+k..r)$. This needs one hash comparison.
+To be a power of its first $k$ bytes, also require $(r-l)\bmod k=0$.
+For instance, \texttt{"abcab"} has period three but is not a whole
+number of copies of \texttt{"abc"}. \texttt{has\_period} and
+\texttt{is\_block\_power} make this distinction in $O(1)$.
+They return false for invalid period sizes and for an empty range.
+
+\textbf{Huge repetitions.} The first $L$ bytes of the infinite
+repetition of nonempty $A$ consist of $\lfloor L/|A|\rfloor$ full
+copies followed by its prefix of length $L\bmod |A|$.
+\texttt{periodic\_prefix} hashes this in $O(\log(L+1))$.
+\texttt{compare\_repeated(a,p,b,q)} binary-searches the LCP of
+$A^p$ and $B^q$ using these hashes, in $O(\log^2(L+2))$ after prefix
+preprocessing, where $L$ is the shorter represented length.
+It never constructs the repeated strings. It remains probabilistic,
+and very large represented lengths weaken the polynomial degree bound.
+
+\textbf{Exact alternative for this particular comparison.}
+The Fine--Wilf theorem implies that two infinite periodic strings
+with periods $u=|A|$ and $v=|B|$ are identical if they agree through
+$u+v-\gcd(u,v)$ positions. Therefore
+\texttt{compare\_repeated\_exact} scans at most this many bytes,
+or stops when one finite repetition ends. If there is no mismatch,
+the finite lengths decide. It takes $O(|A|+|B|)$ time and $O(1)$
+extra space beyond the supplied prefix objects, regardless of $p,q$.
+Empty strings or zero exponents are handled before any modular index.
+This exact version is convenient when only two powers need comparison.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/HashRecipes.hpp}
+
+\subsection{Set and Multiset Fingerprints}
+\textbf{Ignore order, preserve the right information.}
+An integer key receives the same pair of seeded 64-bit mixer values
+throughout the process. For a \emph{multiset}, add those values once
+per occurrence, using intentional unsigned wraparound modulo
+$2^{64}$. Removing one occurrence subtracts its pair.
+Store the total count too, so different cardinalities cannot compare
+equal. \texttt{MultisetHash} supports insertion, valid deletion,
+multiset sum with \texttt{a+b}, and subtraction of a known
+submultiset with \texttt{a-b}, all in $O(1)$.
+These operations combine multisets with multiplicity, not distinct-set
+union. The caller must ensure that deleted occurrences exist.
+
+\textbf{Range composition and anagrams.}
+\texttt{MultisetPrefix} builds cumulative multiset hashes in $O(n)$
+time and space. \texttt{get(l,r)} subtracts the prefix before $l$,
+answering range-multiset equality queries in $O(1)$.
+It accepts either a \texttt{vector<long long>} or a byte string.
+Signed integer keys are converted to their unique unsigned bit
+patterns. In \texttt{"abccba"}, ranges $[0,3)$ and $[3,6)$ both
+contain one each of \texttt{a,b,c}, although their string hashes
+usually differ. For a small fixed alphabet, prefix frequency counts
+are an exact alternative costing $O(\sigma)$ per query.
+
+\textbf{A true set needs membership tracking.}
+For distinct present keys, XOR their fingerprints. Insertion toggles
+only when a key was absent; deletion toggles only when it was present.
+\texttt{SetHash} maintains this membership in an unordered set,
+so operations take expected $O(1)$ time and $O(n)$ memory overall.
+The hash-table key function is randomized too.
+Raw prefix XOR of an array with duplicates records \emph{odd
+multiplicity}, not its set of distinct values: two equal copies cancel.
+For example, \texttt{[a,a]} and \texttt{[b,b]} would both have XOR
+zero. Use the sum-based prefix class for multiset/anagram queries.
+Set union with overlapping keys also needs membership accounting;
+XOR alone represents symmetric difference.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/CollectionHash.hpp}
+
+\subsection{Zobrist Hashing for Incremental States}
+Represent a state as fixed positions with values in $[0,k)$;
+$-1$ means empty. A \texttt{ZobristContext(n,k)} assigns two random
+words to every (position,value) pair, including emptiness.
+The state hash is the XOR of all positions' selected tokens.
+To replace a value, XOR out its old token and XOR in its new token.
+\texttt{set(position,value)} takes $O(1)$; setting the same value
+again has no effect. A move from one slot to another is two calls,
+and undoing the calls restores the hash exactly.
+
+The context costs $O(nk)$ time/space to build; a state costs $O(n)$
+time/space and shares that context. Only compare states using the
+\emph{same context}. Keep it alive and unchanged while any state
+uses it; constructing a state directly from a temporary context is
+explicitly disabled. Copies of a state retain the same context.
+\texttt{key()} gives a pair of words suitable for a visited-state
+set or transposition table. Include every component that affects
+the actual state, such as whose turn it is, as another modeled slot.
+Matching fingerprints can still collide; a full-state check is the
+exact alternative for visited-state deduplication.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/ZobristHash.hpp}
+
+\subsection{Dynamic String Hash: Replacements and Palindromes}
+A segment-tree node stores forward and reverse \texttt{Hash} values.
+If consecutive segments are $a,c$, their forward hash is $a*c$ and
+their reverse hash is $\operatorname{rev}(c)*\operatorname{rev}(a)$.
+An empty segment is the identity. This merge is associative but not
+commutative, so range queries keep separate left and right accumulators
+and merge them in their original order.
+
+\texttt{DynamicStringHash(s)} builds in $O(n)$ time and space.
+\texttt{set(i,c)} replaces one byte in $O(\log(n+1))$.
+\texttt{get(l,r)} and \texttt{reversed(l,r)} return forward/reverse
+hashes in $O(\log(n+1))$; \texttt{palindrome(l,r)} compares them.
+An empty range is a palindrome. These hashes share the static
+\texttt{PrefixHash} parameters, so static and dynamic results may be
+compared directly. This class supports replacements, not insertion,
+deletion or rearrangement of positions. A reverse \emph{hash} does
+not mean that the tree implements a range-reversal update.
+Each \texttt{Hash} stores six words and a length; the tree holds two
+hashes per node, so account for its memory constant.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/DynamicStringHash.hpp}
+
+\subsection{Rotation-Invariant Matrix Fingerprint}
+\textbf{Purpose.} This is the lecture's specialized matrix-trace idea,
+implemented as a candidate filter with an exact verification method.
+A rotation changes \texttt{"abcab"} into \texttt{"cabab"}; it does
+not allow arbitrary reordering of the letters.
+
+Assign every byte an independently generated dense invertible
+$3\times3$ matrix over the prime field. Generate again if inversion
+fails. A string is represented by its ordered matrix product $P$.
+For a split $s=uv$ with products $U,V$, its rotation $vu$ has product
+$VU=U^{-1}(UV)U$. Thus rotations have the same
+$\operatorname{tr}(P)$ and $\operatorname{tr}(P^2)$.
+The code includes the length in its fingerprint as well.
+
+\textbf{Range extraction.} Store ordered prefix products $A_i$ and
+their inverses $I_i$. Append a byte matrix $R$ by
+$A_{i+1}=A_iR$ and $I_{i+1}=R^{-1}I_i$; note the reversed order
+in the inverse. The product for $[l,r)$ is $I_lA_r$.
+Each query performs a constant number of $3\times3$ multiplications.
+\texttt{fingerprint(l,r)} returns
+$(r-l,\operatorname{tr}P,\operatorname{tr}(P^2))$ in $O(1)$ for
+this fixed dimension, after $O(n)$ prefix preprocessing.
+The prefix arrays alone occupy about $144(n+1)$ bytes: this is a
+large constant, and two million-character objects need roughly
+288 MB before their text and other allocations.
+
+\textbf{What equality guarantees.} Unequal fingerprints rule out
+rotation equivalence. Equal fingerprints are only a necessary
+condition. The two traces depend on the same random matrices;
+calling them two independent 61-bit hashes is unjustified.
+No universal collision bound for all nonrotation word pairs is
+claimed here. In particular, the nonzero-polynomial condition needed
+for a Schwartz--Zippel bound has not been established for every pair.
+This distinction also avoids importing the lecture's heuristic
+multi-trace estimates as guarantees.
+
+\texttt{same\_rotation(l,r,other,i,j)} first applies the fingerprint
+filter, then verifies a matching candidate with KMP: search one
+length-$L$ string among the $2L-1$ characters of the other's doubled
+cyclic sequence. It uses $O(L)$ time and space for the verification,
+and returns an \emph{exact} boolean. Matching/actually equivalent
+ranges therefore take linear time; this is not an exact $O(1)$
+rotation-equivalence data structure. \texttt{exact\_rotation(a,b)}
+is available separately and does not require matrix preprocessing.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/RotationTraceHash.hpp}
+
+\subsection{Hash Toolkit: Runnable Examples}
+Build \texttt{strings/HashExamples.cpp} with C++17.
+All comments give the expected output for the shown inputs.
+Keep the original objects if hash matches need exact verification.
+\Needspace{6\baselineskip}
+\lstinputlisting[style=C++,showstringspaces=false]{../strings/HashExamples.cpp}
+
+\begin{minipage}{\linewidth}
+\textbf{Sources.} Topics inspired by
+\href{https://aapc.org.ar/wp-content/uploads/2026/07/2026-07-27-lautaro-lasorsa-hashing.pdf}{Lautaro Lasorsa, Hashing (2026)}.
+The implementations and examples here are independently written;
+the matrix API deliberately separates its fingerprint from exact
+verification. Further reading:
+\href{https://cp-algorithms.com/string/string-hashing.html}{CP-Algorithms:
+String Hashing}, and Fine--Wilf periodicity in
+\href{https://www.isa-afp.org/browser_info/current/AFP/Combinatorics_Words/outline.pdf}{Combinatorics
+on Words, Periodicity Lemma}.
+\par
+\end{minipage}
+\par
+\endgroup
