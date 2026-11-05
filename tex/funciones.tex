@@ -70,6 +70,16 @@ Each group is a separate function; \texttt{main} runs all examples.
 
 \begingroup
 \raggedright
+\subsection{Map Operators to Functions}
+\texttt{function<ll(ll,ll)>} stores a callable that takes two
+\texttt{long long} arguments and returns a \texttt{long long}.
+The map chooses the lambda by its operator character; the following
+parentheses call it. \texttt{at} requires the key to exist.
+\begin{minipage}{\linewidth}
+\lstinputlisting[style=C++,showstringspaces=false]{../compile/FunctionMap.cpp}
+\end{minipage}
+\par
+
 \subsection{Comparators}
 For \texttt{sort}, \texttt{set}, and \texttt{map}, \texttt{cmp(a,b)}
 is true when \texttt{a} comes before \texttt{b}. In a
